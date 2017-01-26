@@ -6,8 +6,12 @@ import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SuperRunner extends BlockJUnit4ClassRunner {
+	
+	private static final Logger LOG = LoggerFactory.getLogger(SuperRunner.class);
 
 	public SuperRunner(Class<?> klass) throws InitializationError {
 		super(klass);
@@ -19,11 +23,10 @@ public class SuperRunner extends BlockJUnit4ClassRunner {
 
     @Override
     protected void runChild(final FrameworkMethod method, RunNotifier notifier) {
-    	System.out.println("test '" + method.getName() + "': starting ...");
+    	LOG.debug("test '{}': starting ...", method.getName());
     	long msStart = System.currentTimeMillis();
     	super.runChild(method, notifier);
-    	long ms = System.currentTimeMillis() - msStart;
-    	System.out.println("test '" + method.getName() + "': finished in " + ms + "ms ...");
+    	LOG.debug("test '{}': finished in {}ms ...", method.getName(), System.currentTimeMillis() - msStart);
     }
     
 }
