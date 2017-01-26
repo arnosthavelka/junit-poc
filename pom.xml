@@ -16,12 +16,15 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		
-		<!-- specific properties -->
+		<!-- specific JUnit properties -->
         <junit.jupiter.version>5.0.0-M3</junit.jupiter.version>
         <junit.vintage.version>4.12.0-M3</junit.vintage.version>
         <junit.platform.version>1.0.0-M3</junit.platform.version>
+        <!-- specific logging properties -->
         <slf4j.version>1.7.22</slf4j.version>
         <logback.version>1.1.9</logback.version>
+        <!-- specific Spring properties -->
+        <spring.version>4.3.6.RELEASE</spring.version>
 	</properties>
 
 	<dependencies>
@@ -68,6 +71,12 @@
 			<version>${slf4j.version}</version>
 		</dependency>
 		<dependency>
+			<!-- required by Spring -->
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>		
+		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>${logback.version}</version>
@@ -76,7 +85,25 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
 			<version>${logback.version}</version>
-		</dependency>		
+		</dependency>
+		
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
