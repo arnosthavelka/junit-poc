@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit.spring;
+package com.github.aha.poc.junit.v4.spring;
 
 import org.springframework.stereotype.Service;
 

@@ -6,7 +6,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 import org.junit.Test;
 
-// not required
+//not required for default runner
 //@RunWith(JUnit4.class)
 public class BasicV4Tests {
 

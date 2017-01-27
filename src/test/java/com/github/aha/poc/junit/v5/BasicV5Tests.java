@@ -2,7 +2,6 @@ package com.github.aha.poc.junit.v5;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -31,15 +30,15 @@ public class BasicV5Tests {
 	@Test
 	@DisplayName("Simple assert via Hamcrest")
 	public void simpleHamcrestAssert() {
-		assertThat(true, is(equalTo(true)));
+		assertThat(true, equalTo(true));
 	}
 
 	@Test
 	@DisplayName("Check TestInfo feature")
 	void checkMethodName(TestInfo testInfo) {
 		Optional<Method> testMethod = testInfo.getTestMethod();
-		assertThat(testMethod.isPresent(), is(equalTo(true)));
-		assertThat("TestInfo is not injected correctly", "checkMethodName", is(equalTo(testMethod.get().getName())));
+		assertThat(testMethod.isPresent(), equalTo(true));
+		assertThat("TestInfo is not injected correctly", "checkMethodName", equalTo(testMethod.get().getName()));
 	}
 
 	@Test
@@ -47,11 +46,11 @@ public class BasicV5Tests {
 	@Tag("JUnit5")
 	void checkTag(TestInfo testInfo) {
 		Set<String> tags = testInfo.getTags();
-		assertThat(tags, is(notNullValue()));
-		assertThat(1, is(equalTo(tags.size())));
+		assertThat(tags, notNullValue());
+		assertThat(1, equalTo(tags.size()));
 		Optional<String> firstTag = tags.stream().findFirst();
-		assertThat(firstTag.isPresent(), is(equalTo(true)));
-		assertThat("JUnit5", is(equalTo(firstTag.get())));
+		assertThat(firstTag.isPresent(), equalTo(true));
+		assertThat("JUnit5", equalTo(firstTag.get()));
 	}
 
 }
