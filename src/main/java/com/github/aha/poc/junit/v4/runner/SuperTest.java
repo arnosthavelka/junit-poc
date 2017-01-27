@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit.aha;
+package com.github.aha.poc.junit.v4.runner;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit.aha;
+package com.github.aha.poc.junit.v4.runner;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 public class BasicSuperTests {
 
 	@SuperTest
-	public void simpleAHA() {
+	public void simpleSuperRunnerTest() {
 		assertThat(true, is(equalTo(true)));
 	}
 
