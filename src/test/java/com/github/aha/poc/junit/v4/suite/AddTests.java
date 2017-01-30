@@ -6,12 +6,11 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 import org.junit.Test;
 
-import com.github.aha.poc.junit.v4.Calculator;
+/**
+ * Tests for 'add' feature.  
+ */
+public class AddTests extends AbstractCalcTests {
 
-public class AddTests {
-
-	private Calculator calc = new Calculator();
-	
 	@Test
 	public void addTwoNumbers() {
 		int result = calc.add(2, 5);
