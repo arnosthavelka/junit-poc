@@ -2,8 +2,9 @@
 Demo project with examples of JUnit usage (including JUnit5)
 
 ## Technologies
-* JUnit 5
+* Maven 3
 * Java 8
+* JUnit 5
 * Spring 4.3
 * SLF4J
 
