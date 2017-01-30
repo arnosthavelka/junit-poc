@@ -5,13 +5,8 @@ import static org.hamcrest.core.IsEqual.equalTo;
 import static org.hamcrest.core.IsNot.not;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class SimpleRuleV4Tests {
-
-	/** Logger. */
-	private static final Logger LOG = LoggerFactory.getLogger(SimpleRuleV4Tests.class);
 
 	@Test
 	public void testOk() {

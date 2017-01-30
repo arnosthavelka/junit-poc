@@ -6,12 +6,8 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 import org.junit.Test;
 
-import com.github.aha.poc.junit.v4.Calculator;
+public class MultiplyTests extends AbstractCalcTests {
 
-public class MultiplyTests {
-
-	private Calculator calc = new Calculator();
-	
 	@Test
 	public void multiplyTwoNumbers() {
 		int result = calc.multiply(2, 5);
