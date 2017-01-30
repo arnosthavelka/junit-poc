@@ -1,6 +1,7 @@
 package com.github.aha.poc.junit.v4.suite;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,13 +14,15 @@ public abstract class AbstractCalcTests {
 
 	protected static Calculator calc;
 	
-	static {
+	@BeforeClass
+	public static void init() {
 		calc = new Calculator();
+		LOG.info("Calculator initialized");
 	}
 	
 	@Before
-	public void init() {
-		LOG.info("Calculator instance={}", calc.toString());
+	public void checkCalcInstance() {
+		LOG.debug("Calculator instance={}", calc.toString());
 	}
 	
 }
