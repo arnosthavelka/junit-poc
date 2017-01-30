@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit4.rule.def;
+package com.github.aha.poc.junit4.runner.superrunner;
 
 import java.util.List;
 
