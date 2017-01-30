@@ -6,6 +6,9 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 import org.junit.Test;
 
+/**
+ * Tests for 'add' feature.  
+ */
 public class AddTests extends AbstractCalcTests {
 
 	@Test
