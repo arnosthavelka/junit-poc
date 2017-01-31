@@ -20,6 +20,8 @@
 		<module>junit4</module>
 		<module>junit5</module>
 		<module>spring</module>
+		<!-- it's not a regular module since it shares almost nothing (from the maven setup) -->
+		<module>spring-boot</module>
 	</modules>
 	
 	<build>
