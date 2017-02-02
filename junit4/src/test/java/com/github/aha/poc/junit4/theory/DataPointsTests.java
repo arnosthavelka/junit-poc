@@ -4,14 +4,14 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.number.OrderingComparison.greaterThan;
+import static org.junit.Assume.assumeTrue;
 
-import org.junit.Assume;
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
 
-//https://www.javacodegeeks.com/2013/12/introduction-to-junit-theories.html
+// https://www.javacodegeeks.com/2013/12/introduction-to-junit-theories.html
 
 @RunWith(Theories.class)
 public class DataPointsTests {
@@ -26,7 +26,7 @@ public class DataPointsTests {
 	 */
 	@Theory
 	public void equality(Integer a, Integer b) {
-		Assume.assumeTrue(a > 0 && b > 0);
+		assumeTrue(a > 0 && b > 0);
 		assertThat(a + b, is(greaterThan(a)));
 		assertThat(a + b, is(greaterThan(b)));
 	}
