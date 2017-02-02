@@ -6,8 +6,8 @@ import org.junit.runners.Suite;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.aha.poc.junit4.suite.tests.AddTests;
-import com.github.aha.poc.junit4.suite.tests.MultiplyTests;
+import com.github.aha.poc.junit4.suite.test.AddTests;
+import com.github.aha.poc.junit4.suite.test.MultiplyTests;
 
 // https://examples.javacodegeeks.com/core-java/junit/junit-suite-test-example/
 
@@ -23,7 +23,7 @@ public class SuiteTests {
 
 	@Test
 	public void notExecuted() {
-		LOG.debug("Do you see me?");
+		LOG.info("Some fancy text (not visible) ...");
 	}
 
 }
