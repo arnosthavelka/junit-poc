@@ -1,7 +1,8 @@
 package com.github.aha.poc.junit4;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.IsEqual.equalTo;
 
 import org.junit.Test;
 
@@ -11,7 +12,7 @@ public class BasicTest {
 
 	@Test
 	public void simpleJUnit4() {
-		assertThat(true, equalTo(true));
+		assertThat(true, is(equalTo(true)));
 	}
 
 }
