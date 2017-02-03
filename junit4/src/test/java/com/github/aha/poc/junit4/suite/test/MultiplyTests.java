@@ -1,14 +1,19 @@
-package com.github.aha.poc.junit4.suite.tests;
+package com.github.aha.poc.junit4.suite.test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
+
+import com.github.aha.poc.junit4.cathegory.annotation.MultiplyOperation;
+import com.github.aha.poc.junit4.cathegory.annotation.NoInput;
 
 /**
  * Tests for 'multiply' feature.  
  */
+@Category(MultiplyOperation.class)
 public class MultiplyTests extends AbstractCalcTests {
 
 	@Test
@@ -24,6 +29,7 @@ public class MultiplyTests extends AbstractCalcTests {
 	}
 
 	@Test
+	@Category(NoInput.class)
 	public void multiplyNoneNumbers() {
 		int result = calc.multiply();
 		assertThat(result, is(equalTo(0)));
