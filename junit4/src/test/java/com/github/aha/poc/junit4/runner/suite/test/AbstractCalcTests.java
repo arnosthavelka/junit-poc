@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit4.suite.test;
+package com.github.aha.poc.junit4.runner.suite.test;
 
 import org.junit.Before;
 import org.junit.BeforeClass;

@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit4.theory;
+package com.github.aha.poc.junit4.runner.theory;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;

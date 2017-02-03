@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit4.parameterized;
+package com.github.aha.poc.junit4.runner.parameterized;
 
 import static org.junit.Assume.assumeTrue;
 

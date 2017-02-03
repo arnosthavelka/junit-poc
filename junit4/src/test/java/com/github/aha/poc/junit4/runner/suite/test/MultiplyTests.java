@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit4.suite.test;
+package com.github.aha.poc.junit4.runner.suite.test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -7,8 +7,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import com.github.aha.poc.junit4.cathegory.annotation.MultiplyOperation;
-import com.github.aha.poc.junit4.cathegory.annotation.NoInput;
+import com.github.aha.poc.junit4.runner.cathegory.annotation.MultiplyOperation;
+import com.github.aha.poc.junit4.runner.cathegory.annotation.NoInput;
 
 /**
  * Tests for 'multiply' feature.  
