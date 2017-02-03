@@ -1,13 +1,13 @@
-package com.github.aha.poc.junit4.cathegory;
+package com.github.aha.poc.junit4.runner.cathegory;
 
 import org.junit.experimental.categories.Categories;
 import org.junit.experimental.categories.Categories.IncludeCategory;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 
-import com.github.aha.poc.junit4.cathegory.annotation.NoInput;
-import com.github.aha.poc.junit4.suite.test.AddTests;
-import com.github.aha.poc.junit4.suite.test.MultiplyTests;
+import com.github.aha.poc.junit4.runner.cathegory.annotation.NoInput;
+import com.github.aha.poc.junit4.runner.suite.test.AddTests;
+import com.github.aha.poc.junit4.runner.suite.test.MultiplyTests;
 
 // https://examples.javacodegeeks.com/core-java/junit/junit-suite-test-example/
 

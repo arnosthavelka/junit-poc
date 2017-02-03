@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit4.runner.superrunner;
+package com.github.aha.poc.junit4.runner.custom;
 
 import java.util.List;
 
