@@ -16,7 +16,8 @@ import org.slf4j.LoggerFactory;
 public class RuleTests {
 
 	/** Logger. */
-	private static final Logger LOG = LoggerFactory.getLogger(RuleTests.class);	
+	private static final Logger LOG = LoggerFactory.getLogger(RuleTests.class);
+	
 	/**
 	 * Log method execution (start & stop).
 	 */
