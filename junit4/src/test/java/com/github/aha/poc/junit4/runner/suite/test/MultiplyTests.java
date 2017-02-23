@@ -6,6 +6,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.github.aha.poc.junit4.runner.cathegory.annotation.MultiplyOperation;
 import com.github.aha.poc.junit4.runner.cathegory.annotation.NoInput;
@@ -15,6 +17,9 @@ import com.github.aha.poc.junit4.runner.cathegory.annotation.NoInput;
  */
 @Category(MultiplyOperation.class)
 public class MultiplyTests extends AbstractCalcTests {
+	
+	/** Logger. */
+	private static final Logger LOG = LoggerFactory.getLogger(MultiplyTests.class);	
 
 	@Test
 	public void multiplyTwoNumbers() {
@@ -33,6 +38,11 @@ public class MultiplyTests extends AbstractCalcTests {
 	public void multiplyNoneNumbers() {
 		int result = calc.multiply();
 		assertThat(result, is(equalTo(0)));
+	}
+
+	@Override
+	Logger getLog() {
+		return LOG;
 	}
 
 }
