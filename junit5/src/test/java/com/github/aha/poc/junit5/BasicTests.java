@@ -13,11 +13,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 
-// http://stackoverflow.com/questions/38402155/eclipse-junit-5-support
-@RunWith(JUnitPlatform.class)
+//@RunWith(JUnitPlatform.class)
 @DisplayName("Basic tests in JUnit5")
 public class BasicTests {
 
