@@ -6,6 +6,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.github.aha.poc.junit4.runner.cathegory.annotation.AddOperation;
 import com.github.aha.poc.junit4.runner.cathegory.annotation.NoInput;
@@ -15,6 +17,9 @@ import com.github.aha.poc.junit4.runner.cathegory.annotation.NoInput;
  */
 @Category(AddOperation.class)
 public class AddTests extends AbstractCalcTests {
+	
+	/** Logger. */
+	private static final Logger LOG = LoggerFactory.getLogger(AddTests.class);	
 
 	@Test
 	public void addTwoNumbers() {
@@ -33,6 +38,11 @@ public class AddTests extends AbstractCalcTests {
 	public void addNoneNumbers() {
 		int result = calc.add();
 		assertThat(result, is(equalTo(0)));
+	}
+
+	@Override
+	Logger getLog() {
+		return LOG;
 	}
 
 }
