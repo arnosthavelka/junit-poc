@@ -15,6 +15,8 @@ public abstract class AbstractCalcTests {
 	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(AbstractCalcTests.class);
 
+	abstract Logger getLog();
+	
 	/**
 	 * Shared instance of calculator.
 	 */
@@ -41,7 +43,7 @@ public abstract class AbstractCalcTests {
 	 */
 	@Before
 	public void checkCalcInstance() {
-		LOG.debug("Calculator instance={}", calc.toString());
+		getLog().debug("Calculator instance={}", calc.toString());
 	}
 	
 }
