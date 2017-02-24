@@ -26,11 +26,11 @@
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-runner</artifactId>
 		</dependency>
-		<!-- support to run test for JUnit3 & JUnit4 -->
+		<!-- support to run test for JUnit3 & JUnit4>
 		<dependency>
 			<groupId>org.junit.vintage</groupId>
 			<artifactId>junit-vintage-engine</artifactId>
-		</dependency>
+		</dependency-->
 
 		<!-- other test -->
 		<dependency>
