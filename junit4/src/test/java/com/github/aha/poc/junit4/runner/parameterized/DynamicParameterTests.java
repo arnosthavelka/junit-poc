@@ -19,10 +19,10 @@ import com.github.aha.poc.junit4.Fibonacci;
 // https://github.com/junit-team/junit4/wiki/Parameterized-tests
 
 @RunWith(Parameterized.class)
-public class ParametersTests {
+public class DynamicParameterTests {
 
 	/** Logger. */
-	private static final Logger LOG = LoggerFactory.getLogger(ParametersTests.class);	
+	private static final Logger LOG = LoggerFactory.getLogger(DynamicParameterTests.class);	
 
 	@Parameters
 	public static Collection<Integer> data() {

@@ -17,10 +17,10 @@ import org.slf4j.LoggerFactory;
 // https://github.com/junit-team/junit4/wiki/Parameterized-tests
 
 @RunWith(Parameterized.class)
-public class ParameterizedTests {
+public class MultiParameterTests {
 
 	/** Logger. */
-	private static final Logger LOG = LoggerFactory.getLogger(ParameterizedTests.class);	
+	private static final Logger LOG = LoggerFactory.getLogger(MultiParameterTests.class);	
 
     @Parameters
     public static Collection<Object[]> data() {
@@ -33,7 +33,7 @@ public class ParameterizedTests {
 
     private int expectedResult;
 
-    public ParameterizedTests(int input, int expected) {
+    public MultiParameterTests(int input, int expected) {
     	value = input;
         expectedResult = expected;
     }	
