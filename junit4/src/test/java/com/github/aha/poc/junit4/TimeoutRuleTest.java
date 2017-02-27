@@ -41,7 +41,7 @@ public class TimeoutRuleTest {
 	
     @Test(expected=TimeoutException.class)
 	public void timeoutingFailFastTest() throws InterruptedException {
-		Thread.sleep(100);
+		Thread.sleep(200);
 		assertThat(2, is(equalTo(1 + 1)));
 	}	
 
