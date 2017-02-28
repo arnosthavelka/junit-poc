@@ -9,41 +9,41 @@ import org.junit.jupiter.api.Test;
 
 import com.github.aha.poc.junit5.Calculator;
 
-@DisplayName("Check calculator component")
+@DisplayName("A calculator component")
 public class CalculatorTest {
 
 	@Test
-	@DisplayName("Test simple sum of 2 numbers")
+	@DisplayName("sum 2 positive numbers")
 	void addTwoPositiveNumbers() {
 		assertThat(Calculator.add(3, 5), is(equalTo(8)));
 	}
 
 	@Test
-	@DisplayName("Test more numbers (6 in our case)")
+	@DisplayName("sum more positive numbers (6 in our case)")
 	void addMorePositiveNumbers() {
 		assertThat(Calculator.add(1, 2, 3, 4, 5, 6), is(equalTo(21)));
 	}
 
 	@Test
-	@DisplayName("Test positive and negative numbers")
+	@DisplayName("sum positive and negative numbers")
 	void addPositiveAndNegativeNumbers() {
 		assertThat(Calculator.add(3, -5), is(equalTo(-2)));
 	}
 
 	@Test
-	@DisplayName("Test only negative numbers")
+	@DisplayName("sum only negative numbers")
 	void addJustNegativeNumbers() {
 		assertThat(Calculator.add(-2, -4), is(equalTo(-6)));
 	}
 
 	@Test
-	@DisplayName("Check also correct handling of empty input")
+	@DisplayName("handle empty input")
 	void addNoNumber() {
 		assertThat(Calculator.add(), is(equalTo(0)));
 	}
 
 	@Test
-	@DisplayName("Verify correctness of usage just with one number")
+	@DisplayName("handle just with one number")
 	void addOneNumbers() {
 		assertThat(Calculator.add(3), is(equalTo(3)));
 	}
