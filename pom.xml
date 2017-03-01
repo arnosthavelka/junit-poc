@@ -1,88 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.github.aha.poc.junit5</groupId>
+	<groupId>com.github.aha.poc.junit</groupId>
 	<artifactId>junit-poc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<version>0.0.2</version>
+	<packaging>pom</packaging>
 
-	<description>Demo project with examples of JUnit usage (including JUnit5)</description>
+	<description>Demo project with examples of JUnit usage (including JUnit5 and Spring)</description>
 
 	<properties>
 		<!-- basic properties -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-		
-		<!-- specific properties -->
-        <junit.jupiter.version>5.0.0-M3</junit.jupiter.version>
-        <junit.vintage.version>4.12.0-M3</junit.vintage.version>
-        <junit.platform.version>1.0.0-M3</junit.platform.version>		
 	</properties>
 
-	<dependencies>
-		<!-- JUnit 5 -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>${junit.jupiter.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- support for non JUnit5 IDE via  @RunWith(JUnitPlatform.class) -->
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-runner</artifactId>
-			<version>${junit.platform.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- support to run test for JUnit3 & JUnit4 -->
-		<dependency>
-			<groupId>org.junit.vintage</groupId>
-			<artifactId>junit-vintage-engine</artifactId>
-			<version>${junit.vintage.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- other test libraries work out of the box -->
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-core</artifactId>
-			<version>1.3</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>2.6.8</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
+	<modules>
+		<module>parent</module>
+		<module>junit4</module>
+		<module>junit5</module>
+		<module>spring</module>
+		<!-- it's not a regular module since it shares almost nothing (from the maven setup) -->
+		<module>spring-boot</module>
+	</modules>
+	
 	<build>
 		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.19.1</version>
-				<dependencies>
-					<!-- support for JUnit 5 -->
-					<dependency>
-						<groupId>org.junit.platform</groupId>
-						<artifactId>junit-platform-surefire-provider</artifactId>
-						<version>${junit.platform.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
 			<plugin>
 			    <groupId>external.atlassian.jgitflow</groupId>
 			    <artifactId>jgitflow-maven-plugin</artifactId>
