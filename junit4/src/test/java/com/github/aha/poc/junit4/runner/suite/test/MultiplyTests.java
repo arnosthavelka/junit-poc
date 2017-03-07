@@ -9,8 +9,8 @@ import org.junit.experimental.categories.Category;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.aha.poc.junit4.runner.cathegory.annotation.MultiplyOperation;
-import com.github.aha.poc.junit4.runner.cathegory.annotation.NoInput;
+import com.github.aha.poc.junit4.runner.category.annotation.MultiplyOperation;
+import com.github.aha.poc.junit4.runner.category.annotation.NoInput;
 
 /**
  * Tests for 'multiply' feature.  
