@@ -3,7 +3,9 @@ package com.github.aha.poc.junit5;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.lang.reflect.Method;
 import java.util.Optional;
@@ -19,19 +21,29 @@ import org.junit.jupiter.api.TestInfo;
 public class BasicTests {
 
 	@Test
-	@DisplayName("Simple assert via JUnit")
+	@DisplayName("show simple assert via JUnit")
 	void simpleJUnitAssert() {
 		assertEquals(2, 1 + 1, () -> "Error message");
 	}
 
 	@Test
-	@DisplayName("Simple assert via Hamcrest")
+	@DisplayName("validate tags existence via JUnit")
+	void allJUnitAssert(TestInfo testInfo) {
+		Set<String> tags = testInfo.getTags();
+        assertAll(
+                () -> assertNotNull(tags),
+                () -> assertEquals(0, tags.size())
+        );		
+	}	
+	
+	@Test
+	@DisplayName("show simple assert via Hamcrest")
 	public void simpleHamcrestAssert() {
 		assertThat(true, equalTo(true));
 	}
 
 	@Test
-	@DisplayName("Check TestInfo feature")
+	@DisplayName("check TestInfo feature")
 	void checkMethodName(TestInfo testInfo) {
 		Optional<Method> testMethod = testInfo.getTestMethod();
 		assertThat(testMethod.isPresent(), equalTo(true));
@@ -39,7 +51,7 @@ public class BasicTests {
 	}
 
 	@Test
-	@DisplayName("Check @Tag feature")
+	@DisplayName("check @Tag feature")
 	@Tag("JUnit5")
 	void checkTag(TestInfo testInfo) {
 		Set<String> tags = testInfo.getTags();
