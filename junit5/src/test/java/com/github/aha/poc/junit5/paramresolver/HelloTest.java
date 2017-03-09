@@ -16,7 +16,7 @@ public class HelloTest {
 	@Test
 	@ExtendWith(HelloResolver.class)
 	void paramResolverTest(@Hello("Arny") String msg) {
-		LOG.info("aha value={}", msg);
+		LOG.info("msg value={}", msg);
 		assertThat(msg, equalTo("Hello Arny!"));
 	}
 
