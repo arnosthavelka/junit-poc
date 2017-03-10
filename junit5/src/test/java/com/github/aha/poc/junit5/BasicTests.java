@@ -56,10 +56,10 @@ public class BasicTests {
 	void checkTag(TestInfo testInfo) {
 		Set<String> tags = testInfo.getTags();
 		assertThat(tags, notNullValue());
-		assertThat(1, equalTo(tags.size()));
+		assertThat(tags.size(), equalTo(1));
 		Optional<String> firstTag = tags.stream().findFirst();
 		assertThat(firstTag.isPresent(), equalTo(true));
-		assertThat("JUnit5", equalTo(firstTag.get()));
+		assertThat(firstTag.get(), equalTo("JUnit5"));
 	}
 
 }
