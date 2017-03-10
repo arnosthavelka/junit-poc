@@ -12,9 +12,9 @@ public interface AdvancedCalc extends SimpleCalc {
 	
     @Test
     default void calculateMultiply() {
-    	initValues(2, 4);
+    	setValues(2, 4, 6);
     	Integer result = multiply();
-		assertThat(result, is(equalTo(8)));
-    }	
+		assertThat(result, is(equalTo(48)));
+    }
 
 }
