@@ -22,7 +22,7 @@ public class SimpleDynamicTests {
     Collection<DynamicTest> dynamicTestsFromCollection() {
         return Arrays.asList(
             dynamicTest("1st dynamic test", () -> assertTrue("1st dynamic test".contains("dynamic"))),
-            dynamicTest("2nd dynamic test", () -> assertEquals("2nd dynamic test".split(" ").length, 3))
+            dynamicTest("2nd dynamic test", () -> assertEquals(3, "2nd dynamic test".split(" ").length))
         );
     }
 
@@ -30,7 +30,7 @@ public class SimpleDynamicTests {
     @DisplayName("or defined based on values as stream")
     Stream<DynamicTest> dynamicTestsFromStream() {
         return Stream.of("A", "B", "C").map(
-            str -> dynamicTest("test" + str, () -> assertEquals(("test" + str).length(), 5)));
+            str -> dynamicTest("test" + str, () -> assertEquals(5, ("test" + str).length())));
     }
     
     @TestFactory

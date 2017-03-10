@@ -11,7 +11,7 @@ public class TimeoutSimpleTest {
 
 	@Test(timeout=50)
 	public void standardTest() {
-		assertThat(2, is(equalTo(1 + 1)));
+		assertThat(1 + 1, is(equalTo(2)));
 	}	
 
 }
