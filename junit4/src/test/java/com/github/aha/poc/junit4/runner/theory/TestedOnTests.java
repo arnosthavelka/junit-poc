@@ -8,11 +8,16 @@ import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
 import org.junit.experimental.theories.suppliers.TestedOn;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 // https://github.com/junit-team/junit4/wiki/Theories
 
 @RunWith(Theories.class)
 public class TestedOnTests {
+
+	/** Logger. */
+	private static final Logger LOG = LoggerFactory.getLogger(TestedOnTests.class);
 
 	/**
 	 * Prove theory: "every B can be divide by every A without any remaining" 
@@ -22,6 +27,7 @@ public class TestedOnTests {
 			@TestedOn(ints = {2, 4}) int a,
 	        @TestedOn(ints = {8, 16, 24, }) int b
 	    ) {
+    	LOG.debug("values: a={}, b={}", a, b);
       	assertThat((b / a) * a , is(equalTo(b)));
 	}
 
