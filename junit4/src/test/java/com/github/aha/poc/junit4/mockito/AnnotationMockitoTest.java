@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit4;
+package com.github.aha.poc.junit4.mockito;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -11,7 +11,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class MockitoTest {
+import com.github.aha.poc.junit4.Calculator;
+
+public class AnnotationMockitoTest {
 
 	private static Calculator calc;
 
