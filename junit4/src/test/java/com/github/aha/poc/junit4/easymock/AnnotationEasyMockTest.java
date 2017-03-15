@@ -1,29 +1,31 @@
-package com.github.aha.poc.junit4.mockito;
+package com.github.aha.poc.junit4.easymock;
 
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
+import org.easymock.EasyMockRunner;
+import org.easymock.Mock;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import com.github.aha.poc.junit4.Calculator;
 
-@RunWith(MockitoJUnitRunner.class)
-public class AnnotationMockitoTest {
+@RunWith(EasyMockRunner.class)
+public class AnnotationEasyMockTest {
 
 	@Mock
 	private static Calculator calc;
 
 	@Test
 	public void simpleTest() {
-		when(calc.add(2, 3)).thenReturn(5);
+		expect(calc.add(2, 3)).andReturn(5);
+		replay(calc);
 		assertThat(calc.add(2, 3), is(equalTo(5)));
-		verify(calc).add(2, 3);
+		verify(calc);
 	}
 
 }
