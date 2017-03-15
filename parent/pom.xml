@@ -23,6 +23,7 @@
 		<!-- other testing properties -->
 		<hamcrest.version>1.3</hamcrest.version>
 		<mockito.version>2.7.17</mockito.version>
+		<easymock.version>3.4</easymock.version>
 		<!-- specific logging properties -->
         <slf4j.version>1.7.22</slf4j.version>
         <logback.version>1.1.9</logback.version>
@@ -80,6 +81,12 @@
 				<version>${mockito.version}</version>
 				<scope>test</scope>
 			</dependency>
+			<dependency>
+				<groupId>org.easymock</groupId>
+				<artifactId>easymock</artifactId>
+				<version>${easymock.version}</version>
+				<scope>test</scope>
+			</dependency>			
 			
 			<!-- logging -->
 			<dependency>
