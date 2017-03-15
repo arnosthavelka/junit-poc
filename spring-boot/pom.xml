@@ -4,7 +4,7 @@
 
 	<groupId>com.github.aha.poc.junit</groupId>
 	<artifactId>ju-spring-boot</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.2.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<description>Examples of testing with SpringBoot</description>
