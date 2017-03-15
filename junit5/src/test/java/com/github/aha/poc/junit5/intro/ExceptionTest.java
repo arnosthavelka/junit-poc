@@ -15,7 +15,7 @@ public class ExceptionTest {
 	@Test
 	@DisplayName("Check thrown exception for dividing by zero")
 	void exceptionHandlingTest() {
-		Exception exception = assertThrows(Exception.class, () -> {
+		Exception exception = assertThrows(RuntimeException.class, () -> {
 			assertThat(0, is(equalTo(5 / 0)));
 		});
 		// check exception message

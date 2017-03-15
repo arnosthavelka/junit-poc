@@ -13,10 +13,11 @@ import org.junit.runner.Description;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class RuleTests {
+// see http://java.dzone.com/articles/using-junit-test-name
+public class WatcherTests {
 
 	/** Logger. */
-	private static final Logger LOG = LoggerFactory.getLogger(RuleTests.class);
+	private static final Logger LOG = LoggerFactory.getLogger(WatcherTests.class);
 	
 	/**
 	 * Log method execution (start & stop).

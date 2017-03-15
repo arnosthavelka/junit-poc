@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit4.runner;
+package com.github.aha.poc.junit4.runner.custom;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -6,11 +6,8 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 import org.junit.runner.RunWith;
 
-import com.github.aha.poc.junit4.runner.custom.SuperRunner;
-import com.github.aha.poc.junit4.runner.custom.SuperTest;
-
 @RunWith(SuperRunner.class)
-public class RunnerTests {
+public class CustomTests {
 
 	@SuperTest
 	public void simpleSuperRunnerTest() {

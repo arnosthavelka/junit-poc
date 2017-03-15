@@ -12,9 +12,9 @@ public interface SimpleCalc extends Calc<Integer> {
 	
     @Test
     default void calculateSum() {
-    	initValues(3, 5);
+    	setValues(3, 5);
     	Integer result = sum();
-		assertThat(result, is(equalTo(8)));    	
+		assertThat(result, is(equalTo(8)));
     }	
 
 }

@@ -3,6 +3,7 @@ package com.github.aha.poc.junit4;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -19,7 +20,7 @@ public class BasicTest {
 	@Test
 	public void simpleTest() {
 		LOG.debug("simpleTest");
-		assertThat(true, is(equalTo(true)));
+		assertTrue(true);
 	}
 
 	@Test
