@@ -22,8 +22,6 @@ import com.github.aha.poc.junit4.person.SequenceGenerator;
 @PrepareForTest({SequenceGenerator.class, Person.class})
 public class SimplePowerMockTest {
 
-	private Person person;
-
 	@Test
 	public void staticTest() throws Exception {
 		int newId = 21;
@@ -33,7 +31,7 @@ public class SimplePowerMockTest {
 		expect(SequenceGenerator.nextId()).andReturn(newId);
 		replay(SequenceGenerator.class);		
 
-		person = new Person(name);
+		Person person = new Person(name);
 		assertThat(person.getId(), is(equalTo(newId)));
 		assertThat(person.getName(), is(equalTo(name)));
 		
