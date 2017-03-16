@@ -20,6 +20,7 @@ import com.github.aha.poc.junit4.person.SequenceGenerator;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({SequenceGenerator.class, Person.class})
+
 public class SimplePowerMockTest {
 
 	private Person person;
