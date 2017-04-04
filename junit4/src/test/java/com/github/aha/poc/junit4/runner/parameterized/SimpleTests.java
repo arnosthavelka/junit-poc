@@ -1,5 +1,7 @@
 package com.github.aha.poc.junit4.runner.parameterized;
 
+import static org.junit.Assume.assumeTrue;
+
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -11,25 +13,25 @@ import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+// https://github.com/junit-team/junit4/wiki/Parameterized-tests
 @RunWith(Parameterized.class)
-public class DynamicMultiParameterTests {
+public class SimpleTests {
 
 	/** Logger. */
-	private static final Logger LOG = LoggerFactory.getLogger(DynamicMultiParameterTests.class);	
+	private static final Logger LOG = LoggerFactory.getLogger(SimpleTests.class);	
 
 	@Parameters
-	public static Collection<Integer[]> data() {
-		return Arrays.asList(new Integer[][] { {1, 1}, {2, 4}, {3, 9}, {4, 16}, {5, 25} });
+	public static Collection<Integer> data() {
+		return Arrays.asList(5, -5, 10, 100);
 	}
 
-	@Parameter(0)
-	public Integer value1;
-	
-	@Parameter(1)
-	public Integer value2;
+	@Parameter
+	public int value;
 
 	@Test
-	public void testFibonacci() {
-		LOG.debug("Tested value {} + {}", value1, value2);
+	public void checkInputValue() {
+		assumeTrue(value > 0);
+		LOG.info("Value={}", value);
 	}
+
 }
