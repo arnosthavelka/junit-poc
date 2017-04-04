@@ -20,6 +20,10 @@
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+		</dependency>
 		<!-- support for non JUnit5 IDE via @RunWith(JUnitPlatform.class) -->
 		<dependency>
 			<groupId>org.junit.platform</groupId>
