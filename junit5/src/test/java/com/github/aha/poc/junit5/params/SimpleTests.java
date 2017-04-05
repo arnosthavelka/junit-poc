@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -65,6 +66,14 @@ public class SimpleTests {
 	@ArgumentsSource(CustomProvider.class)
 	@DisplayName("check provider values")
 	void providerTest(ParamTypes value) {
+		assertNotNull(value);
+		assertThat(value, instanceOf(ParamTypes.class));
+	}
+
+	@ParameterizedTest(name = "index={index}, source={0}")
+	@ValueSource(strings = { "i", "L", "X" })
+	@DisplayName("check converter feature")
+	void converterTest(@ConvertWith(CustomConverter.class) ParamTypes value) {
 		assertNotNull(value);
 		assertThat(value, instanceOf(ParamTypes.class));
 	}
