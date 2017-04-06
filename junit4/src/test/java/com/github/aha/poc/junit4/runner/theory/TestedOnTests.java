@@ -25,7 +25,7 @@ public class TestedOnTests {
     @Theory
 	public void aliquotTest(
 			@TestedOn(ints = {2, 4}) int a,
-	        @TestedOn(ints = {8, 16, 24, }) int b
+	        @TestedOn(ints = {8, 16, 24}) int b
 	    ) {
     	LOG.debug("values: a={}, b={}", a, b);
       	assertThat((b / a) * a , is(equalTo(b)));
