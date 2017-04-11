@@ -4,7 +4,7 @@
 
 	<groupId>com.github.aha.poc.junit</groupId>
 	<artifactId>ju-parent</artifactId>
-	<version>0.2.0</version>
+	<version>0.3.0</version>
 	<packaging>pom</packaging>
 
 	<description>Parent maven project with definition of used technologies.</description>
@@ -17,10 +17,10 @@
 		
 		<!-- specific JUnit properties -->
 		<junit.version>4.12</junit.version>
-        <junit.jupiter.version>5.0.0-M3</junit.jupiter.version>
-        <junit.vintage.version>4.12.0-M3</junit.vintage.version>
-        <junit.platform.version>1.0.0-M3</junit.platform.version>
-		<!-- other testing properties -->
+        <junit.jupiter.version>5.0.0-M4</junit.jupiter.version>
+        <junit.vintage.version>4.12.0-M4</junit.vintage.version>
+        <junit.platform.version>1.0.0-M4</junit.platform.version>
+        <!-- other testing properties -->
 		<hamcrest.version>1.3</hamcrest.version>
 		<mockito.version>2.7.17</mockito.version>
 		<easymock.version>3.4</easymock.version>
@@ -45,6 +45,12 @@
 			<dependency>
 				<groupId>org.junit.jupiter</groupId>
 				<artifactId>junit-jupiter-engine</artifactId>
+				<version>${junit.jupiter.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-params</artifactId>
 				<version>${junit.jupiter.version}</version>
 				<scope>test</scope>
 			</dependency>

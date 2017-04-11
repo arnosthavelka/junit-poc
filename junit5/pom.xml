@@ -10,7 +10,7 @@
 	<parent>
 		<groupId>com.github.aha.poc.junit</groupId>
 		<artifactId>ju-parent</artifactId>
-		<version>0.2.0</version>
+		<version>0.3.0</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
@@ -19,6 +19,10 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
 		</dependency>
 		<!-- support for non JUnit5 IDE via @RunWith(JUnitPlatform.class) -->
 		<dependency>
