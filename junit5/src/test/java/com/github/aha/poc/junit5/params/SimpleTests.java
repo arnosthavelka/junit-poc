@@ -44,7 +44,7 @@ public class SimpleTests {
 	}
 
 	@ParameterizedTest
-	@MethodSource(names = "paramValues")
+	@MethodSource(value = "paramValues")
 	@DisplayName("check method values")
 	void methodTest(String argument) {
 		assertNotNull(argument);

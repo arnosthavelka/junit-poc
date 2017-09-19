@@ -8,17 +8,15 @@ import org.junit.jupiter.api.extension.ParameterResolver;
 public class HelloResolver implements ParameterResolver {
 
 	@Override
-	public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext)
-			throws ParameterResolutionException {
-		return parameterContext.getParameter().isAnnotationPresent(Hello.class);
-	}
-
-	@Override
-	public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext)
-			throws ParameterResolutionException {
+	public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
 		String name = parameterContext.getParameter().getAnnotation(Hello.class).value();
 		
 		return String.format("Hello %s!", name);
+	}
+
+	@Override
+	public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+		return parameterContext.getParameter().isAnnotationPresent(Hello.class);
 	}
 
 }

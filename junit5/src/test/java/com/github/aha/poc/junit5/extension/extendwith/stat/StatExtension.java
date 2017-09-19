@@ -5,10 +5,8 @@ import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
-import org.junit.jupiter.api.extension.ContainerExtensionContext;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ExtensionContext.Namespace;
-import org.junit.jupiter.api.extension.TestExtensionContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,14 +21,14 @@ public class StatExtension implements AfterAllCallback, AfterEachCallback, After
 	private long startTime = System.currentTimeMillis();
 	
 	@Override
-	public void beforeEach(TestExtensionContext context) throws Exception {
+	public void beforeEach(ExtensionContext context) throws Exception {
 		String name = context.getTestMethod().get().getName();
 		LOG.info("beforeEach - {}", name);
 		storeDTO(context, name, new StatDTO(name));
 	}
 
 	@Override
-	public void beforeTestExecution(TestExtensionContext context) throws Exception {
+	public void beforeTestExecution(ExtensionContext context) throws Exception {
 		String name = context.getTestMethod().get().getName();
 		LOG.info("beforeTestExecution - {}", name);
 		StatDTO dto = loadDTO(context, context.getTestMethod().get().getName(), StatDTO.class);
@@ -38,7 +36,7 @@ public class StatExtension implements AfterAllCallback, AfterEachCallback, After
 	}
 	
 	@Override
-	public void afterTestExecution(TestExtensionContext context) throws Exception {
+	public void afterTestExecution(ExtensionContext context) throws Exception {
 		String name = context.getTestMethod().get().getName();
 		LOG.info("afterTestExecution - {}", name);
 		StatDTO dto = loadDTO(context, name, StatDTO.class);
@@ -46,14 +44,14 @@ public class StatExtension implements AfterAllCallback, AfterEachCallback, After
 	}
 
 	@Override
-	public void afterEach(TestExtensionContext context) throws Exception {
+	public void afterEach(ExtensionContext context) throws Exception {
 		String name = context.getTestMethod().get().getName();
 		StatDTO dto = loadDTO(context, name, StatDTO.class);
 		LOG.info("afterEach - duration of the method '{}' was {} ms", dto.getName(), dto.getDuration());
 	}
 
 	@Override
-	public void afterAll(ContainerExtensionContext context) throws Exception {
+	public void afterAll(ExtensionContext context) throws Exception {
 		LOG.info("afterAll - duration of complete test processing was {} ms", System.currentTimeMillis() - startTime);
 	}
 
