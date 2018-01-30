@@ -7,15 +7,15 @@ Demo project of usage of framework JUnit (version 4 & 5)
   * Java 8
   * SLF4J
 * Testing
-  * JUnit 4.12 & JUnit 5 M4
+  * JUnit 4.12 & JUnit 5.0.3
   * Hamcrest
   * PowerMock
 * Mocking
   * Mockito
   * EasyMock
 * Others
-  * Spring 4.3.6
-  * Spring Boot 1.5.2
+  * Spring 5.0.3
+  * Spring Boot 1.5.9
 
 ## Features
 * examples for most of JUnit features
