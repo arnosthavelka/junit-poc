@@ -18,7 +18,8 @@
 		<module>parent</module>
 		<module>junit4</module>
 		<module>junit5</module>
-		<module>spring</module>
+		<module>spring-ju4</module>
+		<module>spring-ju5</module>
 		<!-- it's not a regular module since it shares almost nothing (from the maven setup) -->
 		<module>spring-boot</module>
 	</modules>

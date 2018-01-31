@@ -1,19 +1,18 @@
 package com.github.aha.poc.junit.spring;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.assertThat;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-@RunWith(SpringRunner.class)
-@ContextConfiguration(classes=SpringConfig.class)
-public class SpringTests {
+@SpringJUnitConfig(classes=SpringConfig.class)
+@DisplayName("Simple spring test with JUnit5")
+public class SpringWithJU5Tests {
 
 	@Autowired
 	HelloService service;
