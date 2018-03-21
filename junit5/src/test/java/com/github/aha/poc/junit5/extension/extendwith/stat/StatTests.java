@@ -1,8 +1,6 @@
 package com.github.aha.poc.junit5.extension.extendwith.stat;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Random;
 
@@ -13,29 +11,29 @@ import org.slf4j.LoggerFactory;
 
 @Stat
 public class StatTests {
-	
+
 	private static Random rg;
-	
+
 	@BeforeAll
 	static void init() {
 		rg = new Random();
 	}
-	
+
 	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(StatTests.class);
-	
+
 	@Test
 	void trueTest() {
 		randomWait();
-		assertThat(true, equalTo(true));
+		assertThat(true).isTrue();
 	}
 
 	@Test
 	void falseTest() {
 		randomWait();
-		assertFalse(1 == 2);
+		assertThat(1 == 2).isFalse();
 	}
-	
+
 	private void randomWait() {
 		int waitTime = rg.nextInt(100);
 		try {
