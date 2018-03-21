@@ -1,6 +1,8 @@
 package com.github.aha.poc.junit5;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -33,8 +35,14 @@ public class BasicTests {
 
 	@Test
 	@DisplayName("show simple assert via AssertJ")
-	public void simpleHamcrestAssert() {
+	public void simpleAssertJAssert() {
 		assertThat(true).isTrue();
+	}
+
+	@Test
+	@DisplayName("show simple assert via Hamcrest")
+	public void simpleHamcrestAssert() {
+		assertThat(true, equalTo(true));
 	}
 
 	@Test
