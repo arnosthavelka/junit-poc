@@ -9,7 +9,7 @@ public class DisabledTest {
 	@Test
 	@Disabled("running very long")
 	@DisplayName("Run complete integration tests")
-	void completeIntegrationTesta() {
+	void completeIntegrationTests() {
 		// ...
 	}
 
