@@ -16,7 +16,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 
-//@RunWith(JUnitPlatform.class)
 @DisplayName("Basic tests in JUnit5")
 public class BasicTests {
 
