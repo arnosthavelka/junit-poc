@@ -10,10 +10,10 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class LifeCycleTest extends AbstractLifeCycleTest {
+public class StandardLifeCycleTest extends AbstractLifeCycleTest {
 	
 	/** Logger. */
-	private static final Logger LOG = LoggerFactory.getLogger(LifeCycleTest.class);	
+	private static final Logger LOG = LoggerFactory.getLogger(StandardLifeCycleTest.class);	
 	
 	static {
 		LOG.info("[static] class LifeCycleTest initialization ...");
