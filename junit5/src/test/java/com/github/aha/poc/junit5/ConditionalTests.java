@@ -39,8 +39,8 @@ public class ConditionalTests {
 	}
 
 	@Test
-	@DisplayName("enable test on JDK 9 only")
 	@EnabledOnJre({ JAVA_8, JAVA_10, JAVA_11, OTHER })
+	@DisplayName("enable test on JDK 9 only")
 	void testForJdk9(TestInfo testInfo) {
 		assertThat(true).isTrue();
 	}
