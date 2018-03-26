@@ -1,6 +1,5 @@
 package com.github.aha.poc.junit5.lifecycle;
 
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -9,35 +8,35 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public abstract class AbstractLifeCycleTest {
-	
+
 	/** Logger. */
-	private static final Logger LOG = LoggerFactory.getLogger(AbstractLifeCycleTest.class);	
-	
+	private static final Logger LOG = LoggerFactory.getLogger(AbstractLifeCycleTest.class);
+
 	static {
 		LOG.info("[static] class AbstractLifeCycleTest initialization ...");
 	}
-	
+
 	@BeforeAll
-	static void initClassByJunit() {
+	static void initClassByJunitShared() {
 		LOG.info("[@BeforeAll] class initialization ...");
-		
+
 	}
-	
+
 	@BeforeEach
-	void initTest() {
+	void initTestShared() {
 		LOG.info("[@BeforeEach] abstract test preparation ...");
-		
+
 	}
-	
+
 	@AfterEach
-	void destroyTest() {
+	void destroyTestShared() {
 		LOG.info("[@AfterEach] abstract test destroy ...");
-		
+
 	}
-	
+
 	@AfterAll
-	static void destroyClassByJunit() {
+	static void destroyClassByJunitShared() {
 		LOG.info("[@AfterAll] abstract class destroy ...");
 	}
-	
+
 }

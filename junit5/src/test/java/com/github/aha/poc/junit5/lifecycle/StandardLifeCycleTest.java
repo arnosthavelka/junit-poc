@@ -1,6 +1,5 @@
 package com.github.aha.poc.junit5.lifecycle;
 
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.AfterEach;
@@ -11,10 +10,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class StandardLifeCycleTest extends AbstractLifeCycleTest {
-	
+
 	/** Logger. */
-	private static final Logger LOG = LoggerFactory.getLogger(StandardLifeCycleTest.class);	
-	
+	private static final Logger LOG = LoggerFactory.getLogger(StandardLifeCycleTest.class);
+
 	static {
 		LOG.info("[static] class LifeCycleTest initialization ...");
 	}
@@ -22,17 +21,17 @@ public class StandardLifeCycleTest extends AbstractLifeCycleTest {
 	static {
 		LOG.info("[instance] instance initialization ...");
 	}
-	
+
 	@BeforeAll
 	static void initClassByJunit() {
 		LOG.info("[@BeforeAll] class initialization ...");
 	}
-	
+
 	@BeforeEach
 	void initTest() {
 		LOG.info("[@BeforeEach] test preparation ...");
 	}
-	
+
 	@Test
 	void firstTest() {
 		LOG.info("first test execution ...");
@@ -48,7 +47,7 @@ public class StandardLifeCycleTest extends AbstractLifeCycleTest {
 	@AfterEach
 	void destroyTest() {
 		LOG.info("[@AfterEach] test destroy ...");
-		super.destroyTest();
+		super.destroyTestShared();
 	}
-	
+
 }
