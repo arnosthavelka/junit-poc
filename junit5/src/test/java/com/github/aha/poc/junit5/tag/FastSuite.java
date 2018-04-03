@@ -18,9 +18,6 @@ public class FastSuite {
 	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(FastSuite.class);
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request()
 				.selectors(selectPackage("com.github.aha.poc.junit5.tag"))
