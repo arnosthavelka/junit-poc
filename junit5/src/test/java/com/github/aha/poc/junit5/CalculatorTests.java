@@ -1,6 +1,7 @@
 package com.github.aha.poc.junit5;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -35,7 +36,9 @@ public class CalculatorTests {
 	@Test
 	@DisplayName("handle empty input")
 	void addNoNumber() {
-		assertThat(Calculator.add()).isEqualTo(0);
+		Exception exception = assertThrows(IllegalArgumentException.class, () -> Calculator.add());
+		// check exception message
+		assertThat(exception.getClass()).isEqualTo(IllegalArgumentException.class);
 	}
 
 	@Test
