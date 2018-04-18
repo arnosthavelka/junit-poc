@@ -2,8 +2,6 @@ package com.github.aha.poc.junit5.params;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.stream.Stream;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
@@ -33,7 +31,7 @@ public class SimpleTests {
 	}
 
 	@ParameterizedTest
-	@EnumSource(ParamTypes.class)
+	@EnumSource(value = ParamTypes.class, names = { "INT", "LONG" })
 	@DisplayName("check enum values")
 	void enumTest(ParamTypes argument) {
 		assertThat(argument).isNotNull();
@@ -46,8 +44,8 @@ public class SimpleTests {
 		assertThat(argument).isNotNull();
 	}
 
-	static Stream<String> paramValues() {
-		return Stream.of("one", "two");
+	static String[] paramValues() {
+		return new String[] { "one", "two" };
 	}
 
 	@ParameterizedTest
