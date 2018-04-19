@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -50,10 +51,18 @@ public class SimpleTests {
 
 	@ParameterizedTest
 	@CsvSource({ "Rum, 70", "Whiskey, 50", "'Gin Fizz', 150" })
-	@DisplayName("check CSV values")
-	void csvTest(String key, int value) {
+	@DisplayName("check CSV values as independet arguments")
+	void csvSimpleTest(String key, int value) {
 		assertThat(key).isNotNull();
 		assertThat(value).isGreaterThan(0);
+	}
+
+	@ParameterizedTest
+	@CsvSource({ "Rum, 70", "Whiskey, 50", "'Gin Fizz', 150" })
+	@DisplayName("check CSV values with ArgumentsAccessor")
+	void csvSimpleTest(ArgumentsAccessor aa) {
+		assertThat(aa.getString(0)).isNotNull();
+		assertThat(aa.getInteger(1)).isGreaterThan(0);
 	}
 
 	@ParameterizedTest
