@@ -65,11 +65,10 @@ public class SimpleParamTests {
 	}
 
 	@ParameterizedTest
-	@ArgumentsSource(CustomProvider.class)
-	@DisplayName("check provider values")
-	void providerTest(ParamTypes value) {
+	@ArgumentsSource(FibonacciProvider.class)
+	@DisplayName("check values provided by custom ArgumentsProvider")
+	void providerTest(Number value) {
 		assertThat(value).isNotNull();
-		assertThat(value).isInstanceOf(ParamTypes.class);
 	}
 
 }
