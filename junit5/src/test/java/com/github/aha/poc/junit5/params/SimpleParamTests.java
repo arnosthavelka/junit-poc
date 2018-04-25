@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-@DisplayName("Parameterized tests in JUnit5")
+@DisplayName("Simple parameterized tests")
 public class SimpleParamTests {
 
 	@ParameterizedTest

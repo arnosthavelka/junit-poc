@@ -9,7 +9,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.ValueSource;
 
-@DisplayName("Parameterized tests in JUnit5")
+@DisplayName("Conversion usage in parameterized tests")
 public class ConversionTests {
 
 	@ParameterizedTest
