@@ -25,11 +25,7 @@ public class FlagConverter {
 			throw new RuntimeException("The value NULL is not allowed for flag attribute!");
 		}
 
-		if (value.booleanValue()) {
-			return FLAG_ON;
-		}
-
-		return FLAG_OFF;
+		return value.booleanValue() ? FLAG_ON : FLAG_OFF;
 	}
 
 	/**
@@ -42,18 +38,13 @@ public class FlagConverter {
 	 * @throws {@code
 	 *             RuntimeException} when {@link null} value is passed
 	 */
-
 	public Boolean convertFromValue(String value) {
 
 		if (value == null) {
 			throw new RuntimeException("The value NULL is not allowed for flag attribute!");
 		}
 
-		if (value.equalsIgnoreCase(FLAG_ON)) {
-			return Boolean.TRUE;
-		}
-
-		return Boolean.FALSE;
+		return value.equalsIgnoreCase(FLAG_ON) ? Boolean.TRUE : Boolean.FALSE;
 	}
 
 }
