@@ -21,7 +21,7 @@ public class TempFileSystem implements AfterAllCallback {
 	public TempFileSystem(String subfolder) {
 		try {
 			root = Files.createTempDirectory(subfolder);
-			LOG.info("Creating folder {}", root.toString());
+			LOG.info("Folder {} created", root.toString());
 		} catch (IOException e) {
 			LOG.error("Creation of the temporary folder failed!", e);
 		}
@@ -37,7 +37,7 @@ public class TempFileSystem implements AfterAllCallback {
 			.sorted(Comparator.reverseOrder())
 			.map(Path::toFile)
 			.forEach(File::delete);
-		LOG.info("Deleting folder {}", root.toString());
+		LOG.info("Folder {} deleted", root.toString());
 	}
 
 }

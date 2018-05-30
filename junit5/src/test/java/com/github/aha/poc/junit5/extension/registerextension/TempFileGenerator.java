@@ -29,14 +29,13 @@ public class TempFileGenerator implements BeforeEachCallback, AfterEachCallback 
 	@Override
 	public void beforeEach(ExtensionContext context) throws Exception {
 		tempFile = Files.createTempFile(rootPath, "ju5-", "-test.txt");
-		LOG.info("Creating {}", tempFile.toString());
+		LOG.info("File {} created", tempFile.toString());
 	}
 
 	@Override
 	public void afterEach(ExtensionContext context) throws Exception {
 		Files.delete(tempFile);
-		LOG.info("Deleting {}", tempFile.toString());
+		LOG.info("File {} deleted", tempFile.toString());
 	}
-
 
 }
