@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 
 public class CustomAfterEach implements AfterEachCallback {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(CustomAfterEach.class);
 	
 	@Override

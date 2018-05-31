@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 @ExtendWith(CustomBeforeEach.class)
 public class CustomTests {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(CustomTests.class);
 
 	@Test

@@ -20,7 +20,6 @@ import org.slf4j.LoggerFactory;
 @DisplayName("Examples of conditional tests")
 public class ConditionalTests {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(ConditionalTests.class);
 
 	@Test

@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 
 public class CustomBeforeEach implements BeforeEachCallback {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(CustomBeforeEach.class);
 	
 	@Override

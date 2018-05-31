@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 //@RunWith(JUnit4.class)
 public class BasicTest {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(BasicTest.class);
 	
 	@Test

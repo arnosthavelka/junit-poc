@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 @DisplayName("Repeated tests in JUnit5")
 public class RepeatTest {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(RepeatTest.class);
 	
 	@RepeatedTest(5)

@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 
 public class RegisterExtensionTest {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(RegisterExtensionTest.class);
 
 	@RegisterExtension

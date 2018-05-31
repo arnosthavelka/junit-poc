@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 
 public class TempFileGenerator implements BeforeEachCallback, AfterEachCallback {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(TempFileGenerator.class);
 
 	private Path rootPath;

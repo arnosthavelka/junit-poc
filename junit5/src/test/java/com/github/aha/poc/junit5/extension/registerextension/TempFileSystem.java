@@ -13,7 +13,6 @@ import org.slf4j.LoggerFactory;
 
 public class TempFileSystem implements AfterAllCallback {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(TempFileSystem.class);
 
 	private Path root;

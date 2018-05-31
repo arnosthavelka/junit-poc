@@ -12,15 +12,14 @@ import org.slf4j.LoggerFactory;
 @Stat
 public class StatTests {
 
+	private static final Logger LOG = LoggerFactory.getLogger(StatTests.class);
+
 	private static Random rg;
 
 	@BeforeAll
 	static void init() {
 		rg = new Random();
 	}
-
-	/** Logger. */
-	private static final Logger LOG = LoggerFactory.getLogger(StatTests.class);
 
 	@Test
 	void trueTest() {

@@ -12,7 +12,6 @@ import com.github.aha.poc.junit4.Calculator;
  */
 public abstract class AbstractCalcTests {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(AbstractCalcTests.class);
 
 	abstract Logger getLog();

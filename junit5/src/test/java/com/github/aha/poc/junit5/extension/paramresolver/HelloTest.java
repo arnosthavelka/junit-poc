@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 
 public class HelloTest {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(HelloTest.class);
 
 	@Test

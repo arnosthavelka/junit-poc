@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 
 public class FastSuite {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(FastSuite.class);
 
 	public static void main(String[] args) {

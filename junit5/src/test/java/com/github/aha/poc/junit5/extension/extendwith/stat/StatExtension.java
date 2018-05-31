@@ -13,7 +13,6 @@ import org.slf4j.LoggerFactory;
 public class StatExtension implements AfterAllCallback, AfterEachCallback, AfterTestExecutionCallback, 
 		BeforeEachCallback, BeforeTestExecutionCallback {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(StatExtension.class);
 	
 	private static final Namespace NAMESPACE = Namespace.create("org", "github", "aha", "poc", "junit5");

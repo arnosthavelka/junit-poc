@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 @RunWith(Theories.class)
 public class TestedOnTests {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(TestedOnTests.class);
 
 	/**

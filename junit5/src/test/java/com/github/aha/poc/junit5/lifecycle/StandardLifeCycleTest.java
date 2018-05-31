@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 
 public class StandardLifeCycleTest extends AbstractLifeCycleTest {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(StandardLifeCycleTest.class);
 
 	static {

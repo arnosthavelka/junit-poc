@@ -18,7 +18,6 @@ import com.github.aha.poc.junit4.extension.runner.category.annotation.NoInput;
 @Category(MultiplyOperation.class)
 public class MultiplyTests extends AbstractCalcTests {
 	
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(MultiplyTests.class);	
 
 	@Test

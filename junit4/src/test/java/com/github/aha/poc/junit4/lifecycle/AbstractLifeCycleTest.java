@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 
 public abstract class AbstractLifeCycleTest {
 	
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(AbstractLifeCycleTest.class);	
 	
 	static {

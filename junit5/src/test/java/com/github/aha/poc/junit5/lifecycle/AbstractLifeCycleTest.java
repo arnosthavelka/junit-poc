@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 
 public abstract class AbstractLifeCycleTest {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(AbstractLifeCycleTest.class);
 
 	static {
@@ -19,19 +18,16 @@ public abstract class AbstractLifeCycleTest {
 	@BeforeAll
 	static void initClassByJunitShared() {
 		LOG.info("[@BeforeAll] class initialization ...");
-
 	}
 
 	@BeforeEach
 	void initTestShared() {
 		LOG.info("[@BeforeEach] abstract test preparation ...");
-
 	}
 
 	@AfterEach
 	void destroyTestShared() {
 		LOG.info("[@AfterEach] abstract test destroy ...");
-
 	}
 
 	@AfterAll

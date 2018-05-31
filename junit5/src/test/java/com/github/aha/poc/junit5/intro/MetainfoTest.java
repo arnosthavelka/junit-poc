@@ -13,11 +13,9 @@ import org.slf4j.LoggerFactory;
 
 import com.github.aha.poc.junit5.tag.TagConsts;
 
-//@RunWith(JUnitPlatform.class)
 @DisplayName("A meta-info usage")
 public class MetainfoTest {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(MetainfoTest.class);
 	
 	@Test
