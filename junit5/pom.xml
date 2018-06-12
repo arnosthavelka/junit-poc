@@ -29,14 +29,8 @@
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-runner</artifactId>
 		</dependency>
-		<!-- support to run test for JUnit3 & JUnit4>
-		<dependency>
-			<groupId>org.junit.vintage</groupId>
-			<artifactId>junit-vintage-engine</artifactId>
-		</dependency-->
 
 		<!-- other test -->
-		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
 		<dependency>
 		    <groupId>org.assertj</groupId>
 		    <artifactId>assertj-core</artifactId>
