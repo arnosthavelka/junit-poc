@@ -2,12 +2,15 @@ package com.github.aha.poc.junit5;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
+import static org.hamcrest.core.IsNot.not;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.lang.reflect.Method;
+import java.time.LocalDate;
 import java.util.Optional;
 import java.util.Set;
 
@@ -36,12 +39,18 @@ public class BasicTests {
 	@DisplayName("show simple assert via AssertJ")
 	public void simpleAssertJAssert() {
 		assertThat(true).isTrue();
+		assertThat(1 + 1).isEqualTo(2);
+		assertThat("hello").isNotEqualTo("hi");
+		assertThat(LocalDate.of(2018, 06, 13)).isEqualTo("2018-06-13");
+		assertThat(new ClassCastException()).isInstanceOf(RuntimeException.class);
 	}
 
 	@Test
 	@DisplayName("show simple assert via Hamcrest")
 	public void simpleHamcrestAssert() {
-		assertThat(true, equalTo(true));
+		assertThat(true, is(true));
+		assertThat(1 + 1, equalTo(2));
+		assertThat("hello", not(equalTo("hi")));
 	}
 
 	@Test
