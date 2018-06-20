@@ -7,12 +7,15 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@SpringJUnitConfig(classes=SpringConfig.class)
-@DisplayName("Simple spring test with JUnit5")
-public class SpringWithJU5Tests {
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes = SpringConfig.class)
+@DisplayName("Standard spring test for JUnit5")
+public class StandardSpringTest {
 
 	@Autowired
 	HelloService service;
