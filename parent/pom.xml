@@ -32,7 +32,7 @@
         <logback.version>1.2.3</logback.version>
         <!-- specific Spring properties -->
         <spring.version>5.0.7.RELEASE</spring.version>
-        <spring-boot.version>2.0.2.RELEASE</spring-boot.version>
+        <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
 	</properties>
 
 	<dependencyManagement>
