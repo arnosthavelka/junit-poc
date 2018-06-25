@@ -29,7 +29,6 @@
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-runner</artifactId>
 		</dependency>
-
 		<!-- other test -->
 		<dependency>
 		    <groupId>org.assertj</groupId>

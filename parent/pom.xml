@@ -21,6 +21,7 @@
         <junit.platform.version>1.2.0</junit.platform.version>
         <surefire-plugin>2.21.0</surefire-plugin>
         <!-- other testing properties -->
+        <cucumber.version>3.0.2</cucumber.version>
 		<assertj.version>3.9.1</assertj.version>
 		<hamcrest.version>1.3</hamcrest.version>
 		<mockito.version>2.18.3</mockito.version>
