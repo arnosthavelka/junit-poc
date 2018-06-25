@@ -3,11 +3,11 @@ package com.github.aha.poc.junit.cucumber;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calculator {
+public class SimpleCalculator {
 	
 	private List<Integer> values = new ArrayList<>();
 
-	public Calculator(int value) {
+	public SimpleCalculator(Integer value) {
 		values = new ArrayList<>();
 		values.add(value);
 	}

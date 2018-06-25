@@ -9,11 +9,11 @@ import cucumber.api.java8.En;
 
 public class CalcAddStepdefs implements En {
 
-	private Calculator calc;
+	private SimpleCalculator calc;
 	
 	@Given("start sum operation with value {int}")
 	public void init(int initValue) {
-		calc = new Calculator(initValue);
+		calc = new SimpleCalculator(initValue);
 	}
 
 	@When("add value {int}")
