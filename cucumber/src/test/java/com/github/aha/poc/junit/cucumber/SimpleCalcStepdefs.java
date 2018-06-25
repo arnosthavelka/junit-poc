@@ -7,7 +7,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.java8.En;
 
-public class CalcAddStepdefs implements En {
+public class SimpleCalcStepdefs implements En {
 
 	private SimpleCalculator calc;
 	
