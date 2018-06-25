@@ -1,9 +1,6 @@
 package com.github.aha.poc.junit.spring;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,8 +16,8 @@ public class SimpleSpringTest {
 	
 	@Test
 	public void test() {
-		assertThat(service, notNullValue());
-		assertThat(service.getMessage(), is(equalTo("Hello world!")));
+		assertThat(service).isNotNull();
+		assertThat(service.getMessage()).isEqualTo("Hello world!");
 	}
 
 }
