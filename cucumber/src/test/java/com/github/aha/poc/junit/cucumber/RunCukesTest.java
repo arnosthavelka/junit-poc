@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:com/github/aha/poc/junit/cucumber/JUnit.feature")
-public class JUnitCukesTest {
+@CucumberOptions(features = "classpath:com/github/aha/poc/junit/cucumber/Calc.feature")
+public class RunCukesTest {
 
 }

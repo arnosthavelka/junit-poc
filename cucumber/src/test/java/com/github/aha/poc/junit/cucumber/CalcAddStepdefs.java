@@ -7,22 +7,22 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.java8.En;
 
-public class JUnitStepdefs implements En {
+public class CalcAddStepdefs implements En {
 
-	private int value;
+	private Calculator calc;
 	
-	@Given("start with value {int}")
+	@Given("start sum operation with value {int}")
 	public void init(int initValue) {
-		this.value = initValue;
+		calc = new Calculator(initValue);
 	}
 
 	@When("add value {int}")
 	public void add(int addValue) {
-		this.value += addValue;
+		calc.add(addValue);
 	}
 
-	@Then("should have value {int}")
+	@Then("the result of sum operation is {int}")
 	public void check(int finalValue) {
-		Assert.assertEquals(value, finalValue);
+		Assert.assertEquals(calc.sum(), finalValue);
 	}
 }
