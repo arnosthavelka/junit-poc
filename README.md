@@ -11,8 +11,8 @@ Demo project of usage of framework JUnit (version 4 & 5)
   * Hamcrest 1.3
   * PowerMock 2.0.0-beta.5
 * Mocking
-  * AssertJ 3.9.1
-  * Mockito 2.18.3
+  * AssertJ 3.10.0
+  * Mockito 2.19.0
   * EasyMock 3.6
 * Others
   * Spring 5.0.5
