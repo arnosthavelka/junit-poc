@@ -11,6 +11,8 @@ import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import com.github.aha.poc.junit.springboot.rest.HelloController;
+
 @ExtendWith(SpringExtension.class)
 @RestClientTest(HelloController.class)
 public class ControllerTests {
