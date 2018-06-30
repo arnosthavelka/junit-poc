@@ -11,7 +11,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-public class CityJdbcTests {
+public class CityJdbcTest {
 
 	@Autowired
 	JdbcTemplate jdbcTemplate;

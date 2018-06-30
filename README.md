@@ -19,6 +19,7 @@ Demo project of usage of framework JUnit (version 4 & 5)
   * Spring 5.0.5
   * Spring Boot 2.0.1
   * Liquibase
+  * REST
 
 ## Features
 * examples for most of JUnit features
