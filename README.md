@@ -8,16 +8,17 @@ Demo project of usage of framework JUnit (version 4 & 5)
   * SLF4J
 * Testing
   * JUnit 4.12 & JUnit 5.2.0
+  * Cucumber 3.0.2
   * Hamcrest 1.3
-  * PowerMock 2.0.0-beta.5
+  * AssertJ 3.10.0
 * Mocking
-  * AssertJ 3.9.1
-  * Mockito 2.18.3
+  * Mockito 2.19.0
   * EasyMock 3.6
+  * PowerMock 2.0.0-beta.5
 * Others
   * Spring 5.0.5
   * Spring Boot 2.0.1
-  * Cucumber 3.0.2
+  * Liquibase
 
 ## Features
 * examples for most of JUnit features
