@@ -20,6 +20,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<jaxb.version>2.3.0</jaxb.version>
+		<maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
 	</properties>
 	
 	<dependencies>
