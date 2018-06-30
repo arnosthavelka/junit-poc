@@ -61,7 +61,7 @@ public class ControllerRestDocsTest {
 				.andExpect(status().isOk())
 				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON))
 				.andDo(
-						document("index-example", preprocessRequest(prettyPrint()), preprocessResponse(prettyPrint()),
+						document("city-list", preprocessRequest(prettyPrint()), preprocessResponse(prettyPrint()),
 								responseHeaders(headerWithName("Content-Type")
 										.description("The Content-Type of the payload, e.g. `application/hal+json`"))));
 	}
@@ -75,7 +75,7 @@ public class ControllerRestDocsTest {
 				.andExpect(status().isOk())
 				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON)).andExpect(jsonPath("id", is(1)))
 				.andExpect(jsonPath("name", is(PRAGUE_NAME)))
-				.andDo(document(CITY_PATH + "{id}",
+				.andDo(document("city-get",
 						pathParameters(parameterWithName("id").description("The id of the input to retrieve"))));
 
 	}
