@@ -21,7 +21,7 @@
 		<module>spring-ju4</module>
 		<module>spring-ju5</module>
 		<module>spring-boot</module> <!-- it's not a regular module since it inherits from Spring (and not form JU parent) -->
-		<module>spring-cucumber</module>
+		<module>cucumber</module>
 	</modules>
 	
 	<build>

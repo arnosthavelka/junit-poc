@@ -19,7 +19,7 @@
 		<junit.version>4.12</junit.version>
         <junit.jupiter.version>5.2.0</junit.jupiter.version>
         <junit.platform.version>1.2.0</junit.platform.version>
-        <surefire-plugin>2.21.0</surefire-plugin>
+        <surefire-plugin>2.22.0</surefire-plugin>
         <!-- other testing properties -->
         <cucumber.version>3.0.2</cucumber.version>
 		<assertj.version>3.9.1</assertj.version>
