@@ -75,7 +75,7 @@ not create URIs themselves, instead they should use the above-described links to
 The city REST service provides operations with resource "city".
 
 [[resources-city-list]]
-=== List the cities
+=== List all cities
 
 A `GET` request is used to list all available cities
 
@@ -92,7 +92,7 @@ include::{snippets}/city-list/http-response.adoc[]
 include::{snippets}/city-list/curl-request.adoc[]
 
 [[resources-city-get]]
-=== Accessing the crud GET
+=== GET the city item
 
 A `GET` request is used to access the CRUD read.
 
