@@ -3,8 +3,6 @@ package com.github.aha.poc.junit.springboot.rest;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
-import java.util.Optional;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +30,7 @@ public class ControllerBeanTest {
 	@Test
 	public void testMadridCity() {
 		// given
-		when(this.service.getItem(MADRID_ID)).thenReturn(Optional.of(new City(5L, MADRID_NAME)));
+		when(this.service.getItem(MADRID_ID)).thenReturn(new City(5L, MADRID_NAME));
 		// when
 		City city = this.controller.item(MADRID_ID);
 		// then

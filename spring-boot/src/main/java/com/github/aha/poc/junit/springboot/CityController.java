@@ -2,8 +2,6 @@ package com.github.aha.poc.junit.springboot;
 
 import java.util.List;
 
-import javax.persistence.EntityNotFoundException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,7 +34,7 @@ public class CityController {
 	
 	@GetMapping("/{id}")
 	public City item(@PathVariable("id") Long id) {
-		return service.getItem(id).orElseThrow(EntityNotFoundException::new);
+		return service.getItem(id);
 	}
 
 }

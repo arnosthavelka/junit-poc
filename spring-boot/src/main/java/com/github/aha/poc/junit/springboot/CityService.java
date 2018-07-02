@@ -1,7 +1,8 @@
 package com.github.aha.poc.junit.springboot;
 
 import java.util.List;
-import java.util.Optional;
+
+import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,8 +17,8 @@ public class CityService {
 		return repo.findAll();
 	}
 
-	public Optional<City> getItem(Long id) {
-		return repo.findById(id);
+	public City getItem(Long id) {
+		return repo.findById(id).orElseThrow(EntityNotFoundException::new);
 	}
 	
 }

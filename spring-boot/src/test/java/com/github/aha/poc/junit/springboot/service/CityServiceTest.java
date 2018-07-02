@@ -32,11 +32,10 @@ public class CityServiceTest {
 	@Test
 	public void testMadridCity() {
 		// given
-		when(this.service.getItem(PRAGUE_ID)).thenReturn(Optional.of(new City(5L, PRAGUE_NAME)));
+		when(this.repo.findById(PRAGUE_ID)).thenReturn(Optional.of(new City(5L, PRAGUE_NAME)));
 		// when
-		Optional<City> cityRef = this.service.getItem(PRAGUE_ID);
+		City city = this.service.getItem(PRAGUE_ID);
 		// then
-		assertThat(cityRef.isPresent()).isTrue();
-		assertThat(cityRef.get().getName()).isEqualTo(PRAGUE_NAME);
+		assertThat(city.getName()).isEqualTo(PRAGUE_NAME);
 	}
 }
