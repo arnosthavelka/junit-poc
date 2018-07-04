@@ -12,7 +12,7 @@ public class PrivateTest {
 	@Test
 	@DisplayName("check hidden private constructor")
 	public void testPrivateConstructor() {
-		assertThrows(IllegalAccessException.class, Calculator.class::newInstance);
+		assertThrows(NoSuchMethodException.class, () -> Calculator.class.getConstructor().newInstance());
 	}
 
 }
