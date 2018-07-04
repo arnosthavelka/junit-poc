@@ -31,7 +31,7 @@ public class ControllerRestTest {
 	@Test
 	@DisplayName("should list all available cities")
 	void listAllFiles() throws Exception {
-		mvc.perform(get("/city/").contentType(APPLICATION_JSON)).andExpect(status().isOk())
+		mvc.perform(get("/city").contentType(APPLICATION_JSON)).andExpect(status().isOk())
 				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON));
 	}
 

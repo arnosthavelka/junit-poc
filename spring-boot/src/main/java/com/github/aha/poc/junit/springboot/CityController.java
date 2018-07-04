@@ -27,7 +27,7 @@ public class CityController {
 	 * @param name desired user's name
 	 * @return greeting message
 	 */
-	@GetMapping("/")
+	@GetMapping
 	public List<City> list() {
 		return service.getAll();
 	}
