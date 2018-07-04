@@ -2,6 +2,7 @@ package com.github.aha.poc.junit.springboot.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.NONE;
 
 import java.util.Optional;
 
@@ -17,7 +18,7 @@ import com.github.aha.poc.junit.springboot.CityRepository;
 import com.github.aha.poc.junit.springboot.CityService;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment = NONE)
 public class CityServiceTest {
 
 	private static final long PRAGUE_ID = 1L;
