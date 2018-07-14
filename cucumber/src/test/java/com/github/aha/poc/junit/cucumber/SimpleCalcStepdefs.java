@@ -1,28 +1,29 @@
 package com.github.aha.poc.junit.cucumber;
 
-import org.junit.Assert;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import cucumber.api.java8.En;
+import cucumber.api.java8.Cs;
 
-public class SimpleCalcStepdefs implements En {
+public class SimpleCalcStepdefs implements Cs {
 
 	private SimpleCalculator calc;
 	
-	@Given("start sum operation with value {int}")
-	public void init(int initValue) {
-		calc = new SimpleCalculator(initValue);
+	public SimpleCalcStepdefs() {
+
+		Pokud("začneme s výchozí hodnotou {int}", (Integer initValue) -> {
+			calc = new SimpleCalculator(initValue);
+		});
+
+		Když("přidáme hodnotu {int}", (Integer value) -> {
+			calc.add(value);
+		});
+
+		Pak("výsledný součet je {int}", (finalValue) -> {
+			assertThat(calc.sum(), is(equalTo(finalValue)));
+		});
+
 	}
 
-	@When("add value {int}")
-	public void add(int addValue) {
-		calc.add(addValue);
-	}
-
-	@Then("the result of sum operation is {int}")
-	public void check(int finalValue) {
-		Assert.assertEquals(calc.sum(), finalValue);
-	}
 }
