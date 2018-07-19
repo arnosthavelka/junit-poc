@@ -122,8 +122,8 @@
 							<attributes>
 								<snippets>${snippetsDirectory}</snippets>
 							</attributes>
-							<sourceDirectory>src/docs/asciidocs</sourceDirectory>
-							<outputDirectory>target/generated-docs</outputDirectory>
+							<sourceDirectory>${basedir}/src/main/asciidoc</sourceDirectory>
+							<outputDirectory>${project.build.directory}/generated-docs</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>

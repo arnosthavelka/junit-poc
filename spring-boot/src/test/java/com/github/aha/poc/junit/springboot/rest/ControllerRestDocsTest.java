@@ -11,6 +11,8 @@ import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuild
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessRequest;
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessResponse;
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.prettyPrint;
+import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
+import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
 import static org.springframework.restdocs.request.RequestDocumentation.pathParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -64,11 +66,16 @@ public class ControllerRestDocsTest {
 		mvc.perform(get("/city/{id}", PRAGUE_ID)
 				.contentType(APPLICATION_JSON))
 				.andExpect(status().isOk())
-				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON)).andExpect(jsonPath("id", is(1)))
+				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON))
+				.andExpect(jsonPath("id", is(1)))
 				.andExpect(jsonPath("name", is(PRAGUE_NAME)))
 				.andDo(document("city-get",
-						pathParameters(parameterWithName("id").description("The id of the input to retrieve"))));
-
+						pathParameters(
+								parameterWithName("id").description("Identifier of the city")),
+						responseFields(
+								fieldWithPath("id").description("Unique identifier of the city."),
+								fieldWithPath("name").description("Name of the city."),
+								fieldWithPath("country").description("Name of the country the city belong to."))));
 	}
 
 }

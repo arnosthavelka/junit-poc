@@ -1,5 +1,6 @@
-= Spring Boot Example for City REST service
-RESTful Notes API Guide;
+= Sample REST API Documentation
+JUnit book - 
+Arnošt Havelka
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
@@ -70,9 +71,9 @@ not create URIs themselves, instead they should use the above-described links to
 
 
 [[resources-CITY]]
-== City REST Service 
+== City API
 
-The city REST service provides operations with resource "city".
+The REST endpoints to read all cities in the application.
 
 [[resources-city-list]]
 === List all cities
@@ -92,13 +93,19 @@ include::{snippets}/city-list/http-response.adoc[]
 include::{snippets}/city-list/curl-request.adoc[]
 
 [[resources-city-get]]
-=== GET the city item
+=== Get the city by ID
 
-A `GET` request is used to access the CRUD read.
+A `GET` request is used to access the city by identifier.
+
+==== Path Parameters
+include::{snippets}/city-get/path-parameters.adoc[]
 
 ==== Request structure
 
 include::{snippets}/city-get/http-request.adoc[]
+
+==== Response Fields
+include::{snippets}/city-get/response-fields.adoc[]
 
 ==== Example response
 

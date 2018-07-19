@@ -33,7 +33,7 @@ public class CityController {
 	}
 	
 	@GetMapping("/{id}")
-	public City item(@PathVariable("id") Long id) {
+	public City getItem(@PathVariable("id") Long id) {
 		return service.getItem(id);
 	}
 
