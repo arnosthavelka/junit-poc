@@ -32,7 +32,7 @@ public class ControllerBeanTest {
 		// given
 		when(this.service.getItem(MADRID_ID)).thenReturn(new City(5L, MADRID_NAME));
 		// when
-		City city = this.controller.item(MADRID_ID);
+		City city = this.controller.getItem(MADRID_ID);
 		// then
 		assertThat(city.getName()).isEqualTo(MADRID_NAME);
 	}
