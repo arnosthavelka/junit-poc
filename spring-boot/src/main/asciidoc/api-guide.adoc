@@ -84,6 +84,10 @@ A `GET` request is used to list all available cities
 
 include::{snippets}/city-list/http-request.adoc[]
 
+==== Response headers
+
+include::{snippets}/city-list/response-headers.adoc[]
+
 ==== Example response
 
 include::{snippets}/city-list/http-response.adoc[]
