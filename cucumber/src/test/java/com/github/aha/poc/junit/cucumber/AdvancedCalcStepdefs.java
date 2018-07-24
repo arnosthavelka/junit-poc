@@ -11,7 +11,6 @@ import com.github.aha.poc.junit.cucumber.AdvancedCalculator.Operation;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import io.cucumber.datatable.DataTable;
 
 public class AdvancedCalcStepdefs {
 
@@ -29,11 +28,8 @@ public class AdvancedCalcStepdefs {
 	}
 
 	@When("do these math operations")
-	public void addMultipleValue(DataTable dataTable) {
-		List<List<String>> data = dataTable.asLists();
-		for (List<String> item : data) {
-			calc.calculate(Operation.valueOf(item.get(0)), Integer.valueOf(item.get(1)));
-		}
+	public void addMultipleValue(List<List<String>> data) {
+		data.stream().forEach(item -> calc.calculate(Operation.valueOf(item.get(0)), Integer.valueOf(item.get(1))));
 	}
 
 	@Then("the result value is {int}")
