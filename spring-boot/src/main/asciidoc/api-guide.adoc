@@ -1,6 +1,6 @@
 = Sample REST API Documentation
-JUnit book - 
-Arnošt Havelka
+JUnit book 
+Version 1.0.0
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
