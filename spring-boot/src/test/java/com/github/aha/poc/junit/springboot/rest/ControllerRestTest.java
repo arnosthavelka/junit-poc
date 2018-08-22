@@ -27,17 +27,17 @@ public class ControllerRestTest {
 
 	@Autowired
 	private MockMvc mvc;
-	
+
 	@Test
 	@DisplayName("should list all available cities")
-	void listAllFiles() throws Exception {
+	void listCities() throws Exception {
 		mvc.perform(get("/city").contentType(APPLICATION_JSON)).andExpect(status().isOk())
 				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON));
 	}
 
 	@Test
-	@DisplayName("should read one GFDM file")
-	void getFile() throws Exception {
+	@DisplayName("should read one city")
+	void getCity() throws Exception {
 		mvc.perform(get("/city/{id}", PRAGUE_ID).contentType(APPLICATION_JSON)).andExpect(status().isOk())
 				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON)).andExpect(jsonPath("id", is(1)))
 				.andExpect(jsonPath("name", is(PRAGUE_NAME)));

@@ -49,7 +49,7 @@ public class ControllerRestDocsTest {
 
 	@Test
 	@DisplayName("should list all available cities")
-	void listAllFiles() throws Exception {
+	void listCities() throws Exception {
 		mvc.perform(get("/city")
 				.contentType(APPLICATION_JSON))
 				.andExpect(status().isOk())
@@ -61,8 +61,8 @@ public class ControllerRestDocsTest {
 	}
 
 	@Test
-	@DisplayName("should read one GFDM file")
-	void getFile() throws Exception {
+	@DisplayName("should read one city")
+	void getCity() throws Exception {
 		mvc.perform(get("/city/{id}", PRAGUE_ID)
 				.contentType(APPLICATION_JSON))
 				.andExpect(status().isOk())
