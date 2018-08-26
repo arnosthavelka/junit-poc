@@ -36,8 +36,6 @@ public class FastSuite {
 		}
 
 		// Executing tests
-		SummaryGeneratingListener listener = new SummaryGeneratingListener();
-		launcher.registerTestExecutionListeners(listener);
-		launcher.execute(request, listener);
+		launcher.execute(request, new SummaryGeneratingListener());
 	}
 }
