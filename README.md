@@ -2,15 +2,20 @@
 Demo project of usage of framework JUnit (version 4 & 5)
 
 ## Used Technologies
-* Basics
-  * Maven 3
-  * Java 8
-  * SLF4J
-* Testing
-  * JUnit 4.12 & JUnit 5.2.0
-  * Cucumber 3.0.2
-  * Hamcrest 1.3
-  * AssertJ 3.10.0
+
+| Area        | Project    | Tool       | Version    | Description                    |
+| ----------  | ---------- | ---------- | ---------- | ------------------------------ |
+| **General** |            |            |            |                                |
+|             | all        | Maven      | 3.x        | Build                          |
+|             | all        | JDK        | 10.0.2     | Java platform                  |
+|             | all        | SLF4J      | 3.x        | Logging                        |
+| **Testing** |            |            |            |                                |
+|             | ju-junit4, ju-spring-ju4  | JUnit      | 4.12       | Unit testing |
+|             | ju-junit5, ju-spring-ju5, ju-spring-boot, ju-cucumber         | JUnit        | 5.3.0     | Unit testing                  |
+|             | ju-cucumber | Cucumber      | 3.0.2        | BDD testing                        |
+|             | ju-junit4, ??? | Hamcrest      | 1.3        | Assertions                        |
+|             | ju-junit5, ju-spring-ju5, ju-spring-boot, ju-cucumber | AssertJ      | 3.10.0        | Assertions with Fluent API        |
+
 * Mocking
   * Mockito 2.19.0
   * EasyMock 3.6
