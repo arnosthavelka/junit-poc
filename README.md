@@ -6,14 +6,23 @@ This repository holds examples for my book `JUnit 5 - over the border of unit te
 
 ## Features
  Moreover there are some topics related to these areas:
-1.  **Framework JUnit 5** - demonstration of all JUnit 5 covers:
-   1. Features: all basic annotations, dynamic & nested tests, interface default method (idm), etc.
-   1. Extension model: declarative and programmatic registration, parameter resolver, exception handler, etc.
-   1. And more
-1.  **Framework JUnit 4** - demonstration of all JUnit 4 features used in my theses [Analysis of architecture and extension model of the framework JUnit](https://theses.cz/id/p7ghon) (Analýza architektury a nadstavbových možností frameworku JUnit).
-1.  **Spring Framework** - some examples of writing Spring tests.
-1.  **Spring Boot** - demonstration of writing Spring Boot tests dedicated to each layer (persistence, service and web). This part covers usage of **Spring REST Docs** to generate REST API documentation by the tests. 
-1.  **Cucumber** - exploration of writing tests according Behavior-Driven Development (BDD) methodology. The tests are executed by JUnit framework.
+1. **Framework JUnit 5** - demonstration of all JUnit 5 covers:
+    1. Features: 
+        1. All basic annotations
+        1. Dynamic & nested tests
+        1. Interface default method (idm)
+    1. Extension model:
+        1. Declarative and programmatic registration
+        1. Parameter resolver
+        1. Exception handler
+    1. And more
+1. **Framework JUnit 4** - demonstration of all JUnit 4 features used in my theses [Analysis of architecture and extension model of the framework JUnit](https://theses.cz/id/p7ghon) (Analýza architektury a nadstavbových možností frameworku JUnit). Included features are:
+    1. Runners
+    1. Rules
+    1. Validaton
+1. **Spring Framework** - some examples of writing Spring tests.
+1. **Spring Boot** - demonstration of writing Spring Boot tests dedicated to each layer (persistence, service and web). This part covers usage of **Spring REST Docs** to generate REST API documentation by the tests. 
+1. **Cucumber** - exploration of writing tests according Behavior-Driven Development (BDD) methodology. The tests are executed by JUnit framework.
 
 ## Used Technologies
 
