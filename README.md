@@ -1,5 +1,6 @@
 # junit-poc
-This repository holds examples for my book `JUnit 5 - over the border of unit testing` (JUnit 5 - za hranice jednotkového testování). The main goal is to demonstrate usage of the framework JUnit 5.
+This repository holds examples for my book [JUnit 5 - over the border of unit testing](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - za hranice jednotkového testování).
+The main goal is to demonstrate usage of the framework JUnit 5.
 
 ## Decomposition of projects
 ![Build model](build-model.png?raw=true "Build model")
