@@ -40,8 +40,6 @@
 		<dependency>
 			<groupId>name.falgout.jeffrey.testing.junit5</groupId>
 			<artifactId>mockito-extension</artifactId>
-			<version>${mockito-extension.version}</version>
-			<scope>test</scope>			
 		</dependency>		
 		
 		<!-- logging -->
