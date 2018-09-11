@@ -37,7 +37,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |             | JUnit            | 4.12         | ju-junit4, ju-spring-ju4                              | Unit testing                |
 |             | JUnit            | 5.3.0        | ju-junit5, ju-spring-ju5, ju-spring-boot, ju-cucumber | Unit testing                |
 |             | Cucumber         | 3.0.2        | ju-cucumber                                           | BDD testing                 |
-|             | Hamcrest         | 1.3          | all, ???                                              | Assertions                  |
+|             | Hamcrest         | 1.3          | ju-junit4, ju-spring-boot, ju-cucumber                | Assertions                  |
 |             | AssertJ          | 3.11.1       | ju-junit5, ju-spring-ju5, ju-spring-boot              | Assertions with Fluent API  |
 | **Mocking** |                  |              |                                                       |                             |
 |             | Mockito          | 2.21.0       | ju-junit4 - ???, ju-junit5, ju-spring-boot            |                             |
