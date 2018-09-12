@@ -4,7 +4,7 @@
 
 	<groupId>com.github.aha.poc.junit</groupId>
 	<artifactId>ju-parent</artifactId>
-	<version>0.3.0</version>
+	<version>1.0</version>
 	<packaging>pom</packaging>
 
 	<description>Parent maven project with definition of used technologies.</description>
@@ -17,19 +17,22 @@
 		
 		<!-- specific JUnit properties -->
 		<junit.version>4.12</junit.version>
-        <junit.jupiter.version>5.0.0-M4</junit.jupiter.version>
-        <junit.vintage.version>4.12.0-M4</junit.vintage.version>
-        <junit.platform.version>1.0.0-M4</junit.platform.version>
+        <junit.jupiter.version>5.3.0</junit.jupiter.version>
+        <junit.platform.version>1.3.0</junit.platform.version>
+        <surefire-plugin>2.22.0</surefire-plugin>
         <!-- other testing properties -->
+        <cucumber.version>3.0.2</cucumber.version>
+		<assertj.version>3.11.1</assertj.version>
 		<hamcrest.version>1.3</hamcrest.version>
-		<mockito.version>2.7.17</mockito.version>
-		<easymock.version>3.4</easymock.version>
-		<powermock.version>1.7.0RC2</powermock.version>
+		<mockito.version>2.21.0</mockito.version>
+		<mockito-extension.version>1.0.2</mockito-extension.version>
+		<easymock.version>3.6</easymock.version>
+		<powermock.version>2.0.0-beta.5</powermock.version>
 		<!-- specific logging properties -->
-        <slf4j.version>1.7.22</slf4j.version>
-        <logback.version>1.1.9</logback.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <logback.version>1.2.3</logback.version>
         <!-- specific Spring properties -->
-        <spring.version>4.3.6.RELEASE</spring.version>
+        <spring.version>5.0.7.RELEASE</spring.version>
 	</properties>
 
 	<dependencyManagement>
@@ -54,6 +57,18 @@
 				<version>${junit.jupiter.version}</version>
 				<scope>test</scope>
 			</dependency>
+			<dependency>
+				<groupId>org.junit.platform</groupId>
+				<artifactId>junit-platform-engine</artifactId>
+				<version>${junit.platform.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.platform</groupId>
+				<artifactId>junit-platform-launcher</artifactId>
+				<version>${junit.platform.version}</version>
+				<scope>test</scope>
+			</dependency>
 			<!-- support for non JUnit5 IDE via @RunWith(JUnitPlatform.class) -->
 			<dependency>
 				<groupId>org.junit.platform</groupId>
@@ -65,11 +80,30 @@
 			<dependency>
 				<groupId>org.junit.vintage</groupId>
 				<artifactId>junit-vintage-engine</artifactId>
-				<version>${junit.vintage.version}</version>
+				<version>${junit.jupiter.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<!-- Cucumber -->
+			<dependency>
+				<groupId>io.cucumber</groupId>
+				<artifactId>cucumber-java8</artifactId>
+				<version>${cucumber.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.cucumber</groupId>
+				<artifactId>cucumber-junit</artifactId>
+				<version>${cucumber.version}</version>
 				<scope>test</scope>
 			</dependency>
 	
 			<!-- other test -->
+			<dependency>
+			    <groupId>org.assertj</groupId>
+			    <artifactId>assertj-core</artifactId>
+			    <version>${assertj.version}</version>
+			    <scope>test</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.hamcrest</groupId>
 				<artifactId>hamcrest-core</artifactId>
@@ -88,6 +122,12 @@
 				<version>${mockito.version}</version>
 				<scope>test</scope>
 			</dependency>
+			<dependency>
+				<groupId>name.falgout.jeffrey.testing.junit5</groupId>
+				<artifactId>mockito-extension</artifactId>
+				<version>${mockito-extension.version}</version>
+				<scope>test</scope>			
+			</dependency>		
 			<dependency>
 				<groupId>org.easymock</groupId>
 				<artifactId>easymock</artifactId>
@@ -146,7 +186,9 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-test</artifactId>
 				<version>${spring.version}</version>
+				<scope>test</scope>
 			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -166,7 +208,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.19.1</version>
+					<version>${surefire-plugin}</version>
 					<configuration>
 						<includes>
 							<include>**/*Test.java</include>

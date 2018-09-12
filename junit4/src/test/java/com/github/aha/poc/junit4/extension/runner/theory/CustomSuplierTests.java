@@ -27,7 +27,6 @@ import org.slf4j.LoggerFactory;
 @RunWith(Theories.class)
 public class CustomSuplierTests {
 	
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(CustomSuplierTests.class);	
 
 	@Retention(RetentionPolicy.RUNTIME)

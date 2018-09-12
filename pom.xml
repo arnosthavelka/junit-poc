@@ -4,7 +4,7 @@
 
 	<groupId>com.github.aha.poc.junit</groupId>
 	<artifactId>junit-poc</artifactId>
-	<version>0.3.0</version>
+	<version>1.0</version>
 	<packaging>pom</packaging>
 
 	<description>Demo project with examples of JUnit usage (including JUnit5 and Spring)</description>
@@ -18,9 +18,10 @@
 		<module>parent</module>
 		<module>junit4</module>
 		<module>junit5</module>
-		<module>spring</module>
-		<!-- it's not a regular module since it shares almost nothing (from the maven setup) -->
-		<module>spring-boot</module>
+		<module>spring-ju4</module>
+		<module>spring-ju5</module>
+		<module>spring-boot</module> <!-- it's not a regular module since it inherits from Spring (and not form JU parent) -->
+		<module>cucumber</module>
 	</modules>
 	
 	<build>

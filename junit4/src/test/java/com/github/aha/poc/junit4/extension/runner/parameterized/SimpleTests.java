@@ -17,7 +17,6 @@ import org.slf4j.LoggerFactory;
 @RunWith(Parameterized.class)
 public class SimpleTests {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(SimpleTests.class);	
 
 	@Parameters

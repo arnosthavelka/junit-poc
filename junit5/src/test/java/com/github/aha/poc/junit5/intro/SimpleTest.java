@@ -10,19 +10,16 @@ import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
 /**
- * The simplest test for JUnit 5. The runner <code>JUnitPlatform</code> is necessary
- * for backward compatibility with STS (IDE).
- *
- * @see http://stackoverflow.com/questions/38402155/eclipse-junit-5-support
+ * The simplest test for JUnit 5. The runner <code>JUnitPlatform</code> can be
+ * used to run tests in JUnit 4.
  */
 @RunWith(JUnitPlatform.class)
 public class SimpleTest {
 	
 	@Test
-	@DisplayName("First real test")
+	@DisplayName("Description of the real test")
 	void firstRealTest(TestInfo testInfo) {
-		assertEquals(2, 1 + 1);
-		assertEquals("First real test", testInfo.getDisplayName(), "Error message");
+		assertEquals("Description of the real test", testInfo.getDisplayName(), "Error message");
 	}
 
 }

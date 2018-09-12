@@ -18,7 +18,6 @@ import com.github.aha.poc.junit4.extension.runner.category.annotation.NoInput;
 @Category(AddOperation.class)
 public class AddTests extends AbstractCalcTests {
 	
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(AddTests.class);	
 
 	@Test

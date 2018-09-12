@@ -17,7 +17,6 @@ import org.slf4j.LoggerFactory;
 @RunWith(Theories.class)
 public class DataPointTests {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(DataPointTests.class);
 
     @DataPoint

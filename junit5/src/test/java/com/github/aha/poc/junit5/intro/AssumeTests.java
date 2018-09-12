@@ -11,15 +11,11 @@ import org.slf4j.LoggerFactory;
 @DisplayName("Usage of assumes in JUnit5")
 public class AssumeTests {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(AssumeTests.class);
 	
 	private static final String OS_KEY = "OS";
-	
 	private static final String OS_WIN = "Windows_NT";
-	
 	private static final String JAVA_KEY = "java.version";
-	
 	private static final String JAVA8 = "1.8";
 	
 	@Test

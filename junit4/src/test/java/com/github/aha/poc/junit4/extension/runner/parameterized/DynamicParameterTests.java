@@ -21,7 +21,6 @@ import com.github.aha.poc.junit4.Fibonacci;
 @RunWith(Parameterized.class)
 public class DynamicParameterTests {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(DynamicParameterTests.class);	
 
 	@Parameters
