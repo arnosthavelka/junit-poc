@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * HATEOAS is not used here, because it's not necessary (for this demo).
  * 
- * @see http://localhost:8080/city/
- * @see http://localhost:8080/city/2
+ * Usage:
+ * <ul>
+ * <li>search - http://localhost:8080/city/</li>
+ * <li>detail - http://localhost:8080/city/2</li>
+ * </ul>
  */
 @RestController
 @RequestMapping("/city")
@@ -21,12 +24,6 @@ public class CityController {
 	@Autowired
 	CityService service;
 
-	/**
-	 * Usage: localhost:8080/hello or http://localhost:8080/hello?name=Arny
-	 * 
-	 * @param name desired user's name
-	 * @return greeting message
-	 */
 	@GetMapping
 	public List<City> list() {
 		return service.getAll();
