@@ -1,5 +1,5 @@
 # junit-poc
-[![Travis Build Status][travis-image]][travis-url-main]
+[![Travis Build Status][travis-image]][travis-url-main] [![sonar-quality-gate][sonar-quality-gate]][sonar-url] [![sonar-coverage][sonar-coverage]][sonar-url] [![sonar-bugs][sonar-bugs]][sonar-url] [![sonar-vulnerabilities][sonar-vulnerabilities]][sonar-url]
 
 This repository holds examples for my book [JUnit 5 - over the border of unit testing](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - za hranice jednotkového testování).
 The main goal is to demonstrate usage of the framework JUnit 5.
@@ -52,3 +52,9 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 
 [travis-url-main]: https://travis-ci.org/arnosthavelka/junit-poc
 [travis-image]: https://travis-ci.org/arnosthavelka/junit-poc.svg?branch=develop
+
+[sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_junit-poc
+[sonar-quality-gate]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_junit-poc&metric=alert_status
+[sonar-coverage]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_junit-poc&metric=coverage
+[sonar-bugs]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_junit-poc&metric=bugs
+[sonar-vulnerabilities]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_junit-poc&metric=vulnerabilities
