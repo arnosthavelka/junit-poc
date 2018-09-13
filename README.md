@@ -1,4 +1,6 @@
 # junit-poc
+[![Travis Build Status][travis-image]][travis-url-main]
+
 This repository holds examples for my book [JUnit 5 - over the border of unit testing](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - za hranice jednotkového testování).
 The main goal is to demonstrate usage of the framework JUnit 5.
 
@@ -47,3 +49,6 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |             | Spring Framework | 5.0.7        | ju-spring-ju4, ju-spring-ju5                          |                             |
 |             | Spring Boot      | 2.0.4        | ju-spring-boot                                        |                             |
 |             | Liquibase        | 3.5.5        | ju-spring-boot                                        | Database management         |
+
+[travis-url]: https://travis-ci.org/arnosthavelka/junit-poc/branches
+[travis-image]: https://travis-ci.org/arnosthavelka/junit-poc.svg?branch=develop
