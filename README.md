@@ -50,5 +50,5 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |             | Spring Boot      | 2.0.4        | ju-spring-boot                                        |                             |
 |             | Liquibase        | 3.5.5        | ju-spring-boot                                        | Database management         |
 
-[travis-url]: https://travis-ci.org/arnosthavelka/junit-poc/branches
+[travis-url-main]: https://travis-ci.org/arnosthavelka/junit-poc
 [travis-image]: https://travis-ci.org/arnosthavelka/junit-poc.svg?branch=develop
