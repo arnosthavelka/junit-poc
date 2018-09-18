@@ -33,7 +33,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 | ----------  | ---------------- | ------------ | ----------------------------------------------------- | --------------------------- |
 | **General** |                  |              |                                                       |                             |
 |             | Maven            | 3.x          | all                                                   | Build                       |
-|             | JDK              | 10.0.2       | all                                                   | Java platform               |
+|             | Java             | 10           | all                                                   | Java platform               |
 |             | SLF4J            | 1.7.25       | all                                                   | Logging                     |
 | **Testing** |                  |              |                                                       |                             |
 |             | JUnit            | 4.12         | ju-junit4, ju-spring-ju4                              | Unit testing                |
