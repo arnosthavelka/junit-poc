@@ -13,6 +13,10 @@
 		<version>1.1-SNAPSHOT</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
+	
+	<properties>
+		<java.release>8</java.release>
+	</properties>
 
 	<dependencies>
 		<!-- JUnit 4 -->

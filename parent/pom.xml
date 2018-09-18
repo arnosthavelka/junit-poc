@@ -15,8 +15,10 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		
 		<!-- compiler properties -->
-		<java.version>10</java.version>
+		<java.release>10</java.release>
 		<maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+		<maven.compiler.source>${java.release}</maven.compiler.source>
+		<maven.compiler.target>${java.release}</maven.compiler.target>
 		
 		<!-- specific JUnit properties -->
 		<junit.version>4.12</junit.version>
@@ -202,11 +204,6 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${maven.compiler.plugin.version}</version>
-					<configuration>
-						<source>${java.version}</source>
-						<target>${java.version}</target>
-						<encoding>${project.build.sourceEncoding}</encoding>
-					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>

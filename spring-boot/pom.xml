@@ -18,10 +18,14 @@
 	</parent>
 
 	<properties>
-		<java.version>10</java.version>
 		<jaxb.version>2.3.0.1</jaxb.version>
 		<maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
 		<snippetsDirectory>${project.build.directory}/generated-snippets</snippetsDirectory>
+		<!-- compiler properties -->
+		<java.release>10</java.release>
+		<maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+		<maven.compiler.source>${java.release}</maven.compiler.source>
+		<maven.compiler.target>${java.release}</maven.compiler.target>
 	</properties>
 
 	<dependencies>
