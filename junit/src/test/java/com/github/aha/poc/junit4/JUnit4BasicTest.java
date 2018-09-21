@@ -36,4 +36,13 @@ public class JUnit4BasicTest {
 		assertThat("hello", not(equalTo("hi")));
 	}
 
+	@Test(expected = ArithmeticException.class)
+	public void exceptionTest() {
+		assertThat(0, is(equalTo(5 / 0)));
+	}
+
+	@Test(timeout = 50)
+	public void timeoutTest() {
+		assertThat(1 + 1, is(equalTo(2)));
+	}
 }
