@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit4.integration.powermock;
+package com.github.aha.poc.junit4;
 
 import static org.easymock.EasyMock.expect;
 import static org.hamcrest.CoreMatchers.equalTo;
