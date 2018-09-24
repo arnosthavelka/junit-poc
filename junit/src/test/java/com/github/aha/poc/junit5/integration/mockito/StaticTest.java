@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 
 import com.github.aha.poc.junit5.integration.Calculator;
 
-public class SimpleTest {
+public class StaticTest {
 
 	static Calculator calc;
 

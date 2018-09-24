@@ -14,7 +14,7 @@ import com.github.aha.poc.junit5.integration.Calculator;
 import name.falgout.jeffrey.testing.junit.mockito.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class MockTest {
+public class AnnotationTest {
 
 	@Test
 	public void mockExample(@Mock Calculator calc) {

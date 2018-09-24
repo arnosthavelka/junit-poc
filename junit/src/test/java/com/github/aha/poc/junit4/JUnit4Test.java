@@ -12,9 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 //@RunWith(JUnit4.class)
-public class JUnit4BasicTest {
+public class JUnit4Test {
 
-	private static final Logger LOG = LoggerFactory.getLogger(JUnit4BasicTest.class);
+	private static final Logger LOG = LoggerFactory.getLogger(JUnit4Test.class);
 
 	@Test
 	public void simpleTest() {
