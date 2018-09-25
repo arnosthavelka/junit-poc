@@ -35,6 +35,7 @@ import org.springframework.web.context.WebApplicationContext;
 @SpringBootTest(webEnvironment = MOCK)
 public class ControllerRestDocsTest {
 
+	private static final String ROOT_PATH = "/cities";
 	private static final long PRAGUE_ID = 1L;
 	private static final String PRAGUE_NAME = "Prague";
 
@@ -43,37 +44,28 @@ public class ControllerRestDocsTest {
 	@BeforeEach
 	public void setUp(WebApplicationContext webApplicationContext, RestDocumentationContextProvider restDocumentation) {
 		this.mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext)
-				.apply(documentationConfiguration(restDocumentation))
-				.build();
+				.apply(documentationConfiguration(restDocumentation)).build();
 	}
 
 	@Test
 	@DisplayName("should list all available cities")
 	void listCities() throws Exception {
-		mvc.perform(get("/city")
-				.contentType(APPLICATION_JSON))
-				.andExpect(status().isOk())
+		mvc.perform(get(ROOT_PATH).contentType(APPLICATION_JSON)).andExpect(status().isOk())
 				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON))
-				.andDo(
-						document("city-list", preprocessRequest(prettyPrint()), preprocessResponse(prettyPrint()),
-								responseHeaders(headerWithName("Content-Type")
-										.description("The Content-Type of the payload, e.g. `application/hal+json`"))));
+				.andDo(document("city-list", preprocessRequest(prettyPrint()), preprocessResponse(prettyPrint()),
+						responseHeaders(headerWithName("Content-Type")
+								.description("The Content-Type of the payload, e.g. `application/hal+json`"))));
 	}
 
 	@Test
 	@DisplayName("should read one city")
 	void getCity() throws Exception {
-		mvc.perform(get("/city/{id}", PRAGUE_ID)
-				.contentType(APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON))
-				.andExpect(jsonPath("id", is(1)))
+		mvc.perform(get(ROOT_PATH + "/{id}", PRAGUE_ID).contentType(APPLICATION_JSON)).andExpect(status().isOk())
+				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON)).andExpect(jsonPath("id", is(1)))
 				.andExpect(jsonPath("name", is(PRAGUE_NAME)))
 				.andDo(document("city-get",
-						pathParameters(
-								parameterWithName("id").description("Identifier of the city")),
-						responseFields(
-								fieldWithPath("id").description("Unique identifier of the city."),
+						pathParameters(parameterWithName("id").description("Identifier of the city")),
+						responseFields(fieldWithPath("id").description("Unique identifier of the city."),
 								fieldWithPath("name").description("Name of the city."),
 								fieldWithPath("country").description("Name of the country the city belong to."))));
 	}
