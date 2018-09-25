@@ -1,7 +1,7 @@
 # junit-poc
 [![Travis Build Status][travis-image]][travis-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url]
 
-This repository holds examples for my book [JUnit 5 - over the border of unit testing](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - za hranice jednotkového testování).
+This repository holds examples for my book [JUnit 5 - Unit testing on Java platform](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - Jednotkové testování na platformě Java).
 The main goal is to demonstrate usage of the framework JUnit 5.
 
 ## Decomposition of projects
@@ -19,25 +19,22 @@ The main goal is to demonstrate usage of the framework JUnit 5.
         1. Parameter resolver
         1. Exception handler
     1. And more
-1. **Framework JUnit 4** - demonstration of all JUnit 4 features used in my theses [Analysis of architecture and extension model of the framework JUnit](https://theses.cz/id/p7ghon) (Analýza architektury a nadstavbových možností frameworku JUnit). Included features are:
-    1. Runners
-    1. Rules
-    1. Validaton
+1. **Framework JUnit 4** - demonstration of basic tests and usage of PowerMock framework. The demonstration of all JUnit 4 features is covered in [release 1.0](https://github.com/arnosthavelka/junit-poc/tree/1.0) and my theses [Analysis of architecture and extension model of the framework JUnit](https://theses.cz/id/p7ghon) (Analýza architektury a nadstavbových možností frameworku JUnit).
 1. **Spring Framework** - some examples of writing Spring tests.
 1. **Spring Boot** - demonstration of writing Spring Boot tests dedicated to each layer (persistence, service and web). This part covers usage of **Spring REST Docs** to generate REST API documentation by the tests. 
 1. **Cucumber** - exploration of writing tests according Behavior-Driven Development (BDD) methodology. The tests are executed by JUnit framework.
 
 ## Used Technologies
 
-| Area        | Tool             | Version      | Project                                               | Description                 |
+| Area        | Tool             | Version      | Project                                          | Description                 |
 | ----------  | ---------------- | ------------ | ------------------------------------------------ | --------------------------- |
 | **General** |                  |              |                                                  |                             |
 |             | Maven            | 3.x          | all                                              | Build                       |
 |             | Java             | 10           | all                                              | Java platform               |
 |             | SLF4J            | 1.7.25       | all                                              | Logging                     |
 | **Testing** |                  |              |                                                  |                             |
-|             | JUnit            | 4.12         | ju-junit                                         | Unit testing                |
-|             | JUnit            | 5.3.1        | ju-junit, ju-spring ju-spring-boot, ju-cucumber  | Unit testing                |
+|             | JUnit            | 4.12         | ju-junit                                         | Unit testing with JUnit4    |
+|             | JUnit            | 5.3.1        | ju-junit, ju-spring ju-spring-boot, ju-cucumber  | Unit testing with JUnit5    |
 |             | Cucumber         | 3.0.2        | ju-cucumber                                      | BDD testing                 |
 |             | Hamcrest         | 1.3          | ju-junit, ju-spring-boot, ju-cucumber            | Assertions                  |
 |             | AssertJ          | 3.11.1       | ju-junit, ju-spring, ju-spring-boot              | Assertions with Fluent API  |
