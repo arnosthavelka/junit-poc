@@ -14,9 +14,9 @@ import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import com.github.aha.poc.junit4.person.Person;
-import com.github.aha.poc.junit4.person.PersonService;
-import com.github.aha.poc.junit4.person.SequenceGenerator;
+import com.github.aha.poc.junit.person.Person;
+import com.github.aha.poc.junit.person.PersonService;
+import com.github.aha.poc.junit.person.SequenceGenerator;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({SequenceGenerator.class, Person.class})
@@ -46,7 +46,7 @@ public class PowerMockTest {
 		expect(personMock.getId()).andReturn(newId);
 		replay(personMock);		
 
-		assertThat(PersonService.addName(personMock), is(equalTo(newId)));
+		assertThat(PersonService.store(personMock), is(equalTo(newId)));
 		
 		verify(personMock);
 	}
