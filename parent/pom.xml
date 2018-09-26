@@ -37,8 +37,10 @@
         <slf4j.version>1.7.25</slf4j.version>
         <logback.version>1.2.3</logback.version>
         <!-- specific dependencies -->
+        <spring-boot.version>2.0.5.RELEASE</spring-boot.version>
         <spring.version>5.0.9.RELEASE</spring.version>
         <lombok.version>1.18.2</lombok.version>
+        <jaxb.version>2.3.0.1</jaxb.version>
 	</properties>
 
 	<dependencyManagement>
@@ -175,26 +177,6 @@
 				<artifactId>logback-core</artifactId>
 				<version>${logback.version}</version>
 			</dependency>
-			
-			<!-- Spring -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context</artifactId>
-				<version>${spring.version}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>commons-logging</artifactId>
-						<groupId>commons-logging</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-test</artifactId>
-				<version>${spring.version}</version>
-				<scope>test</scope>
-			</dependency>
-
 		</dependencies>
 	</dependencyManagement>
 	
