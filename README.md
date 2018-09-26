@@ -26,26 +26,27 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 
 ## Used Technologies
 
-| Area        | Tool             | Version      | Project                                          | Description                 |
-| ----------  | ---------------- | ------------ | ------------------------------------------------ | --------------------------- |
-| **General** |                  |              |                                                  |                             |
-|             | Maven            | 3.x          | all                                              | Build                       |
-|             | Java             | 10           | all                                              | Java platform               |
-|             | SLF4J            | 1.7.25       | all                                              | Logging                     |
-| **Testing** |                  |              |                                                  |                             |
-|             | JUnit            | 4.12         | ju-junit                                         | Unit testing with JUnit4    |
-|             | JUnit            | 5.3.1        | ju-junit, ju-spring ju-spring-boot, ju-cucumber  | Unit testing with JUnit5    |
-|             | Cucumber         | 3.0.2        | ju-cucumber                                      | BDD testing                 |
-|             | Hamcrest         | 1.3          | ju-junit, ju-spring-boot, ju-cucumber            | Assertions                  |
-|             | AssertJ          | 3.11.1       | ju-junit, ju-spring, ju-spring-boot              | Assertions with Fluent API  |
-| **Mocking** |                  |              |                                                  |                             |
-|             | Mockito          | 2.22.0       | ju-junit                                         |                             |
-|             | EasyMock         | 3.6          | ju-junit                                         |                             |
-|             | PowerMock        | 2.0.0-beta.5 | ju-junit                                         | Advanced mocking            |
-| **Others**  |                  |              |                                                  |                             |
-|             | Spring Framework | 5.0.9        | ju-spring                                        |                             |
-|             | Spring Boot      | 2.0.5        | ju-spring-boot                                   |                             |
-|             | Liquibase        | 3.5.5        | ju-spring-boot                                   | Database management         |
+| Area        | Tool             | Version      | Project                                          | Description                    |
+| ----------  | ---------------- | ------------ | ------------------------------------------------ | ------------------------------ |
+| **General** |                  |              |                                                  |                                |
+|             | Maven            | 3.x          | all                                              | Build                          |
+|             | Java             | 10           | all                                              | Java platform                  |
+|             | SLF4J            | 1.7.25       | all                                              | Logging                        |
+|             | Lombok           | 1.18.2       | all                                              | Simplification of Java classes |
+| **Testing** |                  |              |                                                  |                                |
+|             | JUnit            | 4.12         | ju-junit                                         | Unit testing with JUnit4       |
+|             | JUnit            | 5.3.1        | ju-junit, ju-spring ju-spring-boot, ju-cucumber  | Unit testing with JUnit5       |
+|             | Cucumber         | 3.0.2        | ju-cucumber                                      | BDD testing                    |
+|             | Hamcrest         | 1.3          | ju-junit, ju-spring-boot, ju-cucumber            | Assertions                     |
+|             | AssertJ          | 3.11.1       | ju-junit, ju-spring, ju-spring-boot              | Assertions with Fluent API     |
+| **Mocking** |                  |              |                                                  |                                |
+|             | Mockito          | 2.22.0       | ju-junit                                         |                                |
+|             | EasyMock         | 3.6          | ju-junit                                         |                                |
+|             | PowerMock        | 2.0.0-beta.5 | ju-junit                                         | Advanced mocking               |
+| **Others**  |                  |              |                                                  |                                |
+|             | Spring Framework | 5.0.9        | ju-spring                                        |                                |
+|             | Spring Boot      | 2.0.5        | ju-spring-boot                                   |                                |
+|             | Liquibase        | 3.5.5        | ju-spring-boot                                   | Database management            |
 
 [travis-url-main]: https://travis-ci.org/arnosthavelka/junit-poc
 [travis-image]: https://travis-ci.org/arnosthavelka/junit-poc.svg?branch=develop

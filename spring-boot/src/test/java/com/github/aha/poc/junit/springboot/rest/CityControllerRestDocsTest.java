@@ -33,7 +33,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @ExtendWith({ RestDocumentationExtension.class, SpringExtension.class })
 @SpringBootTest(webEnvironment = MOCK)
-public class ControllerRestDocsTest {
+public class CityControllerRestDocsTest {
 
 	private static final String ROOT_PATH = "/cities";
 	private static final long PRAGUE_ID = 1L;
@@ -50,9 +50,12 @@ public class ControllerRestDocsTest {
 	@Test
 	@DisplayName("should list all available cities")
 	void listCities() throws Exception {
-		mvc.perform(get(ROOT_PATH).contentType(APPLICATION_JSON)).andExpect(status().isOk())
+		mvc.perform(get(ROOT_PATH).contentType(APPLICATION_JSON))
+				.andExpect(status().isOk())
 				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON))
-				.andDo(document("city-list", preprocessRequest(prettyPrint()), preprocessResponse(prettyPrint()),
+				.andDo(document("city-list",
+						preprocessRequest(prettyPrint()),
+						preprocessResponse(prettyPrint()),
 						responseHeaders(headerWithName("Content-Type")
 								.description("The Content-Type of the payload, e.g. `application/hal+json`"))));
 	}
