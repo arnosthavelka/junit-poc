@@ -18,7 +18,7 @@ import com.github.aha.poc.junit.springboot.CityService;
 
 @ExtendWith(SpringExtension.class)
 @RestClientTest(CityController.class)
-public class ControllerBeanTest {
+public class CityControllerBeanTest {
 
 	private static final long MADRID_ID = 5L;
 	private static final String MADRID_NAME = "Madrid";
@@ -32,11 +32,12 @@ public class ControllerBeanTest {
 	@Test
 	public void testMadridCity() {
 		// given
-		when(this.service.getItem(MADRID_ID)).thenReturn(new City(5L, MADRID_NAME));
+		when(this.service.getItem(MADRID_ID)).thenReturn(new City(MADRID_ID, MADRID_NAME));
 		// when
 		HttpEntity<CityResource> resource = this.controller.getItem(MADRID_ID);
 		// then
 		CityResource city = resource.getBody();
+		assertThat(city.getId()).isEqualTo(MADRID_ID);
 		assertThat(city.getName()).isEqualTo(MADRID_NAME);
 	}
 

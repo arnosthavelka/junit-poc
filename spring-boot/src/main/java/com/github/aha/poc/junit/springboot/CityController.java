@@ -41,7 +41,7 @@ public class CityController {
 		return new ResponseEntity<>(mapEntity(result), OK);
 	}
 
-	private List<CityResource> toResources(List<City> result) {
+	static List<CityResource> toResources(List<City> result) {
 		return result.stream().map(CityController::mapEntity).collect(toList());
 	}
 

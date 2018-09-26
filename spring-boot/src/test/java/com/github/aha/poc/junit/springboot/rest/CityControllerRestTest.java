@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = MOCK)
 @AutoConfigureMockMvc
-public class ControllerRestTest {
+public class CityControllerRestTest {
 
 	private static final String ROOT_PATH = "/cities";
 	private static final long PRAGUE_ID = 1L;
@@ -32,15 +32,20 @@ public class ControllerRestTest {
 	@Test
 	@DisplayName("should list all available cities")
 	void listCities() throws Exception {
-		mvc.perform(get(ROOT_PATH).contentType(APPLICATION_JSON)).andExpect(status().isOk())
+		mvc.perform(get(ROOT_PATH)
+				.contentType(APPLICATION_JSON))
+				.andExpect(status().isOk())
 				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON));
 	}
 
 	@Test
 	@DisplayName("should read one city")
 	void getCity() throws Exception {
-		mvc.perform(get(ROOT_PATH + "/{id}", PRAGUE_ID).contentType(APPLICATION_JSON)).andExpect(status().isOk())
-				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON)).andExpect(jsonPath("id", is(1)))
+		mvc.perform(get(ROOT_PATH + "/{id}", PRAGUE_ID)
+				.contentType(APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON))
+				.andExpect(jsonPath("id", is(1)))
 				.andExpect(jsonPath("name", is(PRAGUE_NAME)));
 	}
 
