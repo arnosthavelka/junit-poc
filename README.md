@@ -42,8 +42,8 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |             | EasyMock         | 3.6          | ju-junit                               |                                |
 |             | PowerMock        | 2.0.0-beta.5 | ju-junit                               | Advanced mocking               |
 | **Others**  |                  |              |                                        |                                |
-|             | Spring Framework | 5.0.9        | ju-spring-boot                         |                                |
-|             | Spring Boot      | 2.0.5        | ju-spring-boot                         |                                |
+|             | Spring Framework | 5.0.9        | ju-spring-boot                         | Used by Spring Boot            |
+|             | Spring Boot      | 2.0.5        | ju-spring-boot                         | Fast development of production ready applications |
 |             | Liquibase        | 3.5.5        | ju-spring-boot                         | Database management            |
 |             | JAX-B            | 2.3.0.1      | ju-spring-boot                         | XML binding                    |
 
