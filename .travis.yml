@@ -10,11 +10,15 @@ matrix:
     - env: JDK='Oracle JDK 10'
       install: . ./install-jdk.sh -F 10 -L BCL
 # Java 10 "OpenJDK"
-    - env: JDK='OpenJDK 10'
-      install: . ./install-jdk.sh -F 10 -L GPL
+#    - env: JDK='OpenJDK 10'
+#      install: . ./install-jdk.sh -F 10 -L GPL
 
 addons:
   sonarcloud:
     organization: "arnosthavelka-github"
     token:
       secure: "54fa3076368fbec99266fb4e91d0e8dd7436b8ea"
+      
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
