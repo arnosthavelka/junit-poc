@@ -4,6 +4,11 @@
 This repository holds examples for my book [JUnit 5 - Unit testing on Java platform](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - Jednotkové testování na platformě Java).
 The main goal is to demonstrate usage of the framework JUnit 5.
 
+## Pre-requisities
+* JDK 10
+* Maven 3
+* Lombok (installed into IDE)
+
 ## Decomposition of projects
 ![Build model](build-model.png?raw=true "Build model")
 

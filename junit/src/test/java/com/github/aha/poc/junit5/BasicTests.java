@@ -10,14 +10,23 @@ import java.time.LocalDate;
 import java.util.Optional;
 import java.util.Set;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @DisplayName("Basic tests in JUnit5")
+@Slf4j
 public class BasicTests {
 
+	@BeforeEach
+	private void init(TestInfo ti) {
+		log.info("Test {} - {}", ti.getTestMethod().get(), Thread.currentThread().getName());
+	}
+	
 	@Test
 	@DisplayName("show simple assert via JUnit")
 	void simpleJUnitAssert() {
