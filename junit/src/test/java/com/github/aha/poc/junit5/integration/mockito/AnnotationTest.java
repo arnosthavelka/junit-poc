@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 
-import com.github.aha.poc.junit5.integration.Calculator;
+import com.github.aha.poc.junit.Calculator;
 
 import name.falgout.jeffrey.testing.junit.mockito.MockitoExtension;
 

@@ -13,7 +13,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import com.github.aha.poc.junit5.integration.Calculator;
+import com.github.aha.poc.junit.Calculator;
 
 public class StaticTest {
 

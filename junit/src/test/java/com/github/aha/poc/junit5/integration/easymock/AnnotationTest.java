@@ -8,7 +8,7 @@ import static org.easymock.EasyMock.verify;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import com.github.aha.poc.junit5.integration.Calculator;
+import com.github.aha.poc.junit.Calculator;
 
 @ExtendWith(EasyMockExtension.class)
 public class AnnotationTest {

@@ -1,10 +1,11 @@
 package com.github.aha.poc.junit.person;
 
-public class PersonService {
+import static lombok.AccessLevel.PRIVATE;
 
-	private PersonService() {
-		// hide constructor
-	}
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(access = PRIVATE)
+public class PersonService {
 
 	public static int store(Person person) {
 		// pretend to add person somewhere and return person's ID
