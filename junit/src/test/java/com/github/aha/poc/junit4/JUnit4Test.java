@@ -8,24 +8,23 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.extern.slf4j.Slf4j;
 
 //@RunWith(JUnit4.class)
+@Slf4j
 public class JUnit4Test {
-
-	private static final Logger LOG = LoggerFactory.getLogger(JUnit4Test.class);
 
 	@Test
 	public void simpleTest() {
-		LOG.debug("simpleTest");
+		log.debug("simpleTest");
 		assertTrue(true);
 	}
 
 	@Test
 	@Ignore
 	public void disabledTest() {
-		LOG.debug("simpleTest");
+		log.debug("simpleTest");
 		assertThat(true, is(equalTo(true)));
 	}
 

@@ -6,46 +6,45 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class StandardLifeCycleTest extends AbstractLifeCycleTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(StandardLifeCycleTest.class);
-
 	static {
-		LOG.info("[static] class LifeCycleTest initialization ...");
+		log.info("[static] class LifeCycleTest initialization ...");
 	}
 
 	static {
-		LOG.info("[instance] instance initialization ...");
+		log.info("[instance] instance initialization ...");
 	}
 
 	@BeforeAll
 	static void initClassByJunit() {
-		LOG.info("[@BeforeAll] class initialization ...");
+		log.info("[@BeforeAll] class initialization ...");
 	}
 
 	@BeforeEach
 	void initTest() {
-		LOG.info("[@BeforeEach] test preparation ...");
+		log.info("[@BeforeEach] test preparation ...");
 	}
 
 	@Test
 	void firstTest() {
-		LOG.info("first test execution ...");
+		log.info("first test execution ...");
 		assertEquals(2, 1 + 1);
 	}
 
 	@Test
 	void secondTest() {
-		LOG.info("second test execution ...");
+		log.info("second test execution ...");
 		assertEquals(2, 1 + 1);
 	}
 
 	@AfterEach
 	void destroyTest() {
-		LOG.info("[@AfterEach] test destroy ...");
+		log.info("[@AfterEach] test destroy ...");
 		super.destroyTestShared();
 	}
 

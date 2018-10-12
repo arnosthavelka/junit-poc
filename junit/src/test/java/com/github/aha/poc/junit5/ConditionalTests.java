@@ -14,13 +14,12 @@ import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 import org.junit.jupiter.api.condition.EnabledIf;
 import org.junit.jupiter.api.condition.EnabledOnJre;
 import org.junit.jupiter.api.condition.EnabledOnOs;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.extern.slf4j.Slf4j;
 
 @DisplayName("Examples of conditional tests")
+@Slf4j
 public class ConditionalTests {
-
-	private static final Logger LOG = LoggerFactory.getLogger(ConditionalTests.class);
 
 	@Test
 	@EnabledOnOs(WINDOWS)
@@ -52,8 +51,8 @@ public class ConditionalTests {
 	}
 
 	private void showOsProperties() {
-		LOG.info("OS={}", System.getProperty("os.name"));
-		LOG.info("Version={}", System.getProperty("os.version"));
+		log.info("OS={}", System.getProperty("os.name"));
+		log.info("Version={}", System.getProperty("os.version"));
 	}
 
 }

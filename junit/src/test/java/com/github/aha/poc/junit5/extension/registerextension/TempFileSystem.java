@@ -8,21 +8,20 @@ import java.util.Comparator;
 
 import org.junit.jupiter.api.extension.AfterAllCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class TempFileSystem implements AfterAllCallback {
-
-	private static final Logger LOG = LoggerFactory.getLogger(TempFileSystem.class);
 
 	private Path root;
 
 	public TempFileSystem(String subfolder) {
 		try {
 			root = Files.createTempDirectory(subfolder);
-			LOG.info("Folder {} created", root.toString());
+			log.info("Folder {} created", root.toString());
 		} catch (IOException e) {
-			LOG.error("Creation of the temporary folder failed!", e);
+			log.error("Creation of the temporary folder failed!", e);
 		}
 	}
 
@@ -36,7 +35,7 @@ public class TempFileSystem implements AfterAllCallback {
 			.sorted(Comparator.reverseOrder())
 			.map(Path::toFile)
 			.forEach(File::delete);
-		LOG.info("Folder {} deleted", root.toString());
+		log.info("Folder {} deleted", root.toString());
 	}
 
 }

@@ -4,35 +4,34 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public abstract class AbstractLifeCycleTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(AbstractLifeCycleTest.class);
-
 	static {
-		LOG.info("[static] class AbstractLifeCycleTest initialization ...");
+		log.info("[static] class AbstractLifeCycleTest initialization ...");
 	}
 
 	@BeforeAll
 	static void initClassByJunitShared() {
-		LOG.info("[@BeforeAll] class initialization ...");
+		log.info("[@BeforeAll] class initialization ...");
 	}
 
 	@BeforeEach
 	void initTestShared() {
-		LOG.info("[@BeforeEach] abstract test preparation ...");
+		log.info("[@BeforeEach] abstract test preparation ...");
 	}
 
 	@AfterEach
 	void destroyTestShared() {
-		LOG.info("[@AfterEach] abstract test destroy ...");
+		log.info("[@AfterEach] abstract test destroy ...");
 	}
 
 	@AfterAll
 	static void destroyClassByJunitShared() {
-		LOG.info("[@AfterAll] abstract class destroy ...");
+		log.info("[@AfterAll] abstract class destroy ...");
 	}
 
 }

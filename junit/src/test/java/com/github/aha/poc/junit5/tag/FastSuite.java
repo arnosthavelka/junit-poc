@@ -10,12 +10,11 @@ import org.junit.platform.launcher.TestPlan;
 import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder;
 import org.junit.platform.launcher.core.LauncherFactory;
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class FastSuite {
-
-	private static final Logger LOG = LoggerFactory.getLogger(FastSuite.class);
 
 	public static void main(String[] args) {
 		LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request()
@@ -29,9 +28,9 @@ public class FastSuite {
 		// analyze test plan
 		TestPlan testPlan = launcher.discover(request);
 		for (TestIdentifier testIdentifier : testPlan.getRoots()) {
-			LOG.info("Test plan contains {}:", testIdentifier.getUniqueId());
+			log.info("Test plan contains {}:", testIdentifier.getUniqueId());
 			for (TestIdentifier ti : testPlan.getChildren(testIdentifier)) {
-				LOG.info("{}", ti.getDisplayName());
+				log.info("{}", ti.getDisplayName());
 			}
 		}
 

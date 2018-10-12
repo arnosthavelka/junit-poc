@@ -2,29 +2,22 @@ package com.github.aha.poc.junit5.integration.mockito;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.github.aha.poc.junit.Calculator;
 
 public class StaticTest {
 
-	static Calculator calc;
+	private Calculator calc;
 
-	@BeforeAll
-	static void init() {
+	@BeforeEach
+	void init() {
 		calc = mock(Calculator.class);
-	}
-
-	@AfterEach
-	void finish() {
-		reset(calc);
 	}
 
 	@Test

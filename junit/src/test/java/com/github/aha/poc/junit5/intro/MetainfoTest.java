@@ -8,24 +8,23 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.TestReporter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.github.aha.poc.junit5.tag.TagConsts;
 
+import lombok.extern.slf4j.Slf4j;
+
 @DisplayName("A meta-info usage")
+@Slf4j
 public class MetainfoTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(MetainfoTest.class);
-	
 	@Test
 	@DisplayName("show UT meta-info data")
 	@Tag(TagConsts.A)
 	@Tag(TagConsts.FAST)
 	void useTestInfo(TestInfo ti) {
-		LOG.info("Test name={}", ti.getTestMethod().get().getName());
-		LOG.info("Display name={}", ti.getDisplayName());
-		ti.getTags().stream().forEach(t -> LOG.info("\ttag={}", t));
+		log.info("Test name={}", ti.getTestMethod().get().getName());
+		log.info("Display name={}", ti.getDisplayName());
+		ti.getTags().stream().forEach(t -> log.info("\ttag={}", t));
 	}
 
 	@Test

@@ -2,12 +2,11 @@ package com.github.aha.poc.junit5.extension.registerextension;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class RegisterExtensionTest {
-
-	private static final Logger LOG = LoggerFactory.getLogger(RegisterExtensionTest.class);
 
 	@RegisterExtension
 	static TempFileSystem tempFS = new TempFileSystem("ju5-fs-");
@@ -17,13 +16,12 @@ public class RegisterExtensionTest {
 
 	@Test
 	public void test1() {
-		LOG.info("First temporary file={}", tempGenerator.getTempFile());
-
+		log.info("First temporary file={}", tempGenerator.getTempFile());
 	}
 
 	@Test
 	public void test2() {
-		LOG.info("Second temporary file={}", tempGenerator.getTempFile());
+		log.info("Second temporary file={}", tempGenerator.getTempFile());
 
 	}
 

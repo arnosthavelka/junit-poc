@@ -5,13 +5,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class CTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(CTest.class);
-	
 	@Test
 	@DisplayName("Fast A test")
 	void fastAtest() {
@@ -19,12 +18,12 @@ public class CTest {
 	}
 	
 	@Test
-	@DisplayName("Slow A test")
+	@DisplayName("Slow C test")
 	void slowAtest(TestInfo ti) {
-		LOG.info("Test name={}", ti.getTestMethod());
-		LOG.info("Display name={}", ti.getDisplayName());
-		LOG.info("Tags:");
-		ti.getTags().stream().forEach(t -> LOG.info("\ttag={}", t));
+		log.info("Test name={}", ti.getTestMethod());
+		log.info("Display name={}", ti.getDisplayName());
+		log.info("Tags:");
+		ti.getTags().stream().forEach(t -> log.info("\ttag={}", t));
 		assertEquals(2, 1 + 1, () -> "Error message");
 	}
 }

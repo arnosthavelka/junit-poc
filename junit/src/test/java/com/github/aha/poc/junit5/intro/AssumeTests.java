@@ -5,14 +5,13 @@ import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.extern.slf4j.Slf4j;
 
 @DisplayName("Usage of assumes in JUnit5")
+@Slf4j
 public class AssumeTests {
 
-	private static final Logger LOG = LoggerFactory.getLogger(AssumeTests.class);
-	
 	private static final String OS_KEY = "OS";
 	private static final String OS_WIN = "Windows_NT";
 	private static final String JAVA_KEY = "java.version";
@@ -26,7 +25,7 @@ public class AssumeTests {
 	            () -> {
 	                // perform these assertions only on the CI server
 	            	System.getProperties().entrySet().stream().limit(5).forEach(entry -> 
-	            		LOG.info("{}={}", entry.getKey(), entry.getValue()));
+				log.info("{}={}", entry.getKey(), entry.getValue()));
 	            });
 	}
 }

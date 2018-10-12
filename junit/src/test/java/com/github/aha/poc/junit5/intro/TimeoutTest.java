@@ -11,13 +11,12 @@ import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.opentest4j.AssertionFailedError;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class TimeoutTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(TimeoutTest.class);
-	
 	@Test
 	@DisplayName("Standard test without timeout")
 	void standardTest() {
@@ -37,9 +36,9 @@ public class TimeoutTest {
 	            assertEquals(2, 1 + 1);
 	        });
 		});
-		LOG.info("time={} ms", System.currentTimeMillis() - ms);
+		log.info("time={} ms", System.currentTimeMillis() - ms);
 		// exception is not verified here
-		LOG.info(exception.getMessage());
+		log.info(exception.getMessage());
 	}
 
 	@Test
@@ -53,8 +52,8 @@ public class TimeoutTest {
 	            assertEquals(2, 1 + 1);
 	        });
 		});
-		LOG.info("time={} ms", System.currentTimeMillis() - ms);
+		log.info("time={} ms", System.currentTimeMillis() - ms);
 		// exception is not verified here
-		LOG.info(exception.getMessage());
+		log.info(exception.getMessage());
 	}
 }

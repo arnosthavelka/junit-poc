@@ -6,13 +6,12 @@ import java.util.Objects;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.extern.slf4j.Slf4j;
 
 @ExtendWith(IllegalArgumentExceptionHandler.class)
+@Slf4j
 public class ExceptionTest {
-
-	private static final Logger LOG = LoggerFactory.getLogger(ExceptionTest.class);
 
 	@Test
 	void validTest() {
@@ -28,7 +27,7 @@ public class ExceptionTest {
 		if (Objects.isNull(name)) {
 			throw new IllegalArgumentException("Parameter name cannot be empty!");
 		}
-		LOG.trace("name={}", name);
+		log.trace("name={}", name);
 	}
 
 }
