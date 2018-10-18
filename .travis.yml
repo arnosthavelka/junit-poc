@@ -11,8 +11,8 @@ matrix:
 #    - env: JDK='Oracle JDK 10'
 #      install: . ./install-jdk.sh -F 10 -L BCL
 # Java "OpenJDK"
-    - env: JDK='OpenJDK 11'
-      install: . ./install-jdk.sh -F 11 -L GPL
+    - env: JDK='OpenJDK 10'
+      install: . ./install-jdk.sh -F 10 -L GPL
 
 addons:
   sonarcloud:
