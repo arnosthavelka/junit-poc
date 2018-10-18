@@ -7,12 +7,12 @@ before_install:
 
 matrix:
   include:
-# Java 10 "Oracle JDK"
-    - env: JDK='Oracle JDK 10'
-      install: . ./install-jdk.sh -F 10 -L BCL
-# Java 10 "OpenJDK"
-#    - env: JDK='OpenJDK 10'
-#      install: . ./install-jdk.sh -F 10 -L GPL
+# Java "Oracle JDK"
+#    - env: JDK='Oracle JDK 10'
+#      install: . ./install-jdk.sh -F 10 -L BCL
+# Java "OpenJDK"
+    - env: JDK='OpenJDK 10'
+      install: . ./install-jdk.sh -F 10 -L GPL
 
 addons:
   sonarcloud:
