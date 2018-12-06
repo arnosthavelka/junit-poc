@@ -20,24 +20,22 @@
 		<maven.compiler.source>${java.release}</maven.compiler.source>
 		<maven.compiler.target>${java.release}</maven.compiler.target>
 		
-		<!-- specific JUnit properties -->
-        <junit.jupiter.version>5.3.1</junit.jupiter.version>
+        <!-- testing properties -->
+        <junit.jupiter.version>5.3.2</junit.jupiter.version>
         <surefire-plugin>2.22.0</surefire-plugin>
-        <!-- other testing properties -->
-        <cucumber.version>4.0.0</cucumber.version>
+        <cucumber.version>4.2.0</cucumber.version>
 		<assertj.version>3.11.1</assertj.version>
 		<hamcrest.version>1.3</hamcrest.version>
-		<mockito.version>2.22.0</mockito.version>
+		<mockito.version>2.23.4</mockito.version>
 		<mockito-extension.version>1.0.2</mockito-extension.version>
 		<easymock.version>3.6</easymock.version>
-		<powermock.version>2.0.0-beta.5</powermock.version>
+		<powermock.version>2.0.0-RC.4</powermock.version>
 		<!-- specific logging properties -->
         <slf4j.version>1.7.25</slf4j.version>
         <logback.version>1.2.3</logback.version>
         <!-- specific dependencies -->
-        <spring-boot.version>2.0.6.RELEASE</spring-boot.version>
-        <lombok.version>1.18.2</lombok.version>
-        <jaxb.version>2.3.0.1</jaxb.version>
+        <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
+        <lombok.version>1.18.4</lombok.version>
 	</properties>
 
 	<dependencyManagement>
@@ -153,7 +151,7 @@
 				    <artifactId>jgitflow-maven-plugin</artifactId>
 				    <version>1.0-m5.1</version>
 				    <configuration>
-						<!-- Prevents deployments since there's not maven repo -->
+						<!-- Prevents deployments since there's no maven repo -->
 						<noDeploy>true</noDeploy>
 				    </configuration>
 				</plugin>

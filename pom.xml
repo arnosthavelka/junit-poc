@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.aha.poc.junit</groupId>
-	<artifactId>ju-root</artifactId>
+	<artifactId>ju-poc</artifactId>
 	<version>1.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
