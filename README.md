@@ -36,21 +36,20 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |             | Maven            | 3.x          | all                                    | Build                          |
 |             | Java             | 10           | all                                    | Java platform                  |
 |             | SLF4J            | 1.7.25       | all                                    | Logging                        |
-|             | Lombok           | 1.18.2       | all                                    | Simplification of Java classes |
+|             | Lombok           | 1.18.4       | all                                    | Simplification of Java classes |
 | **Testing** |                  |              |                                        |                                |
-|             | JUnit            | 5.3.1        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5       |
-|             | Cucumber         | 4.0.0        | ju-cucumber                            | BDD testing                    |
+|             | JUnit            | 5.3.2        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5       |
+|             | Cucumber         | 4.2.0        | ju-cucumber                            | BDD testing                    |
 |             | Hamcrest         | 1.3          | ju-junit, ju-spring-boot, ju-cucumber  | Assertions                     |
 |             | AssertJ          | 3.11.1       | ju-junit, ju-spring-boot               | Assertions with Fluent API     |
 | **Mocking** |                  |              |                                        |                                |
-|             | Mockito          | 2.22.0       | ju-junit                               |                                |
+|             | Mockito          | 2.23.4       | ju-junit                               |                                |
 |             | EasyMock         | 3.6          | ju-junit                               |                                |
-|             | PowerMock        | 2.0.0-beta.5 | ju-junit                               | Advanced mocking               |
+|             | PowerMock        | 2.0.0-RC.4   | ju-junit                               | Advanced mocking               |
 | **Others**  |                  |              |                                        |                                |
-|             | Spring Framework | 5.0.9        | ju-spring-boot                         | Used by Spring Boot            |
-|             | Spring Boot      | 2.0.6        | ju-spring-boot                         | Fast development of production ready applications |
-|             | Liquibase        | 3.5.5        | ju-spring-boot                         | Database management            |
-|             | JAX-B            | 2.3.0.1      | ju-spring-boot                         | XML binding                    |
+|             | Spring Boot      | 2.1.1        | ju-spring-boot                         | Fast development of production ready applications |
+|             | Liquibase        | by SB        | ju-spring-boot                         | Database management            |
+|             | JAX-B            | by SB        | ju-spring-boot                         | XML binding                    |
 
 [travis-url-main]: https://travis-ci.org/arnosthavelka/junit-poc
 [travis-image]: https://travis-ci.org/arnosthavelka/junit-poc.svg?branch=develop
