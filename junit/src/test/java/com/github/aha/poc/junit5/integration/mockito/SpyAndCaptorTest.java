@@ -11,10 +11,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Spy;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.github.aha.poc.junit.Calculator;
-
-import name.falgout.jeffrey.testing.junit.mockito.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 public class SpyAndCaptorTest {
