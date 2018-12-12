@@ -15,7 +15,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		
 		<!-- compiler properties -->
-		<java.release>10</java.release>
+		<java.release>11</java.release>
 		<maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
 		<maven.compiler.source>${java.release}</maven.compiler.source>
 		<maven.compiler.target>${java.release}</maven.compiler.target>

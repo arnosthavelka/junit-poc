@@ -5,8 +5,8 @@ This repository holds examples for my book [JUnit 5 - Unit testing on Java platf
 The main goal is to demonstrate usage of the framework JUnit 5.
 
 ## Pre-requisities
-* JDK 10
-* Maven 3
+* JDK 11
+* Maven 3.5
 * Lombok (installed into IDE)
 
 ## Decomposition of projects
@@ -33,8 +33,8 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 | Area        | Tool             | Version      | Project                                | Description                    |
 | ----------  | ---------------- | ------------ | -------------------------------------- | ------------------------------ |
 | **General** |                  |              |                                        |                                |
-|             | Maven            | 3.x          | all                                    | Build                          |
-|             | Java             | 10           | all                                    | Java platform                  |
+|             | Maven            | 3.5.x        | all                                    | Build                          |
+|             | Java             | 11           | all                                    | Java platform                  |
 |             | SLF4J            | 1.7.25       | all                                    | Logging                        |
 |             | Lombok           | 1.18.4       | all                                    | Simplification of Java classes |
 | **Testing** |                  |              |                                        |                                |
