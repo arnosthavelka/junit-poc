@@ -14,10 +14,6 @@
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 	
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>io.cucumber</groupId>
