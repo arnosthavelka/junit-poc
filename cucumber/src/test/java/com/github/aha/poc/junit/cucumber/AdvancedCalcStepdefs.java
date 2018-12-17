@@ -21,9 +21,8 @@ public class AdvancedCalcStepdefs {
 		calc = new AdvancedCalculator();
 	}
 
-	@When("use {int} with {word} operation")
-	public void addSingleValue(Integer value, String operationValue) {
-		Operation operation = Operation.valueOf(operationValue);
+	@When("use {int} with {Operation} operation")
+	public void addSingleValue(Integer value, Operation operation) {
 		calc.calculate(operation, value);
 	}
 
