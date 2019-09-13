@@ -5,50 +5,28 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
 @Entity
 @Table(name = "CITY")
+@NoArgsConstructor
+@RequiredArgsConstructor
+@Data
 public class City {
-
-	public City() {
-	}
-
-	public City(Long id, String name) {
-		this.id = id;
-		this.name = name;
-	}
 
 	@Id
 	@Column(name = "ID")
+	@NonNull
 	protected Long id;
 
 	@Column(name = "NAME")
+	@NonNull
 	private String name;
 
 	@Column(name = "COUNTRY")
 	private String country;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
 
 }

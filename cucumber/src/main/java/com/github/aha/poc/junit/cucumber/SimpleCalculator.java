@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleCalculator {
-	
-	private List<Integer> values = new ArrayList<>();
+
+	private List<Integer> values;
 
 	public SimpleCalculator(Integer value) {
 		values = new ArrayList<>();

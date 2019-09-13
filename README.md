@@ -1,6 +1,13 @@
 # junit-poc
-This repository holds examples for my book [JUnit 5 - over the border of unit testing](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - za hranice jednotkového testování).
+[![Travis Build Status][travis-image]][travis-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url]
+
+This repository holds examples for my book [JUnit 5 - Unit testing on Java platform](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - Jednotkové testování na platformě Java).
 The main goal is to demonstrate usage of the framework JUnit 5.
+
+## Pre-requisities
+* JDK 11
+* Maven 3.5
+* Lombok (installed into the IDE)
 
 ## Decomposition of projects
 ![Build model](build-model.png?raw=true "Build model")
@@ -17,33 +24,38 @@ The main goal is to demonstrate usage of the framework JUnit 5.
         1. Parameter resolver
         1. Exception handler
     1. And more
-1. **Framework JUnit 4** - demonstration of all JUnit 4 features used in my theses [Analysis of architecture and extension model of the framework JUnit](https://theses.cz/id/p7ghon) (Analýza architektury a nadstavbových možností frameworku JUnit). Included features are:
-    1. Runners
-    1. Rules
-    1. Validaton
-1. **Spring Framework** - some examples of writing Spring tests.
-1. **Spring Boot** - demonstration of writing Spring Boot tests dedicated to each layer (persistence, service and web). This part covers usage of **Spring REST Docs** to generate REST API documentation by the tests. 
+1. **Framework JUnit 4** - demonstration of basic tests and usage of PowerMock framework. The demonstration of all JUnit 4 features is covered in [release 1.0](https://github.com/arnosthavelka/junit-poc/tree/1.0) and my theses [Analysis of architecture and extension model of the framework JUnit](https://theses.cz/id/p7ghon) (Analýza architektury a nadstavbových možností frameworku JUnit).
+1. **Spring Boot** - demonstration of writing Spring Boot tests (including simple Spring tests example) dedicated to each layer (persistence, service and web). This part covers usage of **Spring REST Docs** to generate REST API documentation by the tests. 
 1. **Cucumber** - exploration of writing tests according Behavior-Driven Development (BDD) methodology. The tests are executed by JUnit framework.
 
 ## Used Technologies
 
-| Area        | Tool             | Version      | Project                                               | Description                 |
-| ----------  | ---------------- | ------------ | ----------------------------------------------------- | --------------------------- |
-| **General** |                  |              |                                                       |                             |
-|             | Maven            | 3.x          | all                                                   | Build                       |
-|             | JDK              | 10.0.2       | all                                                   | Java platform               |
-|             | SLF4J            | 1.7.25       | all                                                   | Logging                     |
-| **Testing** |                  |              |                                                       |                             |
-|             | JUnit            | 4.12         | ju-junit4, ju-spring-ju4                              | Unit testing                |
-|             | JUnit            | 5.3.0        | ju-junit5, ju-spring-ju5, ju-spring-boot, ju-cucumber | Unit testing                |
-|             | Cucumber         | 3.0.2        | ju-cucumber                                           | BDD testing                 |
-|             | Hamcrest         | 1.3          | ju-junit4, ju-spring-boot, ju-cucumber                | Assertions                  |
-|             | AssertJ          | 3.11.1       | ju-junit5, ju-spring-ju5, ju-spring-boot              | Assertions with Fluent API  |
-| **Mocking** |                  |              |                                                       |                             |
-|             | Mockito          | 2.21.0       | ju-junit4 - ???, ju-junit5, ju-spring-boot            |                             |
-|             | EasyMock         | 3.6          | ju-junit4                                             |                             |
-|             | PowerMock        | 2.0.0-beta.5 | ju-junit4                                             | Advanced mocking            |
-| **Others**  |                  |              |                                                       |                             |
-|             | Spring Framework | 5.0.7        | ju-spring-ju4, ju-spring-ju5                          |                             |
-|             | Spring Boot      | 2.0.4        | ju-spring-boot                                        |                             |
-|             | Liquibase        | 3.5.5        | ju-spring-boot                                        | Database management         |
+| Area        | Tool             | Version      | Project                                | Description                    |
+| ----------  | ---------------- | ------------ | -------------------------------------- | ------------------------------ |
+| **General** |                  |              |                                        |                                |
+|             | Maven            | 3.5.x        | all                                    | Build                          |
+|             | Java             | 11           | all                                    | Java platform                  |
+|             | SLF4J            | 1.7.28       | all                                    | Logging                        |
+|             | Lombok           | 1.18.8       | all                                    | Simplification of Java classes |
+| **Testing** |                  |              |                                        |                                |
+|             | JUnit            | 5.5.1        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5       |
+|             | Cucumber         | 4.7.1        | ju-cucumber                            | BDD testing                    |
+|             | Hamcrest         | 1.3          | ju-junit, ju-spring-boot, ju-cucumber  | Assertions                     |
+|             | AssertJ          | 3.13.2       | ju-junit, ju-spring-boot               | Assertions with Fluent API     |
+| **Mocking** |                  |              |                                        |                                |
+|             | Mockito          | 3.0.0        | ju-junit                               |                                |
+|             | EasyMock         | 4.0.2        | ju-junit                               |                                |
+|             | PowerMock        | 2.0.2        | ju-junit                               | Advanced mocking               |
+| **Others**  |                  |              |                                        |                                |
+|             | Spring Boot      | 2.1.7        | ju-spring-boot                         | Fast development of production ready applications |
+|             | Liquibase        | by SB        | ju-spring-boot                         | Database management            |
+|             | JAX-B            | by SB        | ju-spring-boot                         | XML binding                    |
+
+[travis-url-main]: https://travis-ci.org/arnosthavelka/junit-poc
+[travis-image]: https://travis-ci.org/arnosthavelka/junit-poc.svg?branch=develop
+
+[sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_ju-root
+[sonar-quality-gate]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ju-root&metric=alert_status
+[sonar-coverage]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ju-root&metric=coverage
+[sonar-bugs]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ju-root&metric=bugs
+[sonar-vulnerabilities]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ju-root&metric=vulnerabilities
