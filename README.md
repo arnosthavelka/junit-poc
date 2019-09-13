@@ -36,10 +36,10 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |             | Maven            | 3.5.x        | all                                    | Build                          |
 |             | Java             | 11           | all                                    | Java platform                  |
 |             | SLF4J            | 1.7.28       | all                                    | Logging                        |
-|             | Lombok           | 1.18.8       | all                                    | Simplification of Java classes |
+|             | Lombok           | 1.18.10      | all                                    | Simplification of Java classes |
 | **Testing** |                  |              |                                        |                                |
-|             | JUnit            | 5.5.1        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5       |
-|             | Cucumber         | 4.7.1        | ju-cucumber                            | BDD testing                    |
+|             | JUnit            | 5.5.2        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5       |
+|             | Cucumber         | 4.7.2        | ju-cucumber                            | BDD testing                    |
 |             | Hamcrest         | 1.3          | ju-junit, ju-spring-boot, ju-cucumber  | Assertions                     |
 |             | AssertJ          | 3.13.2       | ju-junit, ju-spring-boot               | Assertions with Fluent API     |
 | **Mocking** |                  |              |                                        |                                |
@@ -47,7 +47,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |             | EasyMock         | 4.0.2        | ju-junit                               |                                |
 |             | PowerMock        | 2.0.2        | ju-junit                               | Advanced mocking               |
 | **Others**  |                  |              |                                        |                                |
-|             | Spring Boot      | 2.1.7        | ju-spring-boot                         | Fast development of production ready applications |
+|             | Spring Boot      | 2.1.8        | ju-spring-boot                         | Fast development of production ready applications |
 |             | Liquibase        | by SB        | ju-spring-boot                         | Database management            |
 |             | JAX-B            | by SB        | ju-spring-boot                         | XML binding                    |
 
