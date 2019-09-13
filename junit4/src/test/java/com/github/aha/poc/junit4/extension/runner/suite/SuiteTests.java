@@ -19,7 +19,6 @@ import com.github.aha.poc.junit4.extension.runner.suite.test.MultiplyTests;
 })
 public class SuiteTests {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(SuiteTests.class);
 
 	@Test

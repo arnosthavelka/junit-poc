@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: arnost.havelka
+      changes:
+        - createTable:
+            tableName: city
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: country
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 2
+      author: arnost.havelka
+      changes:
+        - insert:
+            tableName: city
+            columns:
+              - column:
+                  name: name
+                  value: Prague
+              - column:
+                  name: country
+                  value: Czech Republic
+        - insert:
+            tableName: city
+            columns:
+              - column:
+                  name: name
+                  value: London
+              - column:
+                  name: country
+                  value: Great Britain
+        - insert:
+            tableName: city
+            columns:
+              - column:
+                  name: name
+                  value: Paris
+              - column:
+                  name: country
+                  value: France
+        - insert:
+            tableName: city
+            columns:
+              - column:
+                  name: name
+                  value: Berlin
+              - column:
+                  name: country
+                  value: Germany

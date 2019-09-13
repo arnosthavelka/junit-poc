@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 
 public class CTest {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(CTest.class);
 	
 	@Test

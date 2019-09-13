@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 // see http://java.dzone.com/articles/using-junit-test-name
 public class WatcherTests {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(WatcherTests.class);
 	
 	/**

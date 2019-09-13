@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 @Tag(TagConsts.A)
 public class ATest {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(ATest.class);
 	
 	@Test

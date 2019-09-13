@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 
 public class TimeoutTest {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(TimeoutTest.class);
 	
 	@Test

@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 @RunWith(Parameterized.class)
 public class MultiParameterPropertyTests {
 
-	/** Logger. */
 	private static final Logger LOG = LoggerFactory.getLogger(MultiParameterPropertyTests.class);	
 
 	@Parameters
