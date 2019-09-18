@@ -6,10 +6,6 @@ import java.nio.file.Path;
 import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.github.aha.poc.junit5.extension.extendwith.stat.StatExtension;
 
 import lombok.extern.slf4j.Slf4j;
 
