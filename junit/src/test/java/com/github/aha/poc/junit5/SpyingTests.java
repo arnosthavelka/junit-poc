@@ -4,6 +4,7 @@ import static com.github.aha.poc.junit5.SpyingTests.Greeting.GreetingService.WEL
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.reset;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -85,7 +86,8 @@ public class SpyingTests {
 			given(spiedService.add(anyInt())).willReturn(0);
 
 			assertThat(spiedService.add(3)).isEqualTo(0);
-			assertThat(spiedService.add(5)).isEqualTo(0);
+			reset(spiedService);
+			assertThat(spiedService.add(5)).isEqualTo(10);
 		}
 
 		abstract class AbstractCalc<V extends Number> {
