@@ -57,6 +57,15 @@
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-api-easymock</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.skyscreamer</groupId>
+			<artifactId>jsonassert</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>com.jayway.jsonpath</groupId>
+		    <artifactId>json-path</artifactId>
+		    <version>${jsonpath.version}</version>
+		</dependency>
 		
 		<!-- logging -->
 		<dependency>

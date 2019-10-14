@@ -1,6 +1,6 @@
-package com.github.aha.poc.junit5;
+package com.github.aha.poc.junit5.advanced;
 
-import static com.github.aha.poc.junit5.SpyingTests.Greeting.GreetingService.WELCOME;
+import static com.github.aha.poc.junit5.advanced.SpyingTests.Greeting.GreetingService.WELCOME;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.BDDMockito.given;

@@ -30,11 +30,13 @@
 		<mockito.version>3.0.0</mockito.version>
 		<easymock.version>4.0.2</easymock.version>
 		<powermock.version>2.0.2</powermock.version>
+		<jsonassert.version>1.5.0</jsonassert.version>
+		<jsonpath.version>2.4.0</jsonpath.version>
 		<!-- specific logging properties -->
         <slf4j.version>1.7.28</slf4j.version>
         <logback.version>1.2.3</logback.version>
         <!-- specific dependencies -->
-        <spring-boot.version>2.1.8.RELEASE</spring-boot.version>
+        <spring-boot.version>2.1.9.RELEASE</spring-boot.version>
         <lombok.version>1.18.10</lombok.version>
 	</properties>
 
@@ -96,6 +98,12 @@
 				<groupId>org.powermock</groupId>
 				<artifactId>powermock-api-easymock</artifactId>
 				<version>${powermock.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.skyscreamer</groupId>
+				<artifactId>jsonassert</artifactId>
+				<version>${jsonassert.version}</version>
 				<scope>test</scope>
 			</dependency>
 			
