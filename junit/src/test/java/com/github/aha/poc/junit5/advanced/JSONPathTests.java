@@ -1,5 +1,6 @@
 package com.github.aha.poc.junit5.advanced;
 
+import static com.jayway.jsonpath.JsonPath.parse;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.json.JSONException;
@@ -7,7 +8,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.jayway.jsonpath.DocumentContext;
-import com.jayway.jsonpath.JsonPath;
 
 import net.minidev.json.JSONArray;
 
@@ -52,19 +52,36 @@ public class JSONPathTests {
 	@Test
 	@DisplayName("should check length")
 	void lengthCheck() throws JSONException {
-		DocumentContext jsonContext = JsonPath.parse(jsonContent);
+		DocumentContext jsonContext = parse(jsonContent);
 
 		assertThat(jsonContext.<Integer>read("$._embedded.countries.length()")).isEqualTo(4);
 	}
 
 	@Test
-	@DisplayName("should get specific node")
-	void getSpecificNode() throws JSONException {
-		DocumentContext jsonContext = JsonPath.parse(jsonContent);
+	@DisplayName("should get specific node by index")
+	void getSpecificValueByIndex() throws JSONException {
+		DocumentContext jsonContext = parse(jsonContent);
 
 		assertThat(jsonContext.<String>read("$._embedded.countries[3].cities[0]")).isEqualTo("Paris");
+		assertThat(jsonContext.<String>read("$['_embedded']['countries'][1]['cities'][0]")).isEqualTo("Berlin");
+	}
+
+	@Test
+	@DisplayName("should get specific node by country name")
+	void getSpecificValueByName() throws JSONException {
+		DocumentContext jsonContext = parse(jsonContent);
+
 		JSONArray data = jsonContext.read("$._embedded.countries[?(@.name == \"France\")].cities[0]");
 		assertThat(data.get(0)).isEqualTo("Paris");
+	}
+
+	@Test
+	@DisplayName("should count all cities")
+	void countAllCities() throws JSONException {
+		DocumentContext jsonContext = parse(jsonContent);
+
+		JSONArray data = jsonContext.read("$..cities");
+		assertThat(data.stream().map(JSONArray.class::cast).flatMap(x -> x.stream()).count()).isEqualTo(15);
 	}
 
 }
