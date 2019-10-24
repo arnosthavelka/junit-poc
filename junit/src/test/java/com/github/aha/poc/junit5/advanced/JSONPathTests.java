@@ -58,6 +58,14 @@ public class JSONPathTests {
 	DocumentContext jsonContext = parse(jsonContent);
 
 	@Test
+	@DisplayName("should calculate max function")
+	void maxFunction() throws JSONException {
+		Double maxValue = JsonPath.read("{values:[1, 3, 9, 7]}", "$.values.max()");
+
+		assertThat(maxValue).isEqualTo(9);
+	}
+
+	@Test
 	@DisplayName("should get value with dot notation")
 	void useGetValueWithDotNotation() throws JSONException {
 		assertThat(jsonContext.<String>read("$._embedded.countries[3].cities[0]")).isEqualTo("Paris");
