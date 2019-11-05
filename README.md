@@ -34,7 +34,8 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 | ----------    | ---------------- | ------------ | -------------------------------------- | ---------------------------------------- |
 | **General**   |                  |              |                                        |                                          |
 |               | Maven            | 3.5.x        | all                                    | Build                                    |
-|               | Java             | 11           | all                                    | Java platform                            |
+|               | Java             | 11           | all                                    | Language Java                            |
+|               | Kotlin           | 1.3.50       | ju-junit                               | Language Kotlin (for test now)           |
 |               | SLF4J            | 1.7.28       | all                                    | Logging                                  |
 |               | Lombok           | 1.18.10      | all                                    | Simplification of Java classes           |
 | **Testing**   |                  |              |                                        |                                          |
