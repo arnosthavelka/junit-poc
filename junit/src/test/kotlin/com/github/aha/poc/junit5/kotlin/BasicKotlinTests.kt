@@ -1,14 +1,14 @@
 package com.github.aha.poc.junit5.kotlin
 
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Assertions.assertTrue
-import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class BasicKotlinTests {
 
 	@Test
 	fun `simple assert with Kotlin`() {
-		assertEquals(0, 0)
+		assertThat(0).isEqualTo(0);
 	}
 
 	@Test
