@@ -23,7 +23,7 @@ class BasicKotlinTests {
 	}
 
 	@Test
-	fun `3 is equal to 4`() {
+	fun `devide by zero should thorw ArithmeticException exception`() {
 		assertThrows(ArithmeticException::class.java) {
 			5 / 0
 		} 
