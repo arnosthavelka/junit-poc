@@ -35,7 +35,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 | **General**   |                  |              |                                        |                                          |
 |               | Maven            | 3.5.x        | all                                    | Build                                    |
 |               | Java             | 11           | all                                    | Language Java                            |
-|               | Kotlin           | 1.3.50       | ju-junit                               | Language Kotlin (for test now)           |
+|               | Kotlin           | 1.3.61       | ju-junit                               | Language Kotlin (for test now)           |
 |               | SLF4J            | 1.7.28       | all                                    | Logging                                  |
 |               | Lombok           | 1.18.10      | all                                    | Simplification of Java classes           |
 | **Testing**   |                  |              |                                        |                                          |
@@ -47,11 +47,11 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | JSONAssert       | 1.5.0        | ju-junit                               | Assertions for JSON                      |
 |               | JSONPath         | 2.4.0        | ju-junit                               | Assertions for JSON (used also by Spring |
 | **Mocking**   |                  |              |                                        |                                          |
-|               | Mockito          | 3.1.0        | ju-junit                               |                                          |
-|               | EasyMock         | 4.0.2        | ju-junit                               |                                          |
+|               | Mockito          | 3.2.0        | ju-junit                               |                                          |
+|               | EasyMock         | 4.1          | ju-junit                               |                                          |
 |               | PowerMock        | 2.0.4        | ju-junit                               | Advanced mocking                         |
 | **Others**    |                  |              |                                        |                                          |
-|               | Spring Boot      | 2.2.0        | ju-spring-boot                         | Fast development of production ready applications |
+|               | Spring Boot      | 2.2.1        | ju-spring-boot                         | Fast development of production ready applications |
 |               | Liquibase        | by SB        | ju-spring-boot                         | Database management                      |
 |               | JAX-B            | by SB        | ju-spring-boot                         | XML binding                              |
 
