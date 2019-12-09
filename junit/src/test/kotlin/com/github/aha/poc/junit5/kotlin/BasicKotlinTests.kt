@@ -23,10 +23,11 @@ class BasicKotlinTests {
 	}
 
 	@Test
-	fun `devide by zero should thorw ArithmeticException exception`() {
-		assertThrows(ArithmeticException::class.java) {
+	fun `devide by zero should throw ArithmeticException exception`() {
+		val exception = assertThrows(ArithmeticException::class.java) {
 			5 / 0
-		} 
+		}
+		assertThat(exception.getLocalizedMessage()).isEqualTo("/ by zero")
 	}
 
 }
