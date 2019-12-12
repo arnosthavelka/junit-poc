@@ -61,6 +61,12 @@
 			<groupId>org.springframework.restdocs</groupId>
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
+			<version>${spring-cloud.version}</version>
+			<scope>test</scope>
+		</dependency>
 		<!-- persistence -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -87,6 +93,34 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot.version}</version>
+			</plugin>
+			<plugin>
+			    <groupId>org.springframework.cloud</groupId>
+			    <artifactId>spring-cloud-contract-maven-plugin</artifactId>
+			    <version>${spring-cloud.version}</version>
+			    <extensions>true</extensions>
+	            <configuration>
+	                <baseClassForTests>com.github.aha.poc.junit.springboot.AbstractContractTest</baseClassForTests> 
+	                <testFramework>JUNIT5</testFramework> 
+	            </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-test-source</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>add-test-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<directory>${project.build.directory}/generated-test-sources/contracts</directory>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.asciidoctor</groupId>
