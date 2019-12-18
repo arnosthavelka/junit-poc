@@ -1,0 +1,11 @@
+request:
+  method: GET
+  url: /cities/2
+response:
+  status: 200
+  body:
+    id: 2
+    name: "London"
+    country: "Great Britain"
+  headers:
+    Content-Type: application/json
