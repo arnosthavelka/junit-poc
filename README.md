@@ -30,7 +30,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 
 ## Used Technologies
 
-| Area          | Tool                  | Version      | Project                                | Description                              |
+| Area          | Tool                  | Version      | Project                                | Description / Usage                      |
 | ----------    | --------------------- | ------------ | -------------------------------------- | ---------------------------------------- |
 | **General**   |                       |              |                                        |                                          |
 |               | Maven                 | 3.5.x        | all                                    | Build                                    |
@@ -47,6 +47,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | AssertJ               | 3.14.0       | ju-junit, ju-spring-boot               | Assertions with Fluent API               |
 |               | JSONAssert            | 1.5.0        | ju-junit                               | Assertions for JSON                      |
 |               | JSONPath              | 2.4.0        | ju-junit                               | Assertions for JSON (used also by Spring |
+|               | Rest Assured          | 4.1.2        | ju-spring-boot                         | Assertions for REST service              |
 | **Mocking**   |                       |              |                                        |                                          |
 |               | Mockito               | 3.2.0        | ju-junit                               |                                          |
 |               | EasyMock              | 4.1          | ju-junit                               |                                          |

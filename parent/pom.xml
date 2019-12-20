@@ -34,6 +34,7 @@
 		<powermock.version>2.0.4</powermock.version>
 		<jsonassert.version>1.5.0</jsonassert.version>
 		<jsonpath.version>2.4.0</jsonpath.version>
+		<rest-assured.version>4.1.2</rest-assured.version>
 		<!-- specific logging properties -->
         <slf4j.version>1.7.28</slf4j.version>
         <logback.version>1.2.3</logback.version>
@@ -107,6 +108,18 @@
 				<groupId>org.skyscreamer</groupId>
 				<artifactId>jsonassert</artifactId>
 				<version>${jsonassert.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.rest-assured</groupId>
+				<artifactId>rest-assured-all</artifactId>
+				<version>${rest-assured.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.rest-assured</groupId>
+				<artifactId>spring-mock-mvc</artifactId>
+				<version>${rest-assured.version}</version>
 				<scope>test</scope>
 			</dependency>
 			
