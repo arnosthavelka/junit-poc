@@ -23,10 +23,12 @@ The main goal is to demonstrate usage of the framework JUnit 5.
         1. Declarative and programmatic registration
         1. Parameter resolver
         1. Exception handler
+    1. Usage of Kotlin
     1. And more
 1. **Framework JUnit 4** - demonstration of basic tests and usage of PowerMock framework. The demonstration of all JUnit 4 features is covered in [release 1.0](https://github.com/arnosthavelka/junit-poc/tree/1.0) and my theses [Analysis of architecture and extension model of the framework JUnit](https://theses.cz/id/p7ghon) (Analýza architektury a nadstavbových možností frameworku JUnit).
 1. **Spring Boot** - demonstration of writing Spring Boot tests (including simple Spring tests example) dedicated to each layer (persistence, service and web). This part covers usage of **Spring REST Docs** to generate REST API documentation by the tests. 
 1. **Cucumber** - exploration of writing tests according Behavior-Driven Development (BDD) methodology. The tests are executed by JUnit framework.
+1. **REST testing** - demonstration of test for REST services (Spring Cloud Contract or REST Assured) or JSON content itself (JSONAssert or JSONPath).
 
 ## Used Technologies
 
