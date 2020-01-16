@@ -4,6 +4,8 @@ import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.mockito.Mockito.when;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.MOCK;
+import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -37,6 +39,7 @@ public class CityControllerRestAssuredSingleTest {
 			.get(ROOT_PATH + "/{id}", PRAGUE_ID)
 		.then()
 			.statusCode(200)
+			.assertThat().header(CONTENT_TYPE, APPLICATION_JSON_VALUE)
 			.assertThat().body("id", equalTo(999))
 			.assertThat().body("name", equalTo("Tokyo"));
 	}
