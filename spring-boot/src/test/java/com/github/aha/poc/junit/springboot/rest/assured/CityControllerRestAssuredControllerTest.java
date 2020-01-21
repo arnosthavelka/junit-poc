@@ -18,7 +18,7 @@ import com.github.aha.poc.junit.springboot.CityController;
 import com.github.aha.poc.junit.springboot.CityService;
 
 @SpringBootTest(webEnvironment = MOCK, classes = CityController.class)
-public class CityControllerRestAssuredSingleTest {
+public class CityControllerRestAssuredControllerTest {
 
 	private static final String ROOT_PATH = "/cities";
 	private static final long PRAGUE_ID = 1L;
