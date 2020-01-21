@@ -64,7 +64,7 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
-			<version>${spring-cloud.version}</version>
+			<version>${spring-cloud-contract.version}</version>
 			<scope>test</scope>
 			<exclusions>
 				<exclusion>
@@ -111,7 +111,7 @@
 			<plugin>
 			    <groupId>org.springframework.cloud</groupId>
 			    <artifactId>spring-cloud-contract-maven-plugin</artifactId>
-			    <version>${spring-cloud.version}</version>
+			    <version>${spring-cloud-contract.version}</version>
 			    <extensions>true</extensions>
 	            <configuration>
 	                <baseClassForTests>com.github.aha.poc.junit.springboot.AbstractContractTest</baseClassForTests> 
