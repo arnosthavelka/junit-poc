@@ -44,7 +44,7 @@ public class CityControllerRestAssuredMvcTest {
 		given()
 			.mockMvc(mvc)
 		.when()
-			.get(ROOT_PATH + "")
+				.get(ROOT_PATH)
 		.then()
 		/* expected response: 
 		 {

@@ -61,7 +61,7 @@ public class CityControllerRestAssuredControllerTest {
 		given()
 			.standaloneSetup(controller)
 		.when()
-			.get(ROOT_PATH + "")
+				.get(ROOT_PATH)
 		.then()
 		/* expected response:
 		 {
@@ -87,7 +87,7 @@ public class CityControllerRestAssuredControllerTest {
 	void listCitiesWithConversion() {
 		List<City> cities = asList(buildCity(111L, "Prague"), buildCity(222L, "Madrid"), buildCity(999L, "Tokyo"));
 		when(service.getAll()).thenReturn(cities);
-		MockMvcResponse response = given().standaloneSetup(controller).when().get(ROOT_PATH + "").then().extract()
+		MockMvcResponse response = given().standaloneSetup(controller).when().get(ROOT_PATH).then().extract()
 				.response();
 //		CityResource[] content = response.getBody().as(CityResource[].class);
 		assertThat(3).isEqualTo(3);
