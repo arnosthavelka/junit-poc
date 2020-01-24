@@ -35,6 +35,7 @@
 		<jsonassert.version>1.5.0</jsonassert.version>
 		<jsonpath.version>2.4.0</jsonpath.version>
 		<rest-assured.version>4.1.2</rest-assured.version>
+		<evo-inflector.version>1.2.2</evo-inflector.version>
 		<!-- specific logging properties -->
         <slf4j.version>1.7.30</slf4j.version>
         <logback.version>1.2.3</logback.version>

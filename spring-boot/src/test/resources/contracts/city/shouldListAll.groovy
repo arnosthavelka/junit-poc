@@ -9,7 +9,7 @@ Contract.make {
         status 200
         body(
                 _embedded : [
-                    cityResourceList : [
+                    cityResources : [
                         [
                             id: 1,
                             name : 'Prague',

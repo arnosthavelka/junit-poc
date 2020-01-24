@@ -44,12 +44,12 @@ public class CityControllerRestAssuredMvcTest {
 		given()
 			.mockMvc(mvc)
 		.when()
-			.get(ROOT_PATH + "")
+				.get(ROOT_PATH)
 		.then()
 		/* expected response: 
 		 {
 		 	"_embedded":{
-		 		"cityResourceList":[
+		 		"cityResources":[
 		 			{"id":1,"name":"Prague","country":"Czech Republic"},
 		 			{"id":2,"name":"London","country":"Great Britain"},
 		 			{"id":3,"name":"Paris","country":"France"},
@@ -60,10 +60,10 @@ public class CityControllerRestAssuredMvcTest {
 			.statusCode(200)
 			.assertThat().header(CONTENT_TYPE, APPLICATION_JSON_VALUE)
 			.assertThat().body(
-						"_embedded.cityResourceList.size()", is(4),
-						"_embedded.cityResourceList[2].id", equalTo(3),
-						"_embedded.cityResourceList[2].name", equalTo("Paris"),
-						"_embedded.cityResourceList[2].country", equalTo("France"));
+						"_embedded.cityResources.size()", is(4),
+						"_embedded.cityResources[2].id", equalTo(3),
+						"_embedded.cityResources[2].name", equalTo("Paris"),
+						"_embedded.cityResources[2].country", equalTo("France"));
 
 	}
 }
