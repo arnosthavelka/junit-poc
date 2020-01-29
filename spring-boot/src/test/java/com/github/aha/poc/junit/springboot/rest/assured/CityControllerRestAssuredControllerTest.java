@@ -15,6 +15,10 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 
 import java.util.List;
 
+<<<<<<< HEAD
+=======
+import org.junit.jupiter.api.Disabled;
+>>>>>>> branch 'develop' of https://github.com/arnosthavelka/junit-poc
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
