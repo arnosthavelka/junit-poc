@@ -104,7 +104,7 @@ public class CityControllerRestAssuredControllerTest {
 		/* expected response: 
 		 {
 		 	"_embedded":{
-		 		"cityResourceList":[
+		 		"cityResources":[
 		 			{"id":111,"name":"Prague","country":null},
 		 			{"id":222,"name":"Madrid","country":null},
 		 			{"id":999,"name":"Tokyo","country":null}
