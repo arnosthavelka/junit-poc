@@ -87,6 +87,11 @@
 		    <version>${evo-inflector.version}</version>
 		    <scope>test</scope>
 		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.module</groupId>
+		    <artifactId>jackson-module-jaxb-annotations</artifactId> <!-- needed for extraction in  REST-assured tests -->
+		    <scope>test</scope>
+		</dependency>
 		<!-- persistence -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

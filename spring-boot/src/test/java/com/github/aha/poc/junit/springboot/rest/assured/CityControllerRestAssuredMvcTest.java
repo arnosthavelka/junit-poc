@@ -1,8 +1,10 @@
 package com.github.aha.poc.junit.springboot.rest.assured;
 
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
+import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.lessThan;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.MOCK;
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -43,20 +45,11 @@ public class CityControllerRestAssuredMvcTest {
 	void listCities() {
 		given()
 			.mockMvc(mvc)
+			.log().all()
 		.when()
-				.get(ROOT_PATH)
+			.get(ROOT_PATH)
 		.then()
-		/* expected response: 
-		 {
-		 	"_embedded":{
-		 		"cityResources":[
-		 			{"id":1,"name":"Prague","country":"Czech Republic"},
-		 			{"id":2,"name":"London","country":"Great Britain"},
-		 			{"id":3,"name":"Paris","country":"France"},
-		 			{"id":4,"name":"Berlin","country":"Germany"}
-	 			]
- 			}
-		} */
+			.log().body()
 			.statusCode(200)
 			.assertThat().header(CONTENT_TYPE, APPLICATION_JSON_VALUE)
 			.assertThat().body(
@@ -64,6 +57,18 @@ public class CityControllerRestAssuredMvcTest {
 						"_embedded.cityResources[2].id", equalTo(3),
 						"_embedded.cityResources[2].name", equalTo("Paris"),
 						"_embedded.cityResources[2].country", equalTo("France"));
+
+	}
+
+	@Test
+	@DisplayName("should run list cities under 1s")
+	void measurePerformanceOfListCities() {
+		given()
+			.mockMvc(mvc)
+		.when()
+			.get(ROOT_PATH)
+		.then()
+			.time(lessThan(1L), SECONDS);
 
 	}
 }
