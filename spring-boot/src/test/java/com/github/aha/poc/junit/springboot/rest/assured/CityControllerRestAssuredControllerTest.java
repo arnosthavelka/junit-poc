@@ -4,12 +4,14 @@ import static com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyMap;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.MOCK;
 import static org.springframework.hateoas.mediatype.MessageResolver.DEFAULTS_ONLY;
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
+import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
@@ -33,7 +35,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.StdDateFormat;
 import com.github.aha.poc.junit.springboot.City;
 import com.github.aha.poc.junit.springboot.CityController;
+import com.github.aha.poc.junit.springboot.CityResource;
 import com.github.aha.poc.junit.springboot.CityService;
+
+import io.restassured.module.mockmvc.response.MockMvcResponse;
+import io.restassured.response.ExtractableResponse;
 
 @SpringBootTest(webEnvironment = MOCK, classes = CityController.class)
 public class CityControllerRestAssuredControllerTest {
@@ -57,12 +63,47 @@ public class CityControllerRestAssuredControllerTest {
 			.get(ROOT_PATH + "/{id}", PRAGUE_ID)
 		.then()
 			.statusCode(200)
-			.assertThat().header(CONTENT_TYPE, APPLICATION_JSON_VALUE)
+				.assertThat().header(CONTENT_TYPE, APPLICATION_JSON_VALUE)
 			.assertThat().content(
 					"id", equalTo(999),
 					"name", equalTo("Tokyo"));
 	}
 
+	@Test
+	@DisplayName("should read one city and retrieve the complete response")
+	void getCityAndRetriveCompleteResponse() {
+		when(service.getItem(PRAGUE_ID)).thenReturn(buildCity(123L, "Moscow"));
+		ExtractableResponse<MockMvcResponse> response =
+		given()
+			.standaloneSetup(controller)
+		.when()
+			.get(ROOT_PATH + "/{id}", PRAGUE_ID)
+		.then()
+			.extract();
+
+		assertThat(response.statusCode()).isEqualTo(OK.value());
+		assertThat(response.header(CONTENT_TYPE)).isEqualTo(APPLICATION_JSON_VALUE);
+		CityResource cityResource = response.body().as(CityResource.class);
+		assertThat(cityResource.getId()).isEqualTo(123);
+		assertThat(cityResource.getName()).isEqualTo("Moscow");
+	}
+	
+	@Test
+	@DisplayName("should read one city and retrieve the city resource")
+	void getCityAndRetriveDirectCity() {
+		when(service.getItem(PRAGUE_ID)).thenReturn(buildCity(456L, "Sydney"));
+
+		CityResource cityResource = given()
+			.standaloneSetup(controller)
+		.when()
+			.get(ROOT_PATH + "/{id}", PRAGUE_ID)
+		.then()
+			.extract().as(CityResource.class);
+
+		assertThat(cityResource.getId()).isEqualTo(456);
+		assertThat(cityResource.getName()).isEqualTo("Sydney");
+	}
+	
 	@Test
 	@DisplayName("should list cities without HATEOAS conversion")
 	void listCitiesWithoutConversion() {
