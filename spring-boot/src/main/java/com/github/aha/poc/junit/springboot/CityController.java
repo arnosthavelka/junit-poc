@@ -7,7 +7,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.hateoas.Resources;
+import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,9 +30,9 @@ public class CityController {
 	CityService service;
 
 	@GetMapping
-	public HttpEntity<Resources<CityResource>> list() {
+	public HttpEntity<CollectionModel<CityResource>> list() { // CollectionModel is replacement for Resources
 		List<City> result = service.getAll();
-		return new ResponseEntity<>(new Resources<>(toResources(result)), OK);
+		return new ResponseEntity<>(new CollectionModel<>(toResources(result)), OK);
 	}
 
 	@GetMapping("/{id}")

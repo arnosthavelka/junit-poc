@@ -1,6 +1,6 @@
 package com.github.aha.poc.junit;
 
-import java.util.Arrays;
+import static java.util.Arrays.stream;
 
 public class Calculator {
 
@@ -8,10 +8,10 @@ public class Calculator {
 		if (values.length == 0) {
 			throw new IllegalArgumentException("No input argument");
 		}
-		return Arrays.stream(values).sum();
+		return stream(values).sum();
 	}
 
 	public int multiply(int... values) {
-		return values.length == 0 ? 0 : Arrays.stream(values).reduce(1, (a1, a2) -> a1 * a2);
+		return values.length == 0 ? 0 : stream(values).reduce(1, (a1, a2) -> a1 * a2);
 	}
 }

@@ -1,8 +1,10 @@
 package com.github.aha.poc.junit.springboot;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class CityResource {
 
 	public CityResource(City entity) {

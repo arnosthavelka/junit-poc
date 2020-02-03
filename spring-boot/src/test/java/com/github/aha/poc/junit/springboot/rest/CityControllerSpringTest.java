@@ -10,17 +10,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = MOCK)
 @AutoConfigureMockMvc
-public class CityControllerRestTest {
+public class CityControllerSpringTest {
 
 	private static final String ROOT_PATH = "/cities";
 	private static final long PRAGUE_ID = 1L;

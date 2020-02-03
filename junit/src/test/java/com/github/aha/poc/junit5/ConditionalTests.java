@@ -11,7 +11,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
-import org.junit.jupiter.api.condition.EnabledIf;
 import org.junit.jupiter.api.condition.EnabledOnJre;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 
@@ -40,13 +39,6 @@ public class ConditionalTests {
 	@EnabledOnJre({ JAVA_8, JAVA_10, JAVA_11, OTHER })
 	@DisplayName("enable test on JDK 9 only")
 	void testForJdk9(TestInfo testInfo) {
-		assertThat(true).isTrue();
-	}
-
-	@Test
-	@EnabledIf("java.time.LocalDate.now().getDayOfWeek().getValue() == 6")
-	@DisplayName("enable test on Saturday")
-	public void testOnSaturdayOnly() {
 		assertThat(true).isTrue();
 	}
 

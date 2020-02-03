@@ -8,8 +8,8 @@ import java.util.Locale;
 
 import com.github.aha.poc.junit.cucumber.AdvancedCalculator.Operation;
 
-import cucumber.api.TypeRegistry;
-import cucumber.api.TypeRegistryConfigurer;
+import io.cucumber.core.api.TypeRegistry;
+import io.cucumber.core.api.TypeRegistryConfigurer;
 import io.cucumber.cucumberexpressions.ParameterType;
 
 public class TypeRegistryConfiguration implements TypeRegistryConfigurer {

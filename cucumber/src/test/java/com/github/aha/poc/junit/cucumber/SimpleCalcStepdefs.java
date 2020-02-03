@@ -4,7 +4,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import cucumber.api.java8.Cs;
+import io.cucumber.java8.Cs;
 
 public class SimpleCalcStepdefs implements Cs {
 

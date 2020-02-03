@@ -1,4 +1,4 @@
-package com.github.aha.poc.junit5;
+package com.github.aha.poc.junit5.advanced;
 
 import static java.util.List.of;
 import static org.assertj.core.api.Assertions.assertThat;
