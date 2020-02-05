@@ -71,7 +71,19 @@
 					<groupId>com.sun.xml.bind</groupId>
 					<artifactId>jaxb-osgi</artifactId>
 				</exclusion>
+				<exclusion>
+					<groupId>io.rest-assured</groupId>
+					<artifactId>rest-assured</artifactId>
+				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured-common</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.rest-assured</groupId>
