@@ -34,7 +34,7 @@
 		<powermock.version>2.0.4</powermock.version>
 		<jsonassert.version>1.5.0</jsonassert.version>
 		<jsonpath.version>2.4.0</jsonpath.version>
-		<rest-assured.version>4.1.2</rest-assured.version>
+		<rest-assured.version>4.2.0</rest-assured.version>
 		<evo-inflector.version>1.2.2</evo-inflector.version>
 		<!-- specific logging properties -->
         <slf4j.version>1.7.30</slf4j.version>
@@ -113,6 +113,18 @@
 			</dependency>
 			<dependency>
 				<groupId>io.rest-assured</groupId>
+				<artifactId>rest-assured</artifactId>
+				<version>${rest-assured.version}</version>
+				<scope>test</scope>
+			</dependency>
+<!-- 			<dependency> -->
+<!-- 				<groupId>io.rest-assured</groupId> -->
+<!-- 				<artifactId>rest-assured-common</artifactId> TODO -->
+<!-- 				<version>${rest-assured.version}</version> -->
+<!-- 				<scope>test</scope> -->
+<!-- 			</dependency> -->
+			<dependency>
+				<groupId>io.rest-assured</groupId>
 				<artifactId>rest-assured-all</artifactId>
 				<version>${rest-assured.version}</version>
 				<scope>test</scope>
@@ -122,6 +134,12 @@
 				<artifactId>spring-mock-mvc</artifactId>
 				<version>${rest-assured.version}</version>
 				<scope>test</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>io.rest-assured</groupId>
+						<artifactId>rest-assured</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			
 			<!-- logging -->

@@ -64,7 +64,7 @@ public class CityControllerRestAssuredControllerTest {
 		.then()
 			.statusCode(200)
 				.assertThat().header(CONTENT_TYPE, APPLICATION_JSON_VALUE)
-			.assertThat().content(
+				.assertThat().body(
 					"id", equalTo(999),
 					"name", equalTo("Tokyo"));
 	}
