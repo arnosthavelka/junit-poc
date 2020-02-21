@@ -41,7 +41,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | SLF4J                 | 1.7.30       | all                                    | Logging                                  |
 |               | Lombok                | 1.18.10      | all                                    | Simplification of Java classes           |
 | **Testing**   |                       |              |                                        |                                          |
-|               | JUnit                 | 5.5.2        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5                 |
+|               | JUnit                 | 5.6.0        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5                 |
 |               | Cucumber              | 4.8.0        | ju-cucumber                            | BDD testing                              |
 |               | Spring Cloud Contract | 2.2.1        | ju-spring-boot                         | Contract / specification for REST services  |
 | **Asserting** |                       |              |                                        |                                          |
@@ -49,7 +49,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | AssertJ               | 3.14.0       | ju-junit, ju-spring-boot               | Assertions with Fluent API               |
 |               | JSONAssert            | 1.5.0        | ju-junit                               | Assertions for JSON                      |
 |               | JSONPath              | 2.4.0        | ju-junit                               | Assertions for JSON (used also by Spring |
-|               | Rest Assured          | 4.1.2        | ju-spring-boot                         | Assertions for REST service              |
+|               | Rest Assured          | 4.2.0        | ju-spring-boot                         | Assertions for REST service              |
 | **Mocking**   |                       |              |                                        |                                          |
 |               | Mockito               | 3.2.4        | ju-junit                               |                                          |
 |               | EasyMock              | 4.1          | ju-junit                               |                                          |
