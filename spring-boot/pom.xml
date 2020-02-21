@@ -81,10 +81,6 @@
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>io.rest-assured</groupId> -->
-<!-- 			<artifactId>rest-assured-common</artifactId> -->
-<!-- 		</dependency> -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured-all</artifactId> <!-- all is needed due to JDK11 -->
@@ -93,20 +89,19 @@
 			<groupId>io.rest-assured</groupId>
 			<artifactId>spring-mock-mvc</artifactId>
 		</dependency>
-            <!--Added required depeendencies due to : https://github.com/rest-assured/rest-assured/issues/1168 -->
-            <dependency>
-                <groupId>io.rest-assured</groupId>
-                <artifactId>rest-assured-common</artifactId>
-                <version>${rest-assured.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.rest-assured</groupId>
-                <artifactId>json-path</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>io.rest-assured</groupId>
-                <artifactId>xml-path</artifactId>
-            </dependency>
+            <!--Added required dependencies due to : https://github.com/rest-assured/rest-assured/issues/1168 -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured-common</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-path</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>xml-path</artifactId>
+        </dependency>
 		<dependency>
 		    <groupId>org.atteo</groupId>
 		    <artifactId>evo-inflector</artifactId> <!-- needed for HAL conversion in controller tests -->
