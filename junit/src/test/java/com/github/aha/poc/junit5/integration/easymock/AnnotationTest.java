@@ -5,6 +5,7 @@ import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 
+import org.easymock.Mock;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -13,8 +14,8 @@ import com.github.aha.poc.junit.Calculator;
 @ExtendWith(EasyMockExtension.class)
 public class AnnotationTest {
 
-	@org.easymock.Mock
-	private Calculator calc;
+	@Mock
+	Calculator calc;
 
 	@Test
 	public void mockExample() {

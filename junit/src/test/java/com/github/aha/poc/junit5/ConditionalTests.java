@@ -1,5 +1,6 @@
 package com.github.aha.poc.junit5;
 
+import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.condition.JRE.JAVA_10;
 import static org.junit.jupiter.api.condition.JRE.JAVA_11;
@@ -11,6 +12,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
+import org.junit.jupiter.api.condition.EnabledForJreRange;
 import org.junit.jupiter.api.condition.EnabledOnJre;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 
@@ -40,6 +42,13 @@ public class ConditionalTests {
 	@DisplayName("enable test on JDK 9 only")
 	void testForJdk9(TestInfo testInfo) {
 		assertThat(true).isTrue();
+	}
+
+	@Test
+	@EnabledForJreRange(min = JAVA_11)
+	void checkJdk11Feature() {
+		assertThat("".isBlank()).isTrue();
+		assertThat("x\ny\nz".lines().collect(toList()).size()).isEqualTo(3);
 	}
 
 	private void showOsProperties() {

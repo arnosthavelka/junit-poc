@@ -1,13 +1,29 @@
 package com.github.aha.poc.junit5.integration.easymock;
 
-import org.easymock.EasyMockSupport;
+import static org.easymock.EasyMockSupport.injectMocks;
+
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestInstancePostProcessor;
+import org.junit.jupiter.api.extension.TestInstancePreDestroyCallback;
 
-public class EasyMockExtension implements TestInstancePostProcessor {
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class EasyMockExtension implements TestInstancePostProcessor, TestInstancePreDestroyCallback {
 
 	@Override
 	public void postProcessTestInstance(Object testInstance, ExtensionContext context) throws Exception {
-		EasyMockSupport.injectMocks(testInstance);
+		// manual mocking of dependencies
+		injectMocks(testInstance);
+	}
+
+	@Override
+	public void preDestroyTestInstance(ExtensionContext context) throws Exception {
+		// manual cleaning of created mocks
+		Object testInstance = context.getTestInstance().get();
+		if (testInstance instanceof AnnotationTest) {
+			((AnnotationTest) testInstance).calc = null;
+			log.info("Calc instance in test class {} destroyed", testInstance.getClass().getSimpleName());
+		}
 	}
 }
