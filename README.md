@@ -42,7 +42,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | Lombok                | 1.18.12      | all                                    | Simplification of Java classes           |
 | **Testing**   |                       |              |                                        |                                          |
 |               | JUnit                 | 5.6.0        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5                 |
-|               | Cucumber              | 4.8.0        | ju-cucumber                            | BDD testing                              |
+|               | Cucumber              | 5.4.2        | ju-cucumber                            | BDD testing                              |
 |               | Spring Cloud Contract | 2.2.2        | ju-spring-boot                         | Contract / specification for REST services  |
 | **Asserting** |                       |              |                                        |                                          |
 |               | Hamcrest              | 1.3          | ju-junit, ju-spring-boot, ju-cucumber  | Assertions                               |
