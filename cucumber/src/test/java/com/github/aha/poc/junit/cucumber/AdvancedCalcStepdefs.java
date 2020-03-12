@@ -1,5 +1,6 @@
 package com.github.aha.poc.junit.cucumber;
 
+import static com.github.aha.poc.junit.cucumber.AdvancedCalculator.Operation.valueOf;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -8,10 +9,11 @@ import java.util.List;
 
 import com.github.aha.poc.junit.cucumber.AdvancedCalculator.Operation;
 
-import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.ParameterType;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,6 +23,11 @@ import lombok.extern.slf4j.Slf4j;
 public class AdvancedCalcStepdefs {
 
 	private AdvancedCalculator calc;
+
+	@ParameterType(name = "Operation", value = "[a-zA-Z]+")
+	public Operation parseOperation(String value) {
+		return valueOf(value);
+	}
 
 	@Given("initialize calculator")
 	public void initFeature() {
