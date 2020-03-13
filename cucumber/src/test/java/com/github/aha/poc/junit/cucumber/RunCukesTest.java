@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {
-		"classpath:com/github/aha/poc/junit/cucumber/CalcSimple.feature",
+//		"classpath:com/github/aha/poc/junit/cucumber/CalcSimple.feature",
 		"classpath:com/github/aha/poc/junit/cucumber/CalcAdvanced.feature" })
 public class RunCukesTest {
 
