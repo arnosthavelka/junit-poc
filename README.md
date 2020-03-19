@@ -62,7 +62,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 [travis-url-main]: https://travis-ci.org/arnosthavelka/junit-poc
 [travis-image]: https://travis-ci.org/arnosthavelka/junit-poc.svg?branch=develop
 
-[sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_ju-root
+[sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_junit-poc
 [sonar-quality-gate]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_junit-poc&metric=alert_status
 [sonar-coverage]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_junit-poc&metric=coverage
 [sonar-bugs]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_junit-poc&metric=bugs
