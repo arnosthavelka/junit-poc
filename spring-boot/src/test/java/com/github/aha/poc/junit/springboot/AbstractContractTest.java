@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.web.context.WebApplicationContext;
 
 @SpringBootTest(webEnvironment = MOCK)
-public class AbstractContractTest {
+public abstract class AbstractContractTest {
 
 	@Autowired
 	private WebApplicationContext context;
