@@ -23,7 +23,7 @@ public class JUnit4Test {
 
 	@Test
 	@Ignore
-	public void disabledTest() {
+	public void disabledTest() { // NOSONAR
 		log.debug("simpleTest");
 		assertThat(true, is(equalTo(true)));
 	}
