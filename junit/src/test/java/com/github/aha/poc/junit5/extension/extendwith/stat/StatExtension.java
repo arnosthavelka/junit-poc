@@ -76,7 +76,7 @@ public class StatExtension implements AfterAllCallback, AfterEachCallback, After
 
 	private void randomWait(int waitingTime) {
 		try {
-			Thread.sleep(waitingTime);
+			Thread.sleep(waitingTime); // NOSONAR
 		} catch (InterruptedException e) {
 			log.error("Sleep interuppted ...", e);
 		}

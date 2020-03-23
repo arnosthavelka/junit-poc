@@ -1,6 +1,8 @@
 package com.github.aha.poc.junit5.intro;
 
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import java.util.HashMap;
 
 import org.junit.jupiter.api.DisplayName;
@@ -25,12 +27,14 @@ public class MetainfoTest {
 		log.info("Test name={}", ti.getTestMethod().get().getName());
 		log.info("Display name={}", ti.getDisplayName());
 		ti.getTags().stream().forEach(t -> log.info("\ttag={}", t));
+		assertThat(true).isTrue();
 	}
 
 	@Test
 	@DisplayName("add single value to the test report")
 	void useTestReporterWithSingleParam(TestReporter tr) {
         tr.publishEntry("developer", "Arny");
+		assertThat(true).isTrue();
 	}
 
 	@Test
@@ -41,6 +45,7 @@ public class MetainfoTest {
         values.put("developer", "Arny");
         values.put("poc", "JUnit5");
         tr.publishEntry(values);
+		assertThat(true).isTrue();
 	}
 
 }

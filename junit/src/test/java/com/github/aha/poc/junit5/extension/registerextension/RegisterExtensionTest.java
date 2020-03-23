@@ -1,5 +1,7 @@
 package com.github.aha.poc.junit5.extension.registerextension;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
@@ -17,12 +19,13 @@ public class RegisterExtensionTest {
 	@Test
 	public void test1() {
 		log.info("First temporary file={}", tempGenerator.getTempFile());
+		assertThat(true).isTrue();
 	}
 
 	@Test
 	public void test2() {
 		log.info("Second temporary file={}", tempGenerator.getTempFile());
-
+		assertThat(true).isTrue();
 	}
 
 }

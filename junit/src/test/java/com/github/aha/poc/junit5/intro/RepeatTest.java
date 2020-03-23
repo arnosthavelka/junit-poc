@@ -1,6 +1,8 @@
 package com.github.aha.poc.junit5.intro;
 
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.RepetitionInfo;
@@ -16,6 +18,7 @@ public class RepeatTest {
 	@DisplayName("Standard repeated test")
 	void standardTest() {
 		log.info("Standard test");
+		assertThat(true).isTrue();
 	}
 
 	@RepeatedTest(value = 3, name = "test {currentRepetition}/{totalRepetitions}")
@@ -23,6 +26,7 @@ public class RepeatTest {
 	void advancedTest(TestInfo ti, RepetitionInfo ri) {
 		String name = ti.getTestMethod().get().getName();
 		log.info("Advanced test  {} of {} for {}", ri.getCurrentRepetition(), ri.getTotalRepetitions(), name);
+		assertThat(true).isTrue();
 	}
 	
 }
