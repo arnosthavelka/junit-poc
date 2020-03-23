@@ -1,5 +1,6 @@
 package com.github.aha.poc.junit5.nested;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -23,6 +24,7 @@ class JUnitDemoTest {
 	@DisplayName("is instantiated with new Stack()")
 	void isInstantiatedWithNew() {
 		new Stack<>();
+		assertThat(true).isTrue();
 	}
 
 	@Nested
