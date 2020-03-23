@@ -1,5 +1,6 @@
 package com.github.aha.poc.junit5.intro;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
 
@@ -27,5 +28,6 @@ public class AssumeTests {
 	            	System.getProperties().entrySet().stream().limit(5).forEach(entry -> 
 				log.info("{}={}", entry.getKey(), entry.getValue()));
 	            });
+		assertThat(true).isTrue();
 	}
 }

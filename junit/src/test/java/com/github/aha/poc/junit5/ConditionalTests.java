@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.condition.OS.WINDOWS;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 import org.junit.jupiter.api.condition.EnabledForJreRange;
 import org.junit.jupiter.api.condition.EnabledOnJre;
@@ -40,13 +39,14 @@ public class ConditionalTests {
 	@Test
 	@EnabledOnJre({ JAVA_8, JAVA_10, JAVA_11, OTHER })
 	@DisplayName("enable test on JDK 9 only")
-	void testForJdk9(TestInfo testInfo) {
-		assertThat(true).isTrue();
+	void testForJdk9() {
+		showOsProperties();
 	}
 
 	@Test
 	@EnabledForJreRange(min = JAVA_11)
 	void checkJdk11Feature() {
+		showOsProperties();
 		assertThat("".isBlank()).isTrue();
 		assertThat("x\ny\nz".lines().collect(toList()).size()).isEqualTo(3);
 	}
@@ -54,6 +54,7 @@ public class ConditionalTests {
 	private void showOsProperties() {
 		log.info("OS={}", System.getProperty("os.name"));
 		log.info("Version={}", System.getProperty("os.version"));
+		assertThat(true).isTrue();
 	}
 
 }

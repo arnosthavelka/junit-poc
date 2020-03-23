@@ -1,6 +1,8 @@
 package com.github.aha.poc.junit5.intro;
 
 
+import static java.lang.System.currentTimeMillis;
+import static java.lang.Thread.sleep;
 import static java.time.Duration.ofMillis;
 import static java.time.Duration.ofMinutes;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -28,15 +30,15 @@ public class TimeoutTest {
 	@Test
 	@DisplayName("Timeouting test")
 	void timeoutingTest() {
-		long ms = System.currentTimeMillis();
+		long ms = currentTimeMillis();
 		AssertionFailedError exception = assertThrows(AssertionFailedError.class, () -> {
 	        assertTimeout(ofMillis(10), () -> {
 	            // do some serious job :-)
-	            Thread.sleep(100);
+				sleep(100); // NOSONAR
 	            assertEquals(2, 1 + 1);
 	        });
 		});
-		log.info("time={} ms", System.currentTimeMillis() - ms);
+		log.info("time={} ms", currentTimeMillis() - ms);
 		// exception is not verified here
 		log.info(exception.getMessage());
 	}
@@ -44,15 +46,15 @@ public class TimeoutTest {
 	@Test
 	@DisplayName("Timeouting test2")
 	void timeoutingFailFastTest() {
-		long ms = System.currentTimeMillis();
+		long ms = currentTimeMillis();
 		AssertionFailedError exception = assertThrows(AssertionFailedError.class, () -> {
 	        assertTimeoutPreemptively(ofMillis(10), () -> {
 	            // do some serious job :-)
-	            Thread.sleep(100);
+				sleep(100); // NOSONAR
 	            assertEquals(2, 1 + 1);
 	        });
 		});
-		log.info("time={} ms", System.currentTimeMillis() - ms);
+		log.info("time={} ms", currentTimeMillis() - ms);
 		// exception is not verified here
 		log.info(exception.getMessage());
 	}
