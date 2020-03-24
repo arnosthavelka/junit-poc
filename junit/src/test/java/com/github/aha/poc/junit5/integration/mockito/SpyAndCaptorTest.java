@@ -38,4 +38,9 @@ public class SpyAndCaptorTest {
 		assertThat(Arrays.asList(2, 3)).isEqualTo(argCaptor.getAllValues());
 	}
 
+	@Test
+	public void simpleTest() {
+		assertThat(calc.multiply()).isEqualTo(0);
+	}
+
 }
