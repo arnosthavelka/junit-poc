@@ -9,13 +9,10 @@ public class AdvancedCalculator {
 	private int result = 0;
 
 	public void calculate(Operation operation, int value) {
-		switch (operation) {
-		case ADD:
+		if (operation == Operation.ADD) {
 			result += value;
-			break;
-		case MULTIPLY:
+		} else { // multiply
 			result *= value;
-			break;
 		}
 	}
 

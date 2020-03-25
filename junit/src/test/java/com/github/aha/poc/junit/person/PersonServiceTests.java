@@ -4,12 +4,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-public class SequenceGeneratorTests {
+public class PersonServiceTests {
 
 	@Test
-	void testNextValue() {
+	void getId() {
 		var currentValue = SequenceGenerator.nextId();
-		assertThat(SequenceGenerator.nextId()).isEqualTo(currentValue + 1);
+
+		assertThat(new Person("Arny").getId()).isEqualTo(currentValue + 1);
 	}
 
 
