@@ -4,15 +4,6 @@ public class AdvancedCalculator {
 	
 	public enum Operation {
 		ADD, MULTIPLY;
-
-		public static Operation fromString(String value) {
-			for (Operation operation : Operation.values()) {
-				if (operation.name().equalsIgnoreCase(value)) {
-					return operation;
-				}
-			}
-			return null;
-		}
 	}
 
 	private int result = 0;
@@ -25,8 +16,6 @@ public class AdvancedCalculator {
 		case MULTIPLY:
 			result *= value;
 			break;
-		default:
-			throw new UnsupportedOperationException();
 		}
 	}
 
