@@ -9,9 +9,9 @@ public class PersonServiceTests {
 	@Test
 	void getId() {
 		var currentValue = SequenceGenerator.nextId();
+		Person person = new Person("Arny");
 
-		assertThat(new Person("Arny").getId()).isEqualTo(currentValue + 1);
+		assertThat(PersonService.store(person)).isEqualTo(currentValue + 1);
 	}
-
 
 }

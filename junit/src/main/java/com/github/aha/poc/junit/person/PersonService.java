@@ -1,10 +1,8 @@
 package com.github.aha.poc.junit.person;
 
-import static lombok.AccessLevel.PRIVATE;
+import lombok.experimental.UtilityClass;
 
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor(access = PRIVATE)
+@UtilityClass
 public class PersonService {
 
 	public static int store(Person person) {

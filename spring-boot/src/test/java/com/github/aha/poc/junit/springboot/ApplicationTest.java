@@ -1,16 +1,15 @@
 package com.github.aha.poc.junit.springboot;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.util.Arrays.array;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 public class ApplicationTest {
 
 	@Test
 	public void checkContext() {
-		assertThat(true).isTrue();
+		assertDoesNotThrow(() -> Application.main(array()));
 	}
 
 }
