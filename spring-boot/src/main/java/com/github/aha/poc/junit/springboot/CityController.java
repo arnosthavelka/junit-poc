@@ -30,7 +30,7 @@ public class CityController {
 	CityService service;
 
 	@GetMapping
-	public HttpEntity<CollectionModel<CityResource>> list() { // CollectionModel is replacement for Resources
+	public HttpEntity<CollectionModel<CityResource>> list() {
 		List<City> result = service.getAll();
 		return new ResponseEntity<>(new CollectionModel<>(toResources(result)), OK);
 	}
