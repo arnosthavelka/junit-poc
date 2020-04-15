@@ -20,7 +20,6 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.hateoas.CollectionModel;
-import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.mediatype.hal.Jackson2HalModule;
 import org.springframework.hateoas.server.mvc.TypeConstrainedMappingJackson2HttpMessageConverter;
@@ -34,7 +33,7 @@ import com.github.aha.poc.junit.springboot.CityResource;
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 public class CityControllerIT {
 	
-	public static class ExtractParameterizedResources extends ParameterizedTypeReference<CollectionModel<EntityModel<CityResource>>> {
+	public static class ExtractParameterizedResources extends ParameterizedTypeReference<CollectionModel<CityResource>> {
 	}
 
 	public static class ExtractResources extends CollectionModel<CityResource> {
@@ -74,14 +73,22 @@ public class CityControllerIT {
 
 	@Test
 	public void listCitiesWithExchange() {
-		ResponseEntity<CollectionModel<EntityModel<CityResource>>> response = restTemplate.exchange("/cities/", GET, null,
-				new ExtractParameterizedResources());
+		ResponseEntity<CollectionModel<CityResource>> response = restTemplate.exchange("/cities/", GET,
+				null, new ExtractParameterizedResources());
 		assertThat(response.getStatusCode()).isEqualTo(OK);
 		assertThat(response.getBody().getContent().size()).isEqualTo(4);
 	}
 
-	public TestRestTemplate buildHalTemplate() {
-		return restTemplate;
+	@Test
+	public void getCity() {
+		long cityId = 3;
+		ResponseEntity<CityResource> response = restTemplate.getForEntity("/cities/" + cityId, CityResource.class);
+
+		assertThat(response.getStatusCode()).isEqualTo(OK);
+		CityResource city = response.getBody();
+		assertThat(city.getId()).isEqualTo(cityId);
+		assertThat(city.getName()).isEqualTo("Paris");
+		assertThat(city.getCountry()).isEqualTo("France");
 	}
 
 }
