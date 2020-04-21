@@ -41,14 +41,14 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 | Area          | Tool                  | Version      | Project                                | Description / Usage                      |
 | ----------    | --------------------- | ------------ | -------------------------------------- | ---------------------------------------- |
 | **General**   |                       |              |                                        |                                          |
-|               | Maven                 | 3.5.x        | all                                    | Build                                    |
+|               | Maven                 | 3.6.x        | all                                    | Build                                    |
 |               | Java                  | 11           | all                                    | Language Java  (code and tests)          |
-|               | Kotlin                | 1.3.71       | ju-junit                               | Language Kotlin (tests only   )          |
+|               | Kotlin                | 1.3.72       | ju-junit                               | Language Kotlin (tests only   )          |
 |               | SLF4J                 | 1.7.30       | all                                    | Logging                                  |
 |               | Lombok                | 1.18.12      | all                                    | Simplification of Java classes           |
 | **Testing**   |                       |              |                                        |                                          |
-|               | JUnit                 | 5.6.1        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5                 |
-|               | Cucumber              | 5.5.0        | ju-cucumber                            | BDD testing                              |
+|               | JUnit                 | 5.6.2        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5                 |
+|               | Cucumber              | 5.6.0        | ju-cucumber                            | BDD testing                              |
 |               | Spring Cloud Contract | 2.2.2        | ju-spring-boot                         | Contract / specification for REST services  |
 | **Asserting** |                       |              |                                        |                                          |
 |               | Hamcrest              | 1.3          | ju-junit, ju-spring-boot, ju-cucumber  | Assertions                               |
@@ -57,9 +57,9 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | JSONPath              | 2.4.0        | ju-junit                               | Assertions for JSON (used also by Spring |
 |               | Rest Assured          | 4.2.0        | ju-spring-boot                         | Assertions for REST service              |
 | **Mocking**   |                       |              |                                        |                                          |
-|               | Mockito               | 3.3.0        | ju-junit                               |                                          |
+|               | Mockito               | 3.3.3        | ju-junit                               |                                          |
 |               | EasyMock              | 4.2          | ju-junit                               |                                          |
-|               | PowerMock             | 2.0.5        | ju-junit                               | Advanced mocking                         |
+|               | PowerMock             | 2.0.7        | ju-junit                               | Advanced mocking                         |
 | **Others**    |                       |              |                                        |                                          |
 |               | Spring Boot           | 2.2.6        | ju-spring-boot                         | Fast development of production ready applications |
 |               | Liquibase             | by SB        | ju-spring-boot                         | Database management                      |
