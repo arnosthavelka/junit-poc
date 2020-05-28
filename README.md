@@ -28,7 +28,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 1. **Framework JUnit 4** - demonstration of basic tests and usage of PowerMock framework. The demonstration of all JUnit 4 features is covered in [release 1.0](https://github.com/arnosthavelka/junit-poc/tree/1.0) and my theses [Analysis of architecture and extension model of the framework JUnit](https://theses.cz/id/p7ghon) (Analýza architektury a nadstavbových možností frameworku JUnit).
 1. **Spring Boot** - demonstration of writing Spring Boot tests (including simple Spring tests example) covers:
     1. Tests for each layer
-    	1. Persistence (including LIquibase)
+    	1. Persistence (including Liquibase)
     	1. Service
     	1. REST service (including JSON assertions)
     1. Usage of **Spring REST Docs** to generate REST API documentation by the tests
