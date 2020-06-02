@@ -5,7 +5,7 @@ This repository holds examples for my book [JUnit 5 - Unit testing on Java platf
 The main goal is to demonstrate usage of the framework JUnit 5.
 
 ## Pre-requisities
-* JDK 11
+* JDK 14
 * Maven 3.5
 * Lombok (installed into the IDE)
 
@@ -61,7 +61,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | EasyMock              | 4.2          | ju-junit                               |                                          |
 |               | PowerMock             | 2.0.7        | ju-junit                               | Advanced mocking                         |
 | **Others**    |                       |              |                                        |                                          |
-|               | Spring Boot           | 2.2.7        | ju-spring-boot                         | Fast development of production ready applications |
+|               | Spring Boot           | 2.3.0        | ju-spring-boot                         | Fast development of production ready applications |
 |               | Liquibase             | by SB        | ju-spring-boot                         | Database management                      |
 |               | JAX-B                 | by SB        | ju-spring-boot                         | XML binding                              |
 
