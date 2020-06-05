@@ -3,7 +3,7 @@ install: true
 
 jdk:
 #  - oraclejdk11
-  - openjdk11
+  - openjdk14
 
 addons:
   sonarcloud:
