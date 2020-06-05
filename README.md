@@ -6,7 +6,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 
 ## Pre-requisities
 * JDK 14
-* Maven 3.5
+* Maven 3.6
 * Lombok (installed into the IDE)
 
 ## Decomposition of projects
@@ -48,8 +48,8 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | Lombok                | 1.18.12      | all                                    | Simplification of Java classes           |
 | **Testing**   |                       |              |                                        |                                          |
 |               | JUnit                 | 5.6.2        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5                 |
-|               | Cucumber              | 5.7.0        | ju-cucumber                            | BDD testing                              |
-|               | Spring Cloud Contract | 2.2.2        | ju-spring-boot                         | Contract / specification for REST services  |
+|               | Cucumber              | 6.0.0-RC2    | ju-cucumber                            | BDD testing (Note: lamda feature was removed due to missing support for JDK14)                             |
+|               | Spring Cloud Contract | 2.2.3        | ju-spring-boot                         | Contract / specification for REST services  |
 | **Asserting** |                       |              |                                        |                                          |
 |               | Hamcrest              | 1.3          | ju-junit, ju-spring-boot, ju-cucumber  | Assertions                               |
 |               | AssertJ               | 3.16.1       | ju-junit, ju-spring-boot               | Assertions with Fluent API               |
