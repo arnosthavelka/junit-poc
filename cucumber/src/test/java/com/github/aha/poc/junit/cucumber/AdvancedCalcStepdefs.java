@@ -1,9 +1,7 @@
 package com.github.aha.poc.junit.cucumber;
 
 import static com.github.aha.poc.junit.cucumber.AdvancedCalculator.Operation.valueOf;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
@@ -61,7 +59,7 @@ public class AdvancedCalcStepdefs {
 
 	@Then("the result value is {int}")
 	public void test(Integer finalValue) {
-		assertThat(calc.getResult(), is(equalTo(finalValue)));
+		assertThat(calc.getResult()).isEqualTo(finalValue);
 	}
 
 }

@@ -1,8 +1,6 @@
 package com.github.aha.poc.junit.cucumber;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,7 +21,7 @@ public class SimpleCalcStepdefs /* implements Cs */ {
 
 	@Then("výsledný součet je {int}")
 	public void test(Integer finalValue) {
-		assertThat(calc.sum(), is(equalTo(finalValue)));
+		assertThat(calc.sum()).isEqualTo(finalValue);
 	}
 
 //	public SimpleCalcStepdefs() {
@@ -37,7 +35,7 @@ public class SimpleCalcStepdefs /* implements Cs */ {
 //		});
 //
 //		Pak("výsledný součet je {int}", (finalValue) -> {
-//			assertThat(calc.sum(), is(equalTo(finalValue)));
+//			assertThat(calc.sum()).isEqualTo(finalValue);
 //		});
 //
 //	}
