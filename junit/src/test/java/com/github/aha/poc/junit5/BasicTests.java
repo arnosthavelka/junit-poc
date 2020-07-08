@@ -41,7 +41,7 @@ public class BasicTests {
 	}
 
 	@Test
-	@DisplayName("show simple assert via AssertJ")
+	@DisplayName("show simple asserts via AssertJ")
 	public void simpleAssertJAssert() {
 		assertThat(true).isTrue();
 		assertThat(1 + 1).isEqualTo(2);
