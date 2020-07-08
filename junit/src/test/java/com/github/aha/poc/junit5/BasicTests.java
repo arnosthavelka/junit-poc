@@ -46,8 +46,9 @@ public class BasicTests {
 		assertThat(true).isTrue();
 		assertThat(1 + 1).isEqualTo(2);
 		assertThat("hello").isNotEqualTo("hi");
-		assertThat(LocalDate.of(2018, 06, 13)).isEqualTo("2018-06-13");
+		assertThat(LocalDate.of(2020, 7, 8)).isAfterOrEqualTo(LocalDate.now());
 		assertThat(new ClassCastException()).isInstanceOf(RuntimeException.class);
+		assertThat(Optional.of("hello")).isPresent().hasValue("hello");
 	}
 
 	@Test

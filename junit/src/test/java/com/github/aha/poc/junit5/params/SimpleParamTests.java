@@ -26,7 +26,6 @@ public class SimpleParamTests {
 	@ValueSource(ints = { 2, 3, -2, 4, -5 })
 	@DisplayName("check number values")
 	void numberTest(int argument) {
-		assertThat(argument).isNotNull();
 		assertThat(argument).isNotEqualTo(0);
 	}
 
