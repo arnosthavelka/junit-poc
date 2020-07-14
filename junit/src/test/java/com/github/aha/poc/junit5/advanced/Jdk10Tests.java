@@ -2,11 +2,14 @@ package com.github.aha.poc.junit5.advanced;
 
 import static java.util.List.of;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.condition.JRE.JAVA_10;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledForJreRange;
 
-@DisplayName("Examples of local variable type inference (VAR) in JDK 10")
+@DisplayName("Examples of JDK 10 features")
+@EnabledForJreRange(min = JAVA_10)
 public class Jdk10Tests {
 
 	@Test
