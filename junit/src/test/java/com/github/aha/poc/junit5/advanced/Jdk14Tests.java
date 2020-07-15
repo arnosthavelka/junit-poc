@@ -22,23 +22,23 @@ public class Jdk14Tests {
 			Objects.requireNonNull(message);
 		}
 
-		public <V> LogEntry(String message, V value) {
+		public static <V> LogEntry of(String message, V value) {
 			if (value instanceof Number n) {
-				this.message = format("%s [number=%d]", message, n);
+				return new LogEntry(format("%s [number=%d]", message, n));
 			} else if (value instanceof String s && s.length() > 10) {
-				this.message = format("%s [value='%s', length=%d]", message, s, s.length());
+				return new LogEntry(format("%s [value='%s', length=%d]", message, s, s.length()));
 			} else {
-				this.message = format("%s '%s'", message, value.toString());
+				return new LogEntry(format("%s '%s'", message, value.toString()));
 			}
 		}
 	}
 
 	@Test
 	public void checkRecordFeature() {
-		assertThat(new LogEntry("The counter reached the limit", 5).message()).isEqualTo("The counter reached the limit [number=5]");
-		assertThat(new LogEntry("The value is too large! The maximum expected size is 10", "Some shiny message").message())
+		assertThat(LogEntry.of("The counter reached the limit", 5).message()).isEqualTo("The counter reached the limit [number=5]");
+		assertThat(LogEntry.of("The value is too large! The maximum expected size is 10", "Some shiny message").message())
 				.isEqualTo("The value is too large! The maximum expected size is 10 [value='Some shiny message', length=18]");
-		assertThat(new LogEntry("Today is", "Wednesday").message()).isEqualTo("Today is 'Wednesday'");
+		assertThat(LogEntry.of("Today is", "Wednesday").message()).isEqualTo("Today is 'Wednesday'");
 	}
 
 	@Test
