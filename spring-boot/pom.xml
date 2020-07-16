@@ -119,6 +119,9 @@
 			<plugin>
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<version>${failsafe-plugin}</version>
+				<configuration>
+					<argLine>--enable-preview</argLine>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
