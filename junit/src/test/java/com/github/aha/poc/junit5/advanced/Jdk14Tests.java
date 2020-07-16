@@ -9,12 +9,18 @@ import java.util.Objects;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledForJreRange;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+import com.github.aha.poc.junit5.params.ParamTypes;
 
 @DisplayName("Examples of JDK 14 festures")
 @EnabledForJreRange(min = JAVA_14)
 public class Jdk14Tests {
 
-	// TODO: Switch Expressions
+	// TODO: Switch Expressions:
+	// https://www.baeldung.com/java-switch
+	// https://dzone.com/articles/jdk-12-switch-statementsexpressions-in-action
 
 	record LogEntry(String message) {
 
@@ -34,7 +40,7 @@ public class Jdk14Tests {
 	}
 
 	@Test
-	public void checkRecordFeature() {
+	public void recordFeature() {
 		assertThat(LogEntry.of("The counter reached the limit", 5).message()).isEqualTo("The counter reached the limit [number=5]");
 		assertThat(LogEntry.of("The value is too large! The maximum expected size is 10", "Some shiny message").message())
 				.isEqualTo("The value is too large! The maximum expected size is 10 [value='Some shiny message', length=18]");
@@ -42,7 +48,7 @@ public class Jdk14Tests {
 	}
 
 	@Test
-	public void checkInstanceofFeature() {
+	public void instanceofFeature() {
 		var text = "text";
 
 		if (text instanceof String s && s.length() > 2) {
@@ -52,7 +58,7 @@ public class Jdk14Tests {
 
 	@Test
 	@DisplayName("should check text block feature")
-	public void checkBlockTextFeature() {
+	public void blockTextFeature() {
 		assertThat("first line\nsecond line".lines().count()).isEqualTo(2);
 
 		assertThat("""
@@ -72,6 +78,21 @@ public class Jdk14Tests {
 				Values: \
 				int=%d, \
 				string=%s""".formatted(5, "text")).isEqualTo("Values: int=5, string=text");
+	}
+
+	@ParameterizedTest
+	@CsvSource(value = { "STRING → string", "INT → number", "INT → number", "LONG → number", "DOUBLE → number" }, delimiter = '→')
+	public void switchFeature(ParamTypes paramType, String expectedLabel) {
+		assertThat(getTypeLabel(paramType)).isEqualTo(expectedLabel);
+	}
+
+	String getTypeLabel(ParamTypes type) {
+		return switch (type) {
+			case STRING -> "string";
+			case INT, LONG, DOUBLE -> "number";
+			default -> throw new IllegalArgumentException("Unexpected type: " + type);
+		};
+		
 	}
 
 }
