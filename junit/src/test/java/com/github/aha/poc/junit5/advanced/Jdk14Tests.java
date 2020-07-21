@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.condition.JRE.JAVA_14;
 import java.util.Objects;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledForJreRange;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -20,7 +21,7 @@ public class Jdk14Tests {
 
 	// TODO: Switch Expressions:
 	// https://www.baeldung.com/java-switch
-	// https://dzone.com/articles/jdk-12-switch-statementsexpressions-in-action
+	// https://openjdk.java.net/jeps/361
 
 	record LogEntry(String message) {
 
@@ -80,19 +81,43 @@ public class Jdk14Tests {
 				string=%s""".formatted(5, "text")).isEqualTo("Values: int=5, string=text");
 	}
 
-	@ParameterizedTest
-	@CsvSource(value = { "STRING → string", "INT → number", "INT → number", "LONG → number", "DOUBLE → number" }, delimiter = '→')
-	public void switchFeature(ParamTypes paramType, String expectedLabel) {
-		assertThat(getTypeLabel(paramType)).isEqualTo(expectedLabel);
-	}
+	@Nested
+	@DisplayName("should check new switch features")
+	class switchFeature {
 
-	String getTypeLabel(ParamTypes type) {
-		return switch (type) {
-			case STRING -> "string";
-			case INT, LONG, DOUBLE -> "number";
-			default -> throw new IllegalArgumentException("Unexpected type: " + type);
-		};
+		@ParameterizedTest
+		@CsvSource(value = { "STRING → string", "INT → number", "INT → number", "LONG → number", "DOUBLE → number" }, delimiter = '→')
+		public void simpleSwitch(ParamTypes paramType, String expectedLabel) {
+			assertThat(getTypeLabel(paramType)).isEqualTo(expectedLabel);
+		}
 		
+		String getTypeLabel(ParamTypes type) {
+			return switch (type) {
+				case STRING -> "string";
+				case INT, LONG, DOUBLE -> "number";
+				default -> throw new IllegalArgumentException("Unexpected type: " + type);
+			};
+		}
+		
+		@ParameterizedTest
+		@CsvSource(value = { "0 → zero", "1 → odd", "2 → even", "10 → too large value" }, delimiter = '→')
+		public void simpleNumberCheck(int number, String expectedLabel) {
+			assertThat(simpleNumberClassification(number)).isEqualTo(expectedLabel);
+		}
+
+		String simpleNumberClassification(int number) {
+			var result = "";
+			result = switch (number) {
+				case 0 -> result += "zero";
+				case 1, 3, 5, 7, 9 -> result += "odd";
+				case 2, 4, 6, 8 -> result += "even";
+				default -> result += "too large value";
+			};
+			return result;
+		}
+
+		// TODO: yield, range
+
 	}
 
 }
