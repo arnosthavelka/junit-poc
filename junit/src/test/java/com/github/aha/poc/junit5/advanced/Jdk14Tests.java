@@ -87,7 +87,7 @@ public class Jdk14Tests {
 
 		@ParameterizedTest
 		@CsvSource(value = { "STRING → string", "INT → number", "INT → number", "LONG → number", "DOUBLE → number" }, delimiter = '→')
-		public void simpleSwitch(ParamTypes paramType, String expectedLabel) {
+		public void switchWithEnum(ParamTypes paramType, String expectedLabel) {
 			assertThat(getTypeLabel(paramType)).isEqualTo(expectedLabel);
 		}
 		
@@ -101,11 +101,11 @@ public class Jdk14Tests {
 		
 		@ParameterizedTest
 		@CsvSource(value = { "0 → zero", "1 → odd", "2 → even", "10 → too large value" }, delimiter = '→')
-		public void simpleNumberCheck(int number, String expectedLabel) {
-			assertThat(simpleNumberClassification(number)).isEqualTo(expectedLabel);
+		public void switchWithDefinition(int number, String expectedLabel) {
+			assertThat(numberClassification(number)).isEqualTo(expectedLabel);
 		}
 
-		String simpleNumberClassification(int number) {
+		String numberClassification(int number) {
 			var result = "";
 			result = switch (number) {
 				case 0 -> result += "zero";
@@ -116,7 +116,25 @@ public class Jdk14Tests {
 			return result;
 		}
 
-		// TODO: yield, range
+		@ParameterizedTest
+		@CsvSource(value = { "hello → small", "improvement → large", "hello world → two words",
+				"welcome to the switch feature → sentence" }, delimiter = '→')
+		public void switchWithYield(String value, String expectedLabel) {
+			assertThat(stringClassification(value)).isEqualTo(expectedLabel);
+		}
+
+		String stringClassification(String value) {
+			return switch (value.length()) {
+			case 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 -> "small";
+			case 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 -> {
+				if (value.contains(" ")) {
+					yield "two words";
+				}
+				yield "large";
+			}
+			default -> "sentence";
+			};
+		}
 
 	}
 
