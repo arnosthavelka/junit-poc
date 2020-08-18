@@ -48,8 +48,8 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | Lombok                | 1.18.12      | all                                    | Simplification of Java classes           |
 | **Testing**   |                       |              |                                        |                                          |
 |               | JUnit                 | 5.6.2        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5                 |
-|               | Cucumber              | 6.2.1        | ju-cucumber                            | BDD testing (Note: lamda feature was removed due to missing support for JDK14)                             |
-|               | Spring Cloud Contract | 2.2.3        | ju-spring-boot                         | Contract / specification for REST services |
+|               | Cucumber              | 6.4.0        | ju-cucumber                            | BDD testing (Note: lamda feature was removed due to missing support for JDK14)                             |
+|               | Spring Cloud Contract | 2.2.4        | ju-spring-boot                         | Contract / specification for REST services |
 | **Asserting** |                       |              |                                        |                                          |
 |               | Hamcrest              | 1.3          | ju-junit, ju-spring-boot, ju-cucumber  | Assertions                               |
 |               | AssertJ               | 3.16.1       | ju-junit, ju-spring-boot               | Assertions with Fluent API               |
@@ -61,7 +61,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | EasyMock              | 4.2          | ju-junit                               |                                          |
 |               | PowerMock             | 2.0.7        | ju-junit                               | Advanced mocking                         |
 | **Others**    |                       |              |                                        |                                          |
-|               | Spring Boot           | 2.3.1        | ju-spring-boot                         | Fast development of production ready applications |
+|               | Spring Boot           | 2.3.3        | ju-spring-boot                         | Fast development of production ready applications |
 |               | Liquibase             | by SB        | ju-spring-boot                         | Database management                      |
 |               | JAX-B                 | by SB        | ju-spring-boot                         | XML binding                              |
 
