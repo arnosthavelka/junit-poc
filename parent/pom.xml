@@ -4,7 +4,7 @@
 
 	<groupId>com.github.aha.poc.junit</groupId>
 	<artifactId>ju-parent</artifactId>
-	<version>1.4-SNAPSHOT</version>
+	<version>1.5-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>JUnit 5 :: ${project.artifactId}</name>
@@ -16,35 +16,35 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		
 		<!-- compiler properties -->
-		<java.version>14</java.version>
+		<java.version>15</java.version>
 		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<jacoco.version>0.8.5</jacoco.version>
-		<kotlin.version>1.3.72</kotlin.version>
+		<jacoco.version>0.8.6</jacoco.version>
+		<kotlin.version>1.4.30-M1</kotlin.version>
 		<kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 		
         <!-- testing properties -->
-        <junit.jupiter.version>5.6.2</junit.jupiter.version>
+        <junit.jupiter.version>5.7.0</junit.jupiter.version>
         <surefire-plugin>2.22.2</surefire-plugin>
         <failsafe-plugin>2.22.2</failsafe-plugin>
-        <cucumber.version>6.4.0</cucumber.version>
-		<assertj.version>3.16.1</assertj.version>
+        <cucumber.version>6.9.1</cucumber.version>
+		<assertj.version>3.18.1</assertj.version>
 		<hamcrest.version>1.3</hamcrest.version>
-		<mockito.version>3.3.3</mockito.version>
+		<mockito.version>3.6.28</mockito.version>
 		<easymock.version>4.2</easymock.version>
-		<powermock.version>2.0.7</powermock.version>
+		<powermock.version>2.0.9</powermock.version>
 		<jsonassert.version>1.5.0</jsonassert.version>
-		<jsonpath.version>2.4.0</jsonpath.version>
+		<jsonpath.version>2.5.0</jsonpath.version>
 		<rest-assured.version>4.2.0</rest-assured.version>
 		<evo-inflector.version>1.2.2</evo-inflector.version>
 		<!-- specific logging properties -->
         <slf4j.version>1.7.30</slf4j.version>
         <logback.version>1.2.3</logback.version>
         <!-- specific dependencies -->
-        <spring-boot.version>2.3.3.RELEASE</spring-boot.version>
-        <spring-cloud-contract.version>2.2.4.RELEASE</spring-cloud-contract.version>
-        <lombok.version>1.18.12</lombok.version>
+        <spring-boot.version>2.4.1</spring-boot.version>
+        <spring-cloud-contract.version>3.0.0</spring-cloud-contract.version>
+        <lombok.version>1.18.16</lombok.version>
 	</properties>
 
 	<dependencyManagement>
