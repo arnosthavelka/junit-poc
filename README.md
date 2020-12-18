@@ -74,4 +74,4 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 [sonar-coverage]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_junit-poc&metric=coverage
 [sonar-bugs]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_junit-poc&metric=bugs
 [sonar-vulnerabilities]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_junit-poc&metric=vulnerabilities
-[mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[mit-badge]: https://img.shields.io/badge/license-MIT-maroon.svg
