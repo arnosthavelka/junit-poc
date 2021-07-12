@@ -3,10 +3,9 @@ package com.github.aha.poc.junit5.integration.easymock;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
+import static org.mockito.Mockito.verify;
 
 import org.easymock.Mock;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -19,7 +18,6 @@ public class AnnotationTest {
 	Calculator calc;
 
 	@Test
-	@Disabled
 	// FIXME
 	public void mockExample() {
 		expect(calc.add(2, 3)).andReturn(5);
