@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.aha.poc.junit</groupId>
@@ -14,7 +16,7 @@
 		<!-- basic properties -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		
+
 		<!-- compiler properties -->
 		<java.version>15</java.version>
 		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
@@ -22,12 +24,12 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<jacoco.version>0.8.7</jacoco.version>
 		<kotlin.version>1.5.20</kotlin.version>
-		
-        <!-- testing properties -->
-        <junit.jupiter.version>5.7.2</junit.jupiter.version>
-        <surefire-plugin>2.22.2</surefire-plugin>
-        <failsafe-plugin>2.22.2</failsafe-plugin>
-        <cucumber.version>6.10.4</cucumber.version>
+
+		<!-- testing properties -->
+		<junit.jupiter.version>5.7.2</junit.jupiter.version>
+		<surefire-plugin>2.22.2</surefire-plugin>
+		<failsafe-plugin>2.22.2</failsafe-plugin>
+		<cucumber.version>6.10.4</cucumber.version>
 		<assertj.version>3.20.2</assertj.version>
 		<hamcrest.version>1.3</hamcrest.version>
 		<mockito.version>3.11.2</mockito.version>
@@ -36,33 +38,33 @@
 		<jsonassert.version>1.5.0</jsonassert.version>
 		<jsonpath.version>2.6.0</jsonpath.version>
 		<rest-assured.version>4.4.0</rest-assured.version>
-		<evo-inflector.version>1.2.2</evo-inflector.version>
+		<evo-inflector.version>1.3</evo-inflector.version>
 		<!-- specific logging properties -->
-        <slf4j.version>1.7.31</slf4j.version>
-        <logback.version>1.2.3</logback.version>
-        <!-- specific dependencies -->
-        <spring-boot.version>2.5.2</spring-boot.version>
-        <spring-cloud-contract.version>3.0.3</spring-cloud-contract.version>
-        <lombok.version>1.18.20</lombok.version>
+		<slf4j.version>1.7.31</slf4j.version>
+		<logback.version>1.2.3</logback.version>
+		<!-- specific dependencies -->
+		<spring-boot.version>2.5.2</spring-boot.version>
+		<spring-cloud-contract.version>3.0.3</spring-cloud-contract.version>
+		<lombok.version>1.18.20</lombok.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<!-- JUnit 5 -->
-	        <dependency>
-	            <groupId>org.junit</groupId>
-	            <artifactId>junit-bom</artifactId>
-	            <version>${junit.jupiter.version}</version>
-	            <type>pom</type>
-	            <scope>import</scope>
-	        </dependency>			
-	
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>${junit.jupiter.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
 			<!-- other test -->
 			<dependency>
-			    <groupId>org.assertj</groupId>
-			    <artifactId>assertj-core</artifactId>
-			    <version>${assertj.version}</version>
-			    <scope>test</scope>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-core</artifactId>
+				<version>${assertj.version}</version>
+				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.hamcrest</groupId>
@@ -84,10 +86,10 @@
 			</dependency>
 			<dependency>
 				<groupId>org.mockito</groupId>
-    			<artifactId>mockito-junit-jupiter</artifactId>
+				<artifactId>mockito-junit-jupiter</artifactId>
 				<version>${mockito.version}</version>
-				<scope>test</scope>			
-			</dependency>		
+				<scope>test</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.easymock</groupId>
 				<artifactId>easymock</artifactId>
@@ -124,12 +126,12 @@
 				<version>${rest-assured.version}</version>
 				<scope>test</scope>
 			</dependency>
-            <dependency>
-                <groupId>io.rest-assured</groupId>
-                <artifactId>rest-assured-common</artifactId>
-                <version>${rest-assured.version}</version>
-                <scope>test</scope>
-            </dependency>
+			<dependency>
+				<groupId>io.rest-assured</groupId>
+				<artifactId>rest-assured-common</artifactId>
+				<version>${rest-assured.version}</version>
+				<scope>test</scope>
+			</dependency>
 			<dependency>
 				<groupId>io.rest-assured</groupId>
 				<artifactId>spring-mock-mvc</artifactId>
@@ -142,7 +144,7 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-			
+
 			<!-- logging -->
 			<dependency>
 				<groupId>org.slf4j</groupId>
@@ -154,7 +156,7 @@
 				<groupId>org.slf4j</groupId>
 				<artifactId>jcl-over-slf4j</artifactId>
 				<version>${slf4j.version}</version>
-			</dependency>		
+			</dependency>
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
@@ -176,7 +178,7 @@
 				<groupId>org.jetbrains.kotlin</groupId>
 				<artifactId>kotlin-reflect</artifactId>
 				<version>${kotlin.version}</version>
-			</dependency>			
+			</dependency>
 			<dependency>
 				<groupId>org.jetbrains.kotlin</groupId>
 				<artifactId>kotlin-test-junit</artifactId>
@@ -185,14 +187,14 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>${lombok.version}</version>
 			<scope>provided</scope>
-		</dependency>	
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -233,9 +235,9 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${maven.compiler.plugin.version}</version>
-		            <configuration>
-		                <release>${java.version}</release>
-		            </configuration>
+					<configuration>
+						<release>${java.version}</release>
+					</configuration>
 					<executions>
 						<execution>
 							<id>default-compile</id>
@@ -267,13 +269,13 @@
 					<version>${surefire-plugin}</version>
 				</plugin>
 				<plugin>
-				    <groupId>external.atlassian.jgitflow</groupId>
-				    <artifactId>jgitflow-maven-plugin</artifactId>
-				    <version>1.0-m5.1</version>
-				    <configuration>
+					<groupId>external.atlassian.jgitflow</groupId>
+					<artifactId>jgitflow-maven-plugin</artifactId>
+					<version>1.0-m5.1</version>
+					<configuration>
 						<!-- Prevents deployments since there's no maven repo -->
 						<noDeploy>true</noDeploy>
-				    </configuration>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -307,5 +309,5 @@
 			</build>
 		</profile>
 	</profiles>
-    
+
 </project>
