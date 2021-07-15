@@ -24,7 +24,6 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<jacoco.version>0.8.7</jacoco.version>
 		<kotlin.version>1.5.20</kotlin.version>
-		<!-- <kotlin.compiler.incremental>true</kotlin.compiler.incremental> -->
 
 		<!-- testing properties -->
 		<junit.jupiter.version>5.7.2</junit.jupiter.version>
