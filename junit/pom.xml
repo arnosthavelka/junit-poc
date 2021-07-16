@@ -18,12 +18,9 @@
 		<!-- JUnit 5 -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
+			<artifactId>junit-jupiter</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-params</artifactId>
-		</dependency>
+		<!-- Support for JUnit 4-->
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-runner</artifactId>
@@ -122,6 +119,10 @@
 							junit.jupiter.execution.parallel.config.fixed.parallelism=4
 	                    </configurationParameters>
 	                </properties>
+					<!-- see https://www.gitmemory.com/issue/easymock/easymock/235/809974037 -->
+	                <argLine>
+	                	--illegal-access=permit
+	                </argLine>
 	            </configuration>				
 			</plugin>
 			<plugin>
