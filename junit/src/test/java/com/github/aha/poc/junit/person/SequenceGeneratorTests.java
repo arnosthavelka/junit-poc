@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 public class SequenceGeneratorTests {
 
 	@Test
-	void testNextValue() {
+	void shouldGenerateNextValue() {
 		var currentValue = SequenceGenerator.nextId();
-		assertThat(SequenceGenerator.nextId()).isEqualTo(currentValue + 1);
-	}
 
+		assertThat(SequenceGenerator.nextId()).isGreaterThan(currentValue);
+	}
 
 }
