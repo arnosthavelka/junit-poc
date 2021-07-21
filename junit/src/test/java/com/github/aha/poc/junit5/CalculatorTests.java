@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import com.github.aha.poc.junit.Calculator;
 
-public class CalculatorTests {
+class CalculatorTests {
 
 	private Calculator calc = new Calculator();
 
