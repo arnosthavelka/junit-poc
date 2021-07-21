@@ -4,14 +4,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-public class PersonServiceTests {
+class PersonServiceTests {
 
 	@Test
-	void getId() {
-		var currentValue = SequenceGenerator.nextId();
-		Person person = new Person("Arny");
+	void shouldStoreEntity() {
+		var person = new Person("Arny");
 
-		assertThat(PersonService.store(person)).isEqualTo(currentValue + 1);
+		assertThat(PersonService.store(person)).isEqualTo(person.getId());
 	}
 
 }
