@@ -9,20 +9,16 @@ import static org.powermock.api.easymock.PowerMock.mockStatic;
 import static org.powermock.api.easymock.PowerMock.replay;
 import static org.powermock.api.easymock.PowerMock.verify;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
-
 import com.github.aha.poc.junit.person.Person;
 import com.github.aha.poc.junit.person.PersonService;
 import com.github.aha.poc.junit.person.SequenceGenerator;
 
-@RunWith(PowerMockRunner.class)
-@PrepareForTest({SequenceGenerator.class, Person.class})
+// FIXME
+//@RunWith(PowerMockRunner.class)
+//@PrepareForTest({SequenceGenerator.class, Person.class})
 public class PowerMockTest {
 
-	@Test
+//	@Test
 	public void staticTest() throws Exception {
 		int newId = 21;
 		String name = "Arny";
@@ -38,7 +34,7 @@ public class PowerMockTest {
 		verify(SequenceGenerator.class);
 	}
 
-	@Test
+//	@Test
 	public void finalTest() throws Exception {
 		int newId = 21;
 		
