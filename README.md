@@ -43,26 +43,26 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 | ----------    | --------------------- | ------------ | -------------------------------------- | ---------------------------------------- |
 | **General**   |                       |              |                                        |                                          |
 |               | Maven                 | 3.6.x        | all                                    | Build                                    |
-|               | Java                  | 15           | all                                    | Language Java  (code and tests)          |
-|               | Kotlin                | 1.5.20       | ju-junit                               | Language Kotlin (tests only   )          |
-|               | SLF4J                 | 1.7.31       | all                                    | Logging                                  |
-|               | Lombok                | 1.18.20      | all                                    | Simplification of Java classes           |
+|               | Java                  | 17           | all                                    | Language Java  (code and tests)          |
+|               | Kotlin                | 1.6.0        | ju-junit                               | Language Kotlin (tests only   )          |
+|               | SLF4J                 | 1.7.32       | all                                    | Logging                                  |
+|               | Lombok                | 1.18.22      | all                                    | Simplification of Java classes           |
 | **Testing**   |                       |              |                                        |                                          |
 |               | JUnit                 | 5.7.2        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5                 |
-|               | Cucumber              | 6.10.4       | ju-cucumber                            | BDD testing (Note: lamda feature was removed due to missing support for JDK14)                             |
-|               | Spring Cloud Contract | 3.0.3        | ju-spring-boot                         | Contract / specification for REST services |
+|               | Cucumber              | 7.0.0        | ju-cucumber                            | BDD testing (Note: lamda feature was removed due to missing support for JDK14)                             |
+|               | Spring Cloud Contract | 3.0.4        | ju-spring-boot                         | Contract / specification for REST services |
 | **Asserting** |                       |              |                                        |                                          |
 |               | Hamcrest              | 1.3          | ju-junit, ju-spring-boot, ju-cucumber  | Assertions                               |
-|               | AssertJ               | 3.20.0       | ju-junit, ju-spring-boot               | Assertions with Fluent API               |
+|               | AssertJ               | 3.21.0       | ju-junit, ju-spring-boot               | Assertions with Fluent API               |
 |               | JSONAssert            | 1.5.0        | ju-junit                               | Assertions for JSON                      |
 |               | JSONPath              | 2.6.0        | ju-junit                               | Assertions for JSON (used also by Spring |
 |               | Rest Assured          | 4.4.0        | ju-spring-boot                         | Assertions for REST service              |
 | **Mocking**   |                       |              |                                        |                                          |
-|               | Mockito               | 3.11.2       | ju-junit                               |                                          |
+|               | Mockito               | 4.0.0        | ju-junit                               |                                          |
 |               | EasyMock              | 4.3          | ju-junit                               |                                          |
 |               | PowerMock             | 2.0.9        | ju-junit                               | Advanced mocking                         |
 | **Others**    |                       |              |                                        |                                          |
-|               | Spring Boot           | 2.5.2        | ju-spring-boot                         | Fast development of production ready applications |
+|               | Spring Boot           | 2.5.7        | ju-spring-boot                         | Fast development of production ready applications |
 |               | Liquibase             | by SB        | ju-spring-boot                         | Database management                      |
 |               | JAX-B                 | by SB        | ju-spring-boot                         | XML binding                              |
 
