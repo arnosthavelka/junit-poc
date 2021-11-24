@@ -2,8 +2,9 @@
 [![Travis Build Status][travis-image]][travis-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url] [![MIT licensed][mit-badge]](./LICENSE.txt)
 
 
-This repository holds examples for my book [JUnit 5 - Unit testing on Java platform](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - Jednotkové testování na platformě Java).
-The main goal is to demonstrate usage of the framework JUnit 5.
+This repository holds examples for my book [JUnit 5 - Unit testing on Java platform](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - Jednotkové testování na platformě Java)
+and my theses [Analysis of architecture and extension model of the framework JUnit](https://theses.cz/id/p7ghon). However, I try to keep it up-to-date with the latest
+dependencies and new features with the main goal to demonstrate usage of the framework JUnit 5.
 
 ## Pre-requisities
 * JDK 16
@@ -26,7 +27,6 @@ The main goal is to demonstrate usage of the framework JUnit 5.
         1. Exception handler
     1. Usage of Kotlin
     1. And more
-1. **Framework JUnit 4** - demonstration of basic tests and usage of PowerMock framework. The demonstration of all JUnit 4 features is covered in [release 1.0](https://github.com/arnosthavelka/junit-poc/tree/1.0) and my theses [Analysis of architecture and extension model of the framework JUnit](https://theses.cz/id/p7ghon) (Analýza architektury a nadstavbových možností frameworku JUnit).
 1. **Spring Boot** - demonstration of writing Spring Boot tests (including simple Spring tests example) covers:
     1. Tests for each layer
     	1. Persistence (including Liquibase)
@@ -59,8 +59,6 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | Rest Assured          | 4.4.0        | ju-spring-boot                         | Assertions for REST service              |
 | **Mocking**   |                       |              |                                        |                                          |
 |               | Mockito               | 4.0.0        | ju-junit                               |                                          |
-|               | EasyMock              | 4.3          | ju-junit                               |                                          |
-|               | PowerMock             | 2.0.9        | ju-junit                               | Advanced mocking                         |
 | **Others**    |                       |              |                                        |                                          |
 |               | Spring Boot           | 2.5.7        | ju-spring-boot                         | Fast development of production ready applications |
 |               | Liquibase             | by SB        | ju-spring-boot                         | Database management                      |

@@ -33,8 +33,6 @@
 		<assertj.version>3.21.0</assertj.version>
 		<hamcrest.version>1.3</hamcrest.version>
 		<mockito.version>4.0.0</mockito.version>
-		<easymock.version>4.3</easymock.version>
-		<powermock.version>2.0.9</powermock.version>
 		<jsonassert.version>1.5.0</jsonassert.version>
 		<jsonpath.version>2.6.0</jsonpath.version>
 		<rest-assured.version>4.4.0</rest-assured.version>
@@ -88,24 +86,6 @@
 				<groupId>org.mockito</groupId>
 				<artifactId>mockito-junit-jupiter</artifactId>
 				<version>${mockito.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.easymock</groupId>
-				<artifactId>easymock</artifactId>
-				<version>${easymock.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.powermock</groupId>
-				<artifactId>powermock-module-junit4</artifactId>
-				<version>${powermock.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.powermock</groupId>
-				<artifactId>powermock-api-easymock</artifactId>
-				<version>${powermock.version}</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
