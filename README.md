@@ -48,7 +48,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | SLF4J                 | 1.7.32       | all                                    | Logging                                  |
 |               | Lombok                | 1.18.22      | all                                    | Simplification of Java classes           |
 | **Testing**   |                       |              |                                        |                                          |
-|               | JUnit                 | 5.7.2        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5                 |
+|               | JUnit                 | 5.8.1        | ju-junit, ju-spring-boot, ju-cucumber  | Unit testing with JUnit5                 |
 |               | Cucumber              | 7.0.0        | ju-cucumber                            | BDD testing (Note: lamda feature was removed due to missing support for JDK14)                             |
 |               | Spring Cloud Contract | 3.0.4        | ju-spring-boot                         | Contract / specification for REST services |
 | **Asserting** |                       |              |                                        |                                          |

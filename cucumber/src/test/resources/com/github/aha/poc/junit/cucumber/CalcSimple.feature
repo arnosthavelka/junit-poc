@@ -1,4 +1,5 @@
 # language: cs
+@calculator 
 Požadavek: Jednoduchá kalkulačka
 
   Scénář: součet libovolného počtu čísel

@@ -1,4 +1,4 @@
-@advanced
+@calculator @advanced
 Feature: Advanced Calculator 
 
 Background: 
