@@ -26,7 +26,7 @@
 		<kotlin.version>1.6.0</kotlin.version>
 
 		<!-- testing properties -->
-		<junit.jupiter.version>5.7.2</junit.jupiter.version>
+		<junit.jupiter.version>5.8.1</junit.jupiter.version>
 		<surefire-plugin>3.0.0-M5</surefire-plugin>
 		<failsafe-plugin>3.0.0-M5</failsafe-plugin>
 		<cucumber.version>7.0.0</cucumber.version>
@@ -42,7 +42,7 @@
 		<slf4j.version>1.7.32</slf4j.version>
 		<logback.version>1.2.7</logback.version>
 		<!-- specific dependencies -->
-		<spring-boot.version>2.5.7</spring-boot.version>
+		<spring-boot.version>2.6.0</spring-boot.version>
 		<spring-cloud-contract.version>3.0.4</spring-cloud-contract.version>
 		<lombok.version>1.18.22</lombok.version>
 	</properties>

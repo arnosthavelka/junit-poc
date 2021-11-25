@@ -1,6 +1,7 @@
 package com.github.aha.poc.junit.springboot;
 
 import static java.util.stream.Collectors.toList;
+import static org.springframework.hateoas.CollectionModel.of;
 import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -32,7 +33,7 @@ public class CityController {
 	@GetMapping
 	public HttpEntity<CollectionModel<CityResource>> list() {
 		List<City> result = service.getAll();
-		return new ResponseEntity<>(new CollectionModel<>(toResources(result)), OK);
+		return new ResponseEntity<>(of(toResources(result)), OK);
 	}
 
 	@GetMapping("/{id}")
