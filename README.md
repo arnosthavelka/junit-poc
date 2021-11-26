@@ -6,8 +6,8 @@ This repository holds examples for my book [JUnit 5 - Unit testing on Java platf
 The main goal is to demonstrate usage of the framework JUnit 5.
 
 ## Pre-requisities
-* JDK 16
-* Maven 3.6
+* JDK 17
+* Maven 3.8
 * Lombok (installed into the IDE)
 
 ## Decomposition of projects
@@ -15,7 +15,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 
 ## Features
  Moreover there are some topics related to these areas:
-1. **Framework JUnit 5** - demonstration of all JUnit 5 covers:
+1. **Framework JUnit** - demonstration of all JUnit 5 covers:
     1. Features: 
         1. All basic annotations
         1. Dynamic & nested tests
@@ -26,7 +26,6 @@ The main goal is to demonstrate usage of the framework JUnit 5.
         1. Exception handler
     1. Usage of Kotlin
     1. And more
-1. **Framework JUnit 4** - demonstration of most JUnit 4 features is covered in [release 1.0](https://github.com/arnosthavelka/junit-poc/tree/1.0) and my theses [Analysis of architecture and extension model of the framework JUnit](https://theses.cz/id/p7ghon) (Analýza architektury a nadstavbových možností frameworku JUnit).
 1. **Spring Boot** - demonstration of writing Spring Boot tests (including simple Spring tests example) covers:
     1. Tests for each layer
     	1. Persistence (including Liquibase)
@@ -42,7 +41,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 | Area          | Tool                  | Version      | Project                                | Description / Usage                      |
 | ----------    | --------------------- | ------------ | -------------------------------------- | ---------------------------------------- |
 | **General**   |                       |              |                                        |                                          |
-|               | Maven                 | 3.6.x        | all                                    | Build                                    |
+|               | Maven                 | 3.8.x        | all                                    | Build                                    |
 |               | Java                  | 17           | all                                    | Language Java  (code and tests)          |
 |               | Kotlin                | 1.6.0        | ju-junit                               | Language Kotlin (tests only   )          |
 |               | SLF4J                 | 1.7.32       | all                                    | Logging                                  |
