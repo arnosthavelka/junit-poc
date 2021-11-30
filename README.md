@@ -60,7 +60,7 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | Mockito               | 4.0.0        | ju-junit                               |                                          |
 |               | EasyMock              | 4.3          | ju-junit                               |                                          |
 | **Others**    |                       |              |                                        |                                          |
-|               | Spring Boot           | 2.5.7        | ju-spring-boot                         | Fast development of production ready applications |
+|               | Spring Boot           | 2.6.1        | ju-spring-boot                         | Fast development of production ready applications |
 |               | Liquibase             | by SB        | ju-spring-boot                         | Database management                      |
 |               | JAX-B                 | by SB        | ju-spring-boot                         | XML binding                              |
 
