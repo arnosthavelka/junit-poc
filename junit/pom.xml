@@ -111,10 +111,6 @@
 							junit.jupiter.execution.parallel.config.fixed.parallelism=4
 	                    </configurationParameters>
 	                </properties>
-					<!-- see https://www.gitmemory.com/issue/easymock/easymock/235/809974037 -->
-	                <argLine>
-	                	--illegal-access=permit
-	                </argLine>
 	            </configuration>				
 			</plugin>
 			<plugin>
