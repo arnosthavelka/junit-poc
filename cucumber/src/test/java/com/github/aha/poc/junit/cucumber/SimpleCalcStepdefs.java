@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class SimpleCalcStepdefs /* implements Cs */ {
+public class SimpleCalcStepdefs {
 
 	private SimpleCalculator calc;
 	
@@ -24,20 +24,4 @@ public class SimpleCalcStepdefs /* implements Cs */ {
 		assertThat(calc.sum()).isEqualTo(finalValue);
 	}
 
-//	public SimpleCalcStepdefs() {
-//
-//		Pokud("začneme s výchozí hodnotou {int}", (Integer initValue) -> {
-//			calc = new SimpleCalculator(initValue);
-//		});
-//
-//		Když("přidáme hodnotu {int}", (Integer value) -> {
-//			calc.add(value);
-//		});
-//
-//		Pak("výsledný součet je {int}", (finalValue) -> {
-//			assertThat(calc.sum()).isEqualTo(finalValue);
-//		});
-//
-//	}
-//
 }
