@@ -30,7 +30,7 @@ public class CityControllerBeanTest {
 	private CityService service;
 
 	@Test
-	public void testMadridCity() {
+	public void getItem() {
 		// given
 		when(this.service.getItem(MADRID_ID)).thenReturn(new City(MADRID_ID, MADRID_NAME));
 		// when
