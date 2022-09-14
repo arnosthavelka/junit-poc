@@ -1,5 +1,5 @@
 # junit-poc
-[![Travis Build Status][travis-image]][travis-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url] [![MIT licensed][mit-badge]](./LICENSE.txt)
+[![Java CI with Maven][github-image]][github-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url] [![MIT licensed][mit-badge]](./LICENSE.txt)
 
 
 This repository holds examples for my book [JUnit 5 - Unit testing on Java platform](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - Jednotkové testování na platformě Java).
@@ -61,8 +61,8 @@ The main goal is to demonstrate usage of the framework JUnit 5.
 |               | Liquibase             | ju-spring-boot                         | Database management                      |
 |               | JAX-B                 | ju-spring-boot                         | XML binding                              |
 
-[travis-url-main]: https://app.travis-ci.com/github/arnosthavelka/junit-poc
-[travis-image]: https://travis-ci.com/arnosthavelka/junit-poc.svg?branch=develop
+[github-url-main]: https://github.com/arnosthavelka/junit-poc/actions/workflows/maven.yml
+[github-image]: https://github.com/arnosthavelka/junit-poc/actions/workflows/maven.yml/badge.svg
 
 [sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_junit-poc
 [sonar-quality-gate]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_junit-poc&metric=alert_status
