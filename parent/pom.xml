@@ -31,16 +31,16 @@
 		<failsafe-plugin>3.0.0-M6</failsafe-plugin>
 		<cucumber.version>7.7.0</cucumber.version>
 		<assertj.version>3.23.1</assertj.version>
-		<hamcrest.version>1.3</hamcrest.version> <!-- TODO switch to https://mvnrepository.com/artifact/org.hamcrest/hamcrest/2.2 -->
-		<mockito.version>4.4.0</mockito.version> <!-- TODO  4.8.0 -->
+		<hamcrest.version>2.2</hamcrest.version>
+		<mockito.version>4.8.0</mockito.version>
 		<easymock.version>4.3</easymock.version>
 		<jsonassert.version>1.5.1</jsonassert.version>
 		<jsonpath.version>2.7.0</jsonpath.version>
 		<rest-assured.version>4.5.1</rest-assured.version> <!-- TODO 5.2.0 -->
 		<evo-inflector.version>1.3</evo-inflector.version>
 		<!-- specific logging properties -->
-		<slf4j.version>1.7.36</slf4j.version> <!-- TODO 2.0.0 -->
-		<logback.version>1.2.11</logback.version> <!-- TODO 1.4.0 -->
+		<slf4j.version>1.7.36</slf4j.version>
+		<logback.version>1.2.11</logback.version>
 		<!-- specific dependencies -->
 		<spring-boot.version>2.7.3</spring-boot.version>
 		<spring-cloud-contract.version>3.1.3</spring-cloud-contract.version>
