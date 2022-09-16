@@ -29,7 +29,7 @@
 		<junit.jupiter.version>5.9.0</junit.jupiter.version>
 		<surefire-plugin>3.0.0-M7</surefire-plugin>
 		<failsafe-plugin>3.0.0-M6</failsafe-plugin>
-		<cucumber.version>7.2.3</cucumber.version> <!-- TODO  7.7.0 -->
+		<cucumber.version>7.7.0</cucumber.version>
 		<assertj.version>3.23.1</assertj.version>
 		<hamcrest.version>1.3</hamcrest.version> <!-- TODO switch to https://mvnrepository.com/artifact/org.hamcrest/hamcrest/2.2 -->
 		<mockito.version>4.4.0</mockito.version> <!-- TODO  4.8.0 -->
