@@ -7,17 +7,14 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.github.aha.poc.junit.springboot.City;
 import com.github.aha.poc.junit.springboot.CityRepository;
 import com.github.aha.poc.junit.springboot.CityService;
 
-@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = NONE)
 public class CityServiceTest {
 
