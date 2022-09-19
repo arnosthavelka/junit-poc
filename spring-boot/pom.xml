@@ -62,22 +62,6 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>io.rest-assured</groupId>
-			<artifactId>rest-assured-all</artifactId> <!-- all is needed due to JDK11 -->
-		</dependency>
-		<dependency>
-			<groupId>io.rest-assured</groupId>
-			<artifactId>spring-mock-mvc</artifactId>
-		</dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>json-path</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>xml-path</artifactId>
-        </dependency>
-		<dependency>
 		    <groupId>org.atteo</groupId>
 		    <artifactId>evo-inflector</artifactId> <!-- needed for HAL conversion in controller tests -->
 		    <version>${evo-inflector.version}</version>
