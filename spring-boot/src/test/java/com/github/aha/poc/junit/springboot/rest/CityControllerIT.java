@@ -11,7 +11,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,14 +31,13 @@ import com.github.aha.poc.junit.springboot.CityResource;
 import jakarta.annotation.PostConstruct;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-@Disabled // FIXME not working in mvn install
 public class CityControllerIT {
 
-	public static class ExtractParameterizedResources
+	static class ExtractParameterizedResources
 			extends ParameterizedTypeReference<CollectionModel<CityResource>> {
 	}
 
-	public static class ExtractResources extends CollectionModel<CityResource> {
+	static class ExtractResources extends CollectionModel<CityResource> {
 	}
 
 	@Autowired
@@ -70,14 +68,14 @@ public class CityControllerIT {
 
 	@Test
 	public void listCitiesWithGet() {
-		ResponseEntity<ExtractResources> response = restTemplate.getForEntity("/cities/", ExtractResources.class);
+		ResponseEntity<ExtractResources> response = restTemplate.getForEntity("/cities", ExtractResources.class);
 		assertThat(response.getStatusCode()).isEqualTo(OK);
 		assertThat(response.getBody().getContent().size()).isEqualTo(4);
 	}
 
 	@Test
 	public void listCitiesWithExchange() {
-		ResponseEntity<CollectionModel<CityResource>> response = restTemplate.exchange("/cities/", GET, null,
+		ResponseEntity<CollectionModel<CityResource>> response = restTemplate.exchange("/cities", GET, null,
 				new ExtractParameterizedResources());
 		assertThat(response.getStatusCode()).isEqualTo(OK);
 		assertThat(response.getBody().getContent().size()).isEqualTo(4);
