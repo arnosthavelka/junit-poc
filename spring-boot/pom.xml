@@ -54,12 +54,6 @@
 			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
 			<version>${spring-cloud-contract.version}</version>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>com.sun.xml.bind</groupId>
-					<artifactId>jaxb-osgi</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 		    <groupId>org.atteo</groupId>
