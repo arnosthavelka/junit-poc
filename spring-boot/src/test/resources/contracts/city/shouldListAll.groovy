@@ -3,7 +3,7 @@ Contract.make {
     description "should return all available cities"
     request{
         method GET()
-        url("/cities/")
+        url("/cities")
     }
     response {
         status 200

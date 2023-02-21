@@ -11,14 +11,12 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.RepresentationModel;
@@ -31,11 +29,14 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.aha.poc.junit.springboot.CityResource;
 
+import jakarta.annotation.PostConstruct;
+
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @Disabled // FIXME not working in mvn install
 public class CityControllerIT {
-	
-	public static class ExtractParameterizedResources extends ParameterizedTypeReference<CollectionModel<CityResource>> {
+
+	public static class ExtractParameterizedResources
+			extends ParameterizedTypeReference<CollectionModel<CityResource>> {
 	}
 
 	public static class ExtractResources extends CollectionModel<CityResource> {
@@ -60,7 +61,8 @@ public class CityControllerIT {
 	private HttpMessageConverter<?> getHalMessageConverter() {
 		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.registerModule(new Jackson2HalModule());
-		MappingJackson2HttpMessageConverter halConverter = new TypeConstrainedMappingJackson2HttpMessageConverter(RepresentationModel.class);
+		MappingJackson2HttpMessageConverter halConverter = new TypeConstrainedMappingJackson2HttpMessageConverter(
+				RepresentationModel.class);
 		halConverter.setSupportedMediaTypes(of(HAL_JSON, APPLICATION_JSON));
 		halConverter.setObjectMapper(objectMapper);
 		return halConverter;
@@ -75,8 +77,8 @@ public class CityControllerIT {
 
 	@Test
 	public void listCitiesWithExchange() {
-		ResponseEntity<CollectionModel<CityResource>> response = restTemplate.exchange("/cities/", GET,
-				null, new ExtractParameterizedResources());
+		ResponseEntity<CollectionModel<CityResource>> response = restTemplate.exchange("/cities/", GET, null,
+				new ExtractParameterizedResources());
 		assertThat(response.getStatusCode()).isEqualTo(OK);
 		assertThat(response.getBody().getContent().size()).isEqualTo(4);
 	}

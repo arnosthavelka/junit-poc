@@ -118,7 +118,6 @@
 			    <extensions>true</extensions>
 	            <configuration>
 	                <baseClassForTests>com.github.aha.poc.junit.springboot.AbstractContractTest</baseClassForTests> 
-	                <testFramework>JUNIT5</testFramework> 
 	            </configuration>
 			</plugin>
 			<plugin>
