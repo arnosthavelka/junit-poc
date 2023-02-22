@@ -7,7 +7,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -15,21 +14,20 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import com.github.aha.poc.junit.springboot.CityResource;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-@Disabled // FIXME not working in mvn install
-public class CityControllerRestAssuredIT {
+class CityControllerRestAssuredIT {
 
 	@LocalServerPort
 	private int port;
 
 	@Test
-	public void listCities() {
-		when().get("http://localhost:" + port + "/cities/").then().statusCode(200).assertThat().body(
+	void listCities() {
+		when().get("http://localhost:" + port + "/cities").then().statusCode(200).assertThat().body(
 				"_embedded.cityResources.size()", is(4), "_embedded.cityResources[2].id", equalTo(3),
 				"_embedded.cityResources[2].name", equalTo("Paris"));
 	}
 
 	@Test
-	public void getCity() {
+	void getCity() {
 		long cityId = 2L;
 		CityResource city = get("http://localhost:" + port + "/cities/" + cityId).then().extract()
 				.as(CityResource.class);
