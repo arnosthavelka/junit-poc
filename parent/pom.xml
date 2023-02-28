@@ -41,7 +41,7 @@
 		<slf4j.version>2.0.6</slf4j.version>
 		<logback.version>1.4.5</logback.version>
 		<!-- specific dependencies -->
-		<spring-boot.version>3.0.3</spring-boot.version>
+		<spring-boot.version>3.0.4</spring-boot.version>
 		<spring-cloud-contract.version>4.0.1</spring-cloud-contract.version>
 		<lombok.version>1.18.26</lombok.version>
 	</properties>
