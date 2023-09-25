@@ -21,7 +21,7 @@ import org.springframework.test.web.servlet.MockMvc;
 public class CityControllerRestAssuredMvcTest {
 
 	private static final String ROOT_PATH = "/cities";
-	private static final long PRAGUE_ID = 1L;
+	private static final Long PRAGUE_ID = 1L;
 	private static final String PRAGUE_NAME = "Prague";
 
 	@Autowired
@@ -33,7 +33,7 @@ public class CityControllerRestAssuredMvcTest {
 		given()
 			.mockMvc(mvc)
 		.when()
-			.get(ROOT_PATH + "/{id}", PRAGUE_ID)
+			.get(ROOT_PATH + "/{id}", PRAGUE_ID.toString())
 		.then()
 			.statusCode(200)
 			.assertThat().body("id", equalTo(1))
