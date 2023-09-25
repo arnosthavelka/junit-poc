@@ -45,7 +45,7 @@ import io.restassured.response.ExtractableResponse;
 public class CityControllerRestAssuredControllerTest {
 
 	private static final String ROOT_PATH = "/cities";
-	private static final long PRAGUE_ID = 1L;
+	private static final Long PRAGUE_ID = 1L;
 
 	@MockBean
 	CityService service;
@@ -60,7 +60,7 @@ public class CityControllerRestAssuredControllerTest {
 		given()
 			.standaloneSetup(controller)
 		.when()
-			.get(ROOT_PATH + "/{id}", PRAGUE_ID)
+			.get(ROOT_PATH + "/{id}", PRAGUE_ID.toString())
 		.then()
 			.statusCode(200)
 				.assertThat().header(CONTENT_TYPE, APPLICATION_JSON_VALUE)
@@ -77,7 +77,7 @@ public class CityControllerRestAssuredControllerTest {
 		given()
 			.standaloneSetup(controller)
 		.when()
-			.get(ROOT_PATH + "/{id}", PRAGUE_ID)
+			.get(ROOT_PATH + "/{id}", PRAGUE_ID.toString())
 		.then()
 			.extract();
 
@@ -96,7 +96,7 @@ public class CityControllerRestAssuredControllerTest {
 		CityResource cityResource = given()
 			.standaloneSetup(controller)
 		.when()
-			.get(ROOT_PATH + "/{id}", PRAGUE_ID)
+			.get(ROOT_PATH + "/{id}", PRAGUE_ID.toString())
 		.then()
 			.extract().as(CityResource.class);
 
