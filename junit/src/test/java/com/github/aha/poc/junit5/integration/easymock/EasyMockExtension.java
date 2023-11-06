@@ -21,8 +21,8 @@ public class EasyMockExtension implements TestInstancePostProcessor, TestInstanc
 	public void preDestroyTestInstance(ExtensionContext context) throws Exception {
 		// manual cleaning of created mocks
 		Object testInstance = context.getTestInstance().get();
-		if (testInstance instanceof AnnotationTest) {
-			((AnnotationTest) testInstance).calc = null;
+		if (testInstance instanceof AnnotationDrivenTest) {
+			((AnnotationDrivenTest) testInstance).calc = null;
 			log.info("Calc instance in test class {} destroyed", testInstance.getClass().getSimpleName());
 		}
 	}

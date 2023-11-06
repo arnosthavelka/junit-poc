@@ -12,7 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import com.github.aha.poc.junit.Calculator;
 
 @ExtendWith(EasyMockExtension.class)
-public class AnnotationTest {
+public class AnnotationDrivenTest {
 
 	@Mock
 	Calculator calc;

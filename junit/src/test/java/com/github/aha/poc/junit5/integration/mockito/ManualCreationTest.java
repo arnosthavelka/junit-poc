@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import com.github.aha.poc.junit.Calculator;
 
-public class StaticTest {
+public class ManualCreationTest {
 
 	private Calculator calc;
 

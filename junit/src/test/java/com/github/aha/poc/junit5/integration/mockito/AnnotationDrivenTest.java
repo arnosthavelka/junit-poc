@@ -13,7 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.github.aha.poc.junit.Calculator;
 
 @ExtendWith(MockitoExtension.class)
-public class AnnotationTest {
+public class AnnotationDrivenTest {
 
 	@Test
 	public void mockExample(@Mock Calculator calc) {
