@@ -1,12 +1,11 @@
 package com.github.aha.poc.junit5.tag;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.platform.runner.JUnitPlatform;
 import org.junit.platform.suite.api.IncludeTags;
 import org.junit.platform.suite.api.SelectClasses;
-import org.junit.runner.RunWith;
+import org.junit.platform.suite.api.Suite;
 
-@RunWith(JUnitPlatform.class)
+@Suite
 @DisplayName("Slow suite - run all slow tests")
 @SelectClasses({ATest.class, BTest.class})
 @IncludeTags(TagConsts.SLOW)
