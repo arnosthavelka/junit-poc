@@ -16,9 +16,10 @@ class StaticUsageTests {
 	@Test
 	void whenWithoutArgument() {
 		try (MockedStatic<SequenceGenerator> seqGeneratorMock = mockStatic(SequenceGenerator.class)) {
-			seqGeneratorMock.when(SequenceGenerator::nextId).thenReturn(5);
+			int newValue = 5;
+			seqGeneratorMock.when(SequenceGenerator::nextId).thenReturn(newValue);
 
-			assertThat(SequenceGenerator.nextId()).isEqualTo(5);
+			assertThat(SequenceGenerator.nextId()).isEqualTo(newValue);
 		}
 	}
 
