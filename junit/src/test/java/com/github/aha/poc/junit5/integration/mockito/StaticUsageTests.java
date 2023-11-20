@@ -6,6 +6,7 @@ import static org.mockito.Mockito.mockStatic;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentMatchers;
 import org.mockito.MockedStatic;
 
 import com.github.aha.poc.junit.person.Person;
@@ -35,15 +36,23 @@ class StaticUsageTests {
 	}
 	
 	@Test
-	void verifyUsage() {
+	void verifyUsageWithoutArgument() {
 		try (MockedStatic<SequenceGenerator> seqGeneratorMock = mockStatic(SequenceGenerator.class)) {
-			int personId = 66;
-			seqGeneratorMock.when(SequenceGenerator::nextId).thenReturn(personId);
 			
 			var person = new Person("Pamela");
 
-			assertThat(person.getId()).isEqualTo(personId);
 			seqGeneratorMock.verify(SequenceGenerator::nextId);
+			assertThat(person.getId()).isEqualTo(0);
+		}
+	}
+
+	@Test
+	void verifyUsageWithArgument() {
+		try (MockedStatic<SequenceGenerator> seqGeneratorMock = mockStatic(SequenceGenerator.class)) {
+			List<Integer> nextIds = SequenceGenerator.nextMultipleIds(3);
+			
+			seqGeneratorMock.verify(() -> SequenceGenerator.nextMultipleIds(ArgumentMatchers.anyInt()));
+			assertThat(nextIds).isEmpty();
 		}
 	}
 	
