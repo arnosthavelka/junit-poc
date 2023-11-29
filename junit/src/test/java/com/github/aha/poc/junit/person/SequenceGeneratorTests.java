@@ -8,14 +8,14 @@ class SequenceGeneratorTests {
 
 	@Test
 	void nextId() {
-		var currentValue = SequenceGenerator.nextId();
-
-		assertThat(SequenceGenerator.nextId()).isGreaterThan(currentValue);
+		assertThat(SequenceGenerator.nextId()).isLessThan(SequenceGenerator.nextId());
 	}
 
 	@Test
 	void nextMultipleIds() {
-		assertThat(SequenceGenerator.nextMultipleIds(3)).hasSize(3);
+		var noOfValues = 3;
+		
+		assertThat(SequenceGenerator.nextMultipleIds(noOfValues)).hasSize(noOfValues);
 	}
 
 }

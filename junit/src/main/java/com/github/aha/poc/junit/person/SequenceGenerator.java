@@ -9,11 +9,7 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class SequenceGenerator {
 
-	private static AtomicInteger counter;
-
-	static {
-		counter = new AtomicInteger(1);
-	}
+	private static AtomicInteger counter = new AtomicInteger(1);
 
 	public static int nextId() {
 		return counter.getAndIncrement();
