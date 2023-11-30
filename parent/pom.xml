@@ -28,7 +28,9 @@
 		<!-- testing properties -->
 		<junit.jupiter.version>5.10.1</junit.jupiter.version>
 		<surefire-plugin>3.2.2</surefire-plugin>
+		<surefire-junit-platform.version>3.2.2</surefire-junit-platform.version>
 		<failsafe-plugin>3.2.2</failsafe-plugin>
+		<byte-buddy.version>1.14.10</byte-buddy.version>
 		<cucumber.version>7.14.1</cucumber.version>
 		<assertj.version>3.24.2</assertj.version>
 		<hamcrest.version>2.2</hamcrest.version>
@@ -223,6 +225,13 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>${surefire-plugin}</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.surefire</groupId>
+							<artifactId>surefire-junit-platform</artifactId>
+							<version>${surefire-junit-platform.version}</version>
+						</dependency>
+					</dependencies>
 				</plugin>
 				<plugin>
 					<groupId>external.atlassian.jgitflow</groupId>

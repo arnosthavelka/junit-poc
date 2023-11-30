@@ -4,8 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-import java.util.Arrays;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -34,8 +32,9 @@ public class SpyAndCaptorTest {
 	@Test
 	public void captorExample() {
 		calc.multiply(2, 3);
+		
 		verify(calc).multiply(argCaptor.capture());
-		assertThat(Arrays.asList(2, 3)).isEqualTo(argCaptor.getAllValues());
+		assertThat(argCaptor.getValue()).contains(2, 3);
 	}
 
 	@Test
