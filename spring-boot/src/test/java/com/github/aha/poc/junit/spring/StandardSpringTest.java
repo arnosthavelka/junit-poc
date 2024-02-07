@@ -17,7 +17,6 @@ public class StandardSpringTest {
 	
 	@Test
 	public void test() {
-		assertThat(service).isNotNull();
 		assertThat(service.getMessage()).isEqualTo("Hello world!");
 	}
 
