@@ -55,7 +55,7 @@ public class BasicTests {
 	@DisplayName("check TestInfo feature")
 	void checkMethodName(TestInfo testInfo) {
 		Optional<Method> testMethod = testInfo.getTestMethod();
-		assertThat(testMethod.isPresent()).isTrue();
+		assertThat(testMethod).isPresent();
 		assertThat(testMethod.get().getName()).isEqualTo("checkMethodName");
 	}
 

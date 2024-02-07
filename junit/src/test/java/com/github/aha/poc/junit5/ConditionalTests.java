@@ -47,7 +47,7 @@ public class ConditionalTests {
 	@EnabledForJreRange(min = JAVA_11)
 	void checkJdk11Feature() {
 		showOsProperties();
-		assertThat("".isBlank()).isTrue();
+		assertThat("").isBlank();
 		assertThat("x\ny\nz".lines().collect(toList()).size()).isEqualTo(3);
 	}
 

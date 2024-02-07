@@ -18,29 +18,25 @@ public class SimpleParamTests {
 
 	@ParameterizedTest
 	@ValueSource(strings = { "Hello", "World" })
-	@DisplayName("check string values")
 	void stringTest(String argument) {
 		assertThat(argument.length()).isGreaterThan(1);
-		assertThat(argument.contains("o")).isTrue();
+		assertThat(argument).contains("o");
 	}
 
 	@ParameterizedTest
 	@ValueSource(ints = { 2, 3, -2, 4, -5 })
-	@DisplayName("check number values")
 	void numberTest(int argument) {
 		assertThat(argument).isNotEqualTo(0);
 	}
 
 	@ParameterizedTest
 	@EnumSource(value = ParamTypes.class, names = { "INT", "LONG" })
-	@DisplayName("check enum values")
 	void enumTest(ParamTypes argument) {
 		assertThat(argument).isNotNull();
 	}
 
 	@ParameterizedTest
 	@MethodSource(value = "paramValues")
-	@DisplayName("check method values")
 	void methodTest(String argument) {
 		assertThat(argument).isNotNull();
 	}
@@ -96,7 +92,6 @@ public class SimpleParamTests {
 
 	@ParameterizedTest
 	@ArgumentsSource(FibonacciProvider.class)
-	@DisplayName("check values provided by custom ArgumentsProvider")
 	void providerTest(Number value) {
 		assertThat(value).isNotNull();
 	}

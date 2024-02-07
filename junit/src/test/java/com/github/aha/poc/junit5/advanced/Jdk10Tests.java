@@ -13,7 +13,6 @@ import org.junit.jupiter.api.condition.EnabledForJreRange;
 public class Jdk10Tests {
 
 	@Test
-	@DisplayName("should allow VAR variable as Integer")
 	public void simpleVarInteger() {
 		var result = 2;
 
@@ -21,7 +20,6 @@ public class Jdk10Tests {
 	}
 
 	@Test
-	@DisplayName("should initialize VAR variable as array")
 	public void simpleVarArray() {
 		var array = of(0, 1, 2);
 
@@ -29,11 +27,10 @@ public class Jdk10Tests {
 	}
 
 	@Test
-	@DisplayName("should check String variable type")
 	public void simpleVarString() {
 		var result = "Welcome to JDK 10";
 
-		assertThat(result instanceof String).isTrue();
+		assertThat(result).isInstanceOf(String.class);
 	}
 
 }
