@@ -6,7 +6,7 @@
 
 	<groupId>com.github.aha.poc.junit</groupId>
 	<artifactId>ju-parent</artifactId>
-	<version>2.3-SNAPSHOT</version>
+	<version>2.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>JUnit 5 :: ${project.artifactId}</name>
