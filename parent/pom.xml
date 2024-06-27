@@ -18,7 +18,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<!-- compiler properties -->
-		<java.version>21</java.version>
+		<java.version>22</java.version>
 		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
@@ -26,12 +26,12 @@
 		<kotlin.version>1.9.24</kotlin.version>
 
 		<!-- testing properties -->
-		<junit.jupiter.version>5.10.2</junit.jupiter.version>
-		<maven-surefire-plugin.version>3.3.0</maven-surefire-plugin.version>
-		<maven-failsafe-plugin.version>3.3.0</maven-failsafe-plugin.version>
-		<byte-buddy.version>1.14.17</byte-buddy.version>
-		<cucumber.version>7.18.0</cucumber.version>
-		<assertj.version>3.26.0</assertj.version>
+		<junit.jupiter.version>5.10.3</junit.jupiter.version>
+		<maven-surefire-plugin.version>3.3.1</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>3.3.1</maven-failsafe-plugin.version>
+		<byte-buddy.version>1.14.18</byte-buddy.version>
+		<cucumber.version>7.18.1</cucumber.version>
+		<assertj.version>3.26.3</assertj.version>
 		<hamcrest.version>2.2</hamcrest.version>
 		<mockito.version>5.12.0</mockito.version>
 		<easymock.version>5.3.0</easymock.version>
@@ -42,9 +42,9 @@
 		<slf4j.version>2.0.13</slf4j.version>
 		<logback.version>1.5.6</logback.version>
 		<!-- specific dependencies -->
-		<spring-boot.version>3.3.1</spring-boot.version>
-		<spring-cloud-contract.version>4.1.3</spring-cloud-contract.version>
-		<lombok.version>1.18.32</lombok.version>
+		<spring-boot.version>3.3.2</spring-boot.version>
+		<spring-cloud-contract.version>4.1.4</spring-cloud-contract.version>
+		<lombok.version>1.18.34</lombok.version>
 	</properties>
 
 	<dependencyManagement>
