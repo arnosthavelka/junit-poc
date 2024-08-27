@@ -32,7 +32,7 @@
 		<byte-buddy.version>1.15.0</byte-buddy.version>
 		<cucumber.version>7.18.1</cucumber.version>
 		<assertj.version>3.26.3</assertj.version>
-		<hamcrest.version>2.2</hamcrest.version>
+		<hamcrest.version>3.0</hamcrest.version>
 		<mockito.version>5.12.0</mockito.version>
 		<easymock.version>5.4.0</easymock.version>
 		<jsonassert.version>1.5.3</jsonassert.version>
