@@ -6,7 +6,7 @@
 
 	<groupId>com.github.aha.poc.junit</groupId>
 	<artifactId>ju-parent</artifactId>
-	<version>2.4-SNAPSHOT</version>
+	<version>2.5-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>JUnit 5 :: ${project.artifactId}</name>
@@ -18,8 +18,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<!-- compiler properties -->
-		<java.version>22</java.version>
+		<java.version>23</java.version>
 		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+		<maven.compiler.proc>full</maven.compiler.proc>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<jacoco.version>0.8.12</jacoco.version>
