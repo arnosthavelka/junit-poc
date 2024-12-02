@@ -6,8 +6,8 @@ import static org.mockito.Mockito.when;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpEntity;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import com.github.aha.poc.junit.springboot.City;
 import com.github.aha.poc.junit.springboot.CityController;
@@ -23,7 +23,7 @@ public class CityControllerBeanTest {
 	@Autowired
 	private CityController controller;
 
-	@MockBean
+	@MockitoBean
 	private CityService service;
 
 	@Test
