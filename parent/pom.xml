@@ -27,11 +27,11 @@
 		<kotlin.version>2.1.10</kotlin.version>
 
 		<!-- testing properties -->
-		<junit.jupiter.version>5.12.1</junit.jupiter.version>
-		<maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
-		<maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
+		<junit.jupiter.version>5.12.2</junit.jupiter.version>
+		<maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>3.5.3</maven-failsafe-plugin.version>
 		<byte-buddy.version>1.17.2</byte-buddy.version>
-		<cucumber.version>7.21.1</cucumber.version>
+		<cucumber.version>7.22.0</cucumber.version>
 		<assertj.version>3.27.3</assertj.version>
 		<hamcrest.version>3.0</hamcrest.version>
 		<mockito.version>5.16.1</mockito.version>
@@ -43,9 +43,9 @@
 		<slf4j.version>2.0.16</slf4j.version>
 		<logback.version>1.5.16</logback.version>
 		<!-- specific dependencies -->
-		<spring-boot.version>3.4.4</spring-boot.version>
+		<spring-boot.version>3.4.5</spring-boot.version>
 		<spring-cloud-contract.version>4.2.1</spring-cloud-contract.version>
-		<lombok.version>1.18.36</lombok.version>
+		<lombok.version>1.18.38</lombok.version>
 	</properties>
 
 	<dependencyManagement>
