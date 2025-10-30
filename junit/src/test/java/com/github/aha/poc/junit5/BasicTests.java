@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 public class BasicTests {
 
 	@BeforeEach
-	private void init(TestInfo ti) {
+	void init(TestInfo ti) {
 		log.info("Test {} - {}", ti.getTestMethod().get(), Thread.currentThread().getName());
 	}
 	
