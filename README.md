@@ -6,7 +6,7 @@ This repository holds examples for my book [JUnit 5 - Unit testing on Java platf
 The main goal is to demonstrate usage of the framework JUnit 5.
 
 ## Pre-requisities
-* JDK 23
+* JDK 25
 * Maven 3.9
 * Lombok (installed into the IDE)
 
