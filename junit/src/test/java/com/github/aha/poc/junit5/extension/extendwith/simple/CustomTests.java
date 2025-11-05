@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @ExtendWith(CustomBeforeEach.class)
 @Slf4j
-public class CustomTests {
+class CustomTests {
 
 	@Test
 	@ExtendWith(CustomAfterEach.class)

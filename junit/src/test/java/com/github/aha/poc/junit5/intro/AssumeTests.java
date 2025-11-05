@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @DisplayName("Usage of assumes in JUnit5")
 @Slf4j
-public class AssumeTests {
+class AssumeTests {
 
 	private static final String OS_KEY = "OS";
 	private static final String OS_WIN = "Windows_NT";

@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 
 @Stat
-public class StatTests {
+class StatTests {
 
 	@Test
 	void trueTest() {

@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import com.github.aha.poc.junit.Calculator;
 
-public class ManualCreationTest {
+class ManualCreationTest {
 
 	private Calculator calc;
 
@@ -21,7 +21,7 @@ public class ManualCreationTest {
 	}
 
 	@Test
-	public void addTwoNumbers() {
+	void addTwoNumbers() {
 		when(calc.add(2, 3)).thenReturn(5);
 		
 		assertThat(calc.add(2, 3)).isEqualTo(5);
@@ -31,7 +31,7 @@ public class ManualCreationTest {
 	}
 
 	@Test
-	public void addThreeNumbers() {
+	void addThreeNumbers() {
 		when(calc.add(2, 3, 4)).thenReturn(9);
 		
 		assertThat(calc.add(2, 3, 4)).isEqualTo(9);

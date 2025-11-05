@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @DisplayName("Examples of conditional tests")
 @Slf4j
-public class ConditionalTests {
+class ConditionalTests {
 
 	@Test
 	@EnabledOnOs(WINDOWS)
@@ -32,7 +32,7 @@ public class ConditionalTests {
 	@EnabledOnOs(WINDOWS)
 	@DisabledIfSystemProperty(named = "os.version", matches = ".*10.*")
 	@DisplayName("enable test on Windows except version 10")
-	public void testOnWindowsExceptVersion10() {
+	void testOnWindowsExceptVersion10() {
 		showOsProperties();
 	}
 

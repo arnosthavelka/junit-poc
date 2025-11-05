@@ -13,7 +13,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 
 @TestMethodOrder(OrderAnnotation.class)
 @DisplayName("Ordered tests in JUnit5")
-public class OrderedTest {
+class OrderedTest {
 
 	static AtomicInteger value = new AtomicInteger(1);
 

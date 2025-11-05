@@ -13,10 +13,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.github.aha.poc.junit.Calculator;
 
 @ExtendWith(MockitoExtension.class)
-public class AnnotationDrivenTest {
+class AnnotationDrivenTest {
 
 	@Test
-	public void mockExample(@Mock Calculator calc) {
+	void mockExample(@Mock Calculator calc) {
 		when(calc.add(2, 3)).thenReturn(5);
 		assertThat(calc.add(2, 3)).isEqualTo(5);
 		verify(calc).add(2, 3);

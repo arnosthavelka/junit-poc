@@ -12,13 +12,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import com.github.aha.poc.junit.Calculator;
 
 @ExtendWith(EasyMockExtension.class)
-public class AnnotationDrivenTest {
+class AnnotationDrivenTest {
 
 	@Mock
 	Calculator calc;
 
 	@Test
-	public void mockExample() {
+	void mockExample() {
 		expect(calc.add(2, 3)).andReturn(5);
 		replay(calc);
 

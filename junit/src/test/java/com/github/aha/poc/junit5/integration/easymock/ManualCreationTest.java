@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 
 import com.github.aha.poc.junit.Calculator;
 
-public class ManualCreationTest {
+class ManualCreationTest {
 
 	static Calculator calc;
 
@@ -31,7 +31,7 @@ public class ManualCreationTest {
 	}
 
 	@Test
-	public void addTwoNumbers() {
+	void addTwoNumbers() {
 		expect(calc.add(2, 3)).andReturn(5);
 		replay(calc);
 
@@ -39,7 +39,7 @@ public class ManualCreationTest {
 	}
 
 	@Test
-	public void addThreeNumbers() {
+	void addThreeNumbers() {
 		expect(calc.add(2, 3, 4)).andReturn(9).times(1);
 		replay(calc);
 

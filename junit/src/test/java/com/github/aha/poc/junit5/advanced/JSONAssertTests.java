@@ -17,7 +17,7 @@ import org.skyscreamer.jsonassert.comparator.CustomComparator;
 // based on https://dzone.com/articles/best-java-unit-testing-frameworks
 // based on https://www.baeldung.com/jsonassert
 @DisplayName("Examples of asserting JSON content with JSONAssert")
-public class JSONAssertTests {
+class JSONAssertTests {
 
 	@Test
 	@DisplayName("should check the content in strict mode")

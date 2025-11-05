@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @DisplayName("A meta-info usage")
 @Slf4j
-public class MetainfoTest {
+class MetainfoTest {
 
 	@Test
 	@DisplayName("show UT meta-info data")

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Check display options")
-public class DisplayNameTest {
+class DisplayNameTest {
 
 	@Test
 	@DisplayName("Dobrý den")

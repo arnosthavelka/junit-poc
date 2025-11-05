@@ -20,7 +20,7 @@ import net.minidev.json.JSONArray;
 // based on https://dzone.com/articles/best-java-unit-testing-frameworks
 // based on https://www.baeldung.com/guide-to-jayway-jsonpath
 @DisplayName("Examples of asserting JSON content with JSONPath")
-public class JSONPathTests {
+class JSONPathTests {
 
 	String jsonContent = "{\n" +
 			"  \"_embedded\": {\n" +

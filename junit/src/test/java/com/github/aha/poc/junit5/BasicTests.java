@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @DisplayName("Basic tests in JUnit5")
 @Slf4j
-public class BasicTests {
+class BasicTests {
 
 	@BeforeEach
 	void init(TestInfo ti) {
@@ -42,7 +42,7 @@ public class BasicTests {
 
 	@Test
 	@DisplayName("show simple asserts via AssertJ")
-	public void simpleAssertJAssert() {
+	void simpleAssertJAssert() {
 		assertThat(true).isTrue();
 		assertThat(1 + 1).isEqualTo(2);
 		assertThat("hello").isNotEqualTo("hi");
@@ -52,23 +52,18 @@ public class BasicTests {
 	}
 
 	@Test
-	@DisplayName("check TestInfo feature")
-	void checkMethodName(TestInfo testInfo) {
-		Optional<Method> testMethod = testInfo.getTestMethod();
-		assertThat(testMethod).isPresent();
-		assertThat(testMethod.get().getName()).isEqualTo("checkMethodName");
+	void checkTestMethodName(TestInfo testInfo) {
+		assertThat(testInfo.getTestMethod())
+			.map(Method::getName)
+			.hasValue("checkTestMethodName");
 	}
 
 	@Test
-	@DisplayName("check @Tag feature")
 	@Tag("JUnit5")
-	void checkTag(TestInfo testInfo) {
-		Set<String> tags = testInfo.getTags();
-		assertThat(tags).isNotNull();
-		assertThat(tags.size()).isEqualTo(1);
-		Optional<String> firstTag = tags.stream().findFirst();
-		assertThat(firstTag.isPresent()).isTrue();
-		assertThat(firstTag.get()).isEqualTo("JUnit5");
+	void checkTagFeature(TestInfo testInfo) {
+		assertThat(testInfo.getTags())
+			.singleElement()
+			.isEqualTo("JUnit5");
 	}
 
 }

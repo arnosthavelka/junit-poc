@@ -7,11 +7,11 @@ import org.junit.jupiter.api.Test;
 
 import com.github.aha.poc.junit.person.PersonService;
 
-public class PrivateTest {
+class PrivateTest {
 
 	@Test
 	@DisplayName("check hidden private constructor")
-	public void testPrivateConstructor() {
+	void testPrivateConstructor() {
 		assertThrows(NoSuchMethodException.class, () -> PersonService.class.getConstructor().newInstance());
 	}
 
