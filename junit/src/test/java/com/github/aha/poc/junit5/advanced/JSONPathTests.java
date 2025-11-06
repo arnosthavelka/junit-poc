@@ -22,38 +22,39 @@ import net.minidev.json.JSONArray;
 @DisplayName("Examples of asserting JSON content with JSONPath")
 class JSONPathTests {
 
-	String jsonContent = "{\n" +
-			"  \"_embedded\": {\n" +
-			"    \"countries\": [\n" +
-			"      {\n" +
-			"        \"name\": \"Great Britain\",\n" +
-			"        \"currency\": \"GDP\",\n" +
-			"        \"cities\": [\"London\", \"Glasgow\", \"Brigton\", \"Manchester\"],\n" +
-			"      },\n" +
-			"      {\n" +
-			"        \"name\": \"Germany\",\n" +
-			"        \"currency\": \"EUR\",\n" +
-			"        \"cities\": [\"Berlin\", \"Munich\", \"Hamburk\"],\n" +
-			"      },\n" +
-			"      {\n" +
-			"        \"name\": \"Czech Republic\",\n" +
-			"        \"currency\": \"CZK\",\n" +
-			"        \"cities\": [\"Prague\", \"Brno\", \"Plzen\", \"Ostrava\"],\n" +
-			"      },\n" +
-			"      {\n" +
-			"        \"name\": \"France\",\n" +
-			"        \"currency\": \"EUR\",\n" +
-			"        \"cities\": [\"Paris\", \"Toulouse\", \"Nice\", \"Marseille\"],\n" +
-			"      }\n" +
-			"     ]\n" +
-			"  },\n" +
-			"  \"page\": {\n" +
-			"    \"size\": 4,\n" +
-			"    \"totalElements\": 4,\n" +
-			"    \"totalPages\": 1,\n" +
-			"    \"number\": 0\n" +
-			"  }\n" +
-			"}";
+	String jsonContent = """
+			{
+			  "_embedded": {
+			    "countries": [
+			      {
+			        "name": "Great Britain",
+			        "currency": "GDP",
+			        "cities": ["London", "Glasgow", "Brigton", "Manchester"],
+			      },
+			      {
+			        "name": "Germany",
+			        "currency": "EUR",
+			        "cities": ["Berlin", "Munich", "Hamburk"],
+			      },
+			      {
+			        "name": "Czech Republic",
+			        "currency": "CZK",
+			        "cities": ["Prague", "Brno", "Plzen", "Ostrava"],
+			      },
+			      {
+			        "name": "France",
+			        "currency": "EUR",
+			        "cities": ["Paris", "Toulouse", "Nice", "Marseille"],
+			      }
+			     ]
+			  },
+			  "page": {
+			    "size": 4,
+			    "totalElements": 4,
+			    "totalPages": 1,
+			    "number": 0
+			  }
+			}""";
 
 	DocumentContext jsonContext = parse(jsonContent);
 
