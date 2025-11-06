@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @DisplayName("Repeated tests in JUnit5")
 @Slf4j
-public class RepeatTest {
+class RepeatTest {
 
 	@RepeatedTest(5)
 	@DisplayName("Standard repeated test")

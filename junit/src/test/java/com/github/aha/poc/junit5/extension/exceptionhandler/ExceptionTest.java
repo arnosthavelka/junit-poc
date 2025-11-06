@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @ExtendWith(IllegalArgumentExceptionHandler.class)
 @Slf4j
-public class ExceptionTest {
+class ExceptionTest {
 
 	@Test
 	void validTest() {

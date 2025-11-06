@@ -10,24 +10,24 @@ import org.junit.jupiter.api.condition.EnabledForJreRange;
 
 @DisplayName("Examples of JDK 10 features")
 @EnabledForJreRange(min = JAVA_10)
-public class Jdk10Tests {
+class Jdk10Tests {
 
 	@Test
-	public void simpleVarInteger() {
+	void simpleVarInteger() {
 		var result = 2;
 
 		assertThat(1 + 1).isEqualTo(result);
 	}
 
 	@Test
-	public void simpleVarArray() {
+	void simpleVarArray() {
 		var array = of(0, 1, 2);
 
 		assertThat(array.size()).isEqualTo(3);
 	}
 
 	@Test
-	public void simpleVarString() {
+	void simpleVarString() {
 		var result = "Welcome to JDK 10";
 
 		assertThat(result).isInstanceOf(String.class);

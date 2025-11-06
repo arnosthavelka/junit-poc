@@ -14,7 +14,7 @@ import org.junit.jupiter.api.function.ThrowingConsumer;
 
 // copied from http://junit.org/junit5/docs/current/user-guide/#writing-tests-dynamic-tests
 @DisplayName("A usage of real dynamic tests")
-public class RealDynamicTests {
+class RealDynamicTests {
 
     @TestFactory
     @DisplayName("generates random numbers (0-100) until a number divisible by 7 is encountered")

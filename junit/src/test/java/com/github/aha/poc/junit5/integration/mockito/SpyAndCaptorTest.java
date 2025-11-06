@@ -14,7 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.github.aha.poc.junit.Calculator;
 
 @ExtendWith(MockitoExtension.class)
-public class SpyAndCaptorTest {
+class SpyAndCaptorTest {
 
 	@Spy
 	private Calculator calc;
@@ -23,14 +23,14 @@ public class SpyAndCaptorTest {
 	ArgumentCaptor<int[]> argCaptor;
 
 	@Test
-	public void spyExample() {
+	void spyExample() {
 		assertThat(calc.multiply(2, 3)).isEqualTo(6);
 		verify(calc).multiply(2, 3);
 		verify(calc, times(0)).add(2, 3);
 	}
 
 	@Test
-	public void captorExample() {
+	void captorExample() {
 		calc.multiply(2, 3);
 		
 		verify(calc).multiply(argCaptor.capture());
@@ -38,8 +38,8 @@ public class SpyAndCaptorTest {
 	}
 
 	@Test
-	public void simpleTest() {
-		assertThat(calc.multiply()).isEqualTo(0);
+	void simpleTest() {
+		assertThat(calc.multiply()).isZero();
 	}
 
 }

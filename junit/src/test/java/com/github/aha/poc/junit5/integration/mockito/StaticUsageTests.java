@@ -42,7 +42,7 @@ class StaticUsageTests {
 			var person = new Person("Pamela");
 
 			seqGeneratorMock.verify(SequenceGenerator::nextId);
-			assertThat(person.getId()).isEqualTo(0);
+			assertThat(person.getId()).isZero();
 		}
 	}
 

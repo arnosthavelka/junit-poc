@@ -15,7 +15,7 @@ import org.junit.jupiter.api.TestFactory;
 
 // based on http://junit.org/junit5/docs/current/user-guide/#writing-tests-dynamic-tests
 @DisplayName("A usage of simple dynamic test can be")
-public class SimpleDynamicTests {
+class SimpleDynamicTests {
 
     @TestFactory
     @DisplayName("just definition of desired tests")

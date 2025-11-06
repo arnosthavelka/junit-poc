@@ -17,7 +17,7 @@ import org.opentest4j.AssertionFailedError;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class TimeoutTest {
+class TimeoutTest {
 
 	@Test
 	@DisplayName("Standard test without timeout")

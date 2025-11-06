@@ -9,7 +9,7 @@ import org.junit.jupiter.api.extension.TestInstancePreDestroyCallback;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class EasyMockExtension implements TestInstancePostProcessor, TestInstancePreDestroyCallback {
+class EasyMockExtension implements TestInstancePostProcessor, TestInstancePreDestroyCallback {
 
 	@Override
 	public void postProcessTestInstance(Object testInstance, ExtensionContext context) throws Exception {
