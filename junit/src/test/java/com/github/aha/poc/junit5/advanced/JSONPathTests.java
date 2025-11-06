@@ -112,8 +112,11 @@ class JSONPathTests {
 		Filter eurFilter = Filter.filter(Criteria.where("currency").eq("EUR"));
 		List<Map<String, String>> countries = jsonContext.read("$['_embedded']['countries'][?]", eurFilter);
 
-		assertThat(countries.size()).isEqualTo(2);
-		assertThat(countries.get(0).values().iterator().next()).isEqualTo("Germany");
+		assertThat(countries)
+			.hasSize(2)
+			.flatExtracting(Map::values)
+			.first()
+			.isEqualTo("Germany");
 	}
 
 }

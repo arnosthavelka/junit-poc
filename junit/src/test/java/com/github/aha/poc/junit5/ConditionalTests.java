@@ -48,7 +48,7 @@ class ConditionalTests {
 	void checkJdk11Feature() {
 		showOsProperties();
 		assertThat("").isBlank();
-		assertThat("x\ny\nz".lines().collect(toList()).size()).isEqualTo(3);
+		assertThat("x\ny\nz".lines().collect(toList())).hasSize(3);
 	}
 
 	private void showOsProperties() {
