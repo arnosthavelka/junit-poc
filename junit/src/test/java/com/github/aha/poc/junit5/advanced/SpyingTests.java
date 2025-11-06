@@ -85,7 +85,7 @@ public class SpyingTests {
 			IntCalc spiedService = Mockito.spy(new IntCalc());
 			given(spiedService.add(anyInt())).willReturn(0);
 
-			assertThat(spiedService.add(3)).isEqualTo(0);
+			assertThat(spiedService.add(3)).isZero();
 			reset(spiedService);
 			assertThat(spiedService.add(5)).isEqualTo(10);
 		}

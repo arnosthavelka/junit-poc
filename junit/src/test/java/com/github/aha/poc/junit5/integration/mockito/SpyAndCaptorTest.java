@@ -39,7 +39,7 @@ class SpyAndCaptorTest {
 
 	@Test
 	void simpleTest() {
-		assertThat(calc.multiply()).isEqualTo(0);
+		assertThat(calc.multiply()).isZero();
 	}
 
 }
