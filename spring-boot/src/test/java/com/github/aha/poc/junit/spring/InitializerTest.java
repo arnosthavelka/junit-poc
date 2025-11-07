@@ -20,7 +20,7 @@ public class InitializerTest {
 	HelloService service;
 
 	@Test
-	public void getMessage() {
+	void getMessage() {
 		assertThat(service.getMessage()).isEqualTo("Hello world!");
 	}
 

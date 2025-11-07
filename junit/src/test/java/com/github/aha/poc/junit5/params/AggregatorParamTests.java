@@ -9,7 +9,7 @@ import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
 import org.junit.jupiter.params.provider.CsvSource;
 
 @DisplayName("Examples of aggregator usage in parameterized tests")
-public class AggregatorParamTests {
+class AggregatorParamTests {
 
 	@ParameterizedTest
 	@DisplayName("Usage of ArgumentsAccessor")

@@ -11,7 +11,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 @TestInstance(Lifecycle.PER_CLASS)
-public class PerClassIsolationTest {
+class PerClassIsolationTest {
 
 	private static final int INCREMENT_VALUE = 5;
 

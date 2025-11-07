@@ -10,12 +10,12 @@ import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("Conversion usage in parameterized tests")
-public class ConversionTests {
+class ConversionTests {
 
 	@ParameterizedTest
 	@ValueSource(strings = { "https://junit.org/", "https://github.com/arnosthavelka/junit-poc" })
 	@DisplayName("check standard conversion")
-	public void standardConverterTest(URI value) {
+	void standardConverterTest(URI value) {
 		assertThat(value).isNotNull();
 	}
 

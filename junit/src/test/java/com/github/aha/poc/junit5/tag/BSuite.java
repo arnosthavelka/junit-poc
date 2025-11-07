@@ -9,6 +9,6 @@ import org.junit.platform.suite.api.Suite;
 @DisplayName("B Suite - run all marked B tests")
 @SelectPackages("com.github.aha.poc.junit5.tag")
 @IncludeTags(TagConsts.B)
-public class BSuite {
+class BSuite {
 
 }

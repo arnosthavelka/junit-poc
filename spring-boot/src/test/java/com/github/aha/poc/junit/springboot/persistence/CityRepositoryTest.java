@@ -12,18 +12,18 @@ import com.github.aha.poc.junit.springboot.City;
 import com.github.aha.poc.junit.springboot.CityRepository;
 
 @DataJpaTest
-public class CityRepositoryTest {
+class CityRepositoryTest {
 
 	@Autowired
 	CityRepository repo;
 
 	@Test
-	public void countEntities() {
+	void countEntities() {
 		assertThat(repo.count()).isEqualTo(4);
 	}
 
 	@Test
-	public void findEntity() {
+	void findEntity() {
 		Optional<City> entityRef = repo.findByName("Prague");
 		assertThat(entityRef.get().getCountry()).isEqualTo("Czech Republic");
 	}

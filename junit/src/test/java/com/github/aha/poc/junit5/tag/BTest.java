@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Tag(TagConsts.B)
 @Slf4j
-public class BTest {
+class BTest {
 
 	@Test
 	@DisplayName("Fast B test")

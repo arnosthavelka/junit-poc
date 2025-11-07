@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class StandardLifeCycleTest extends AbstractLifeCycleTest {
+class StandardLifeCycleTest extends AbstractLifeCycleTest {
 
 	static {
 		log.info("[static] class LifeCycleTest initialization ...");

@@ -15,7 +15,7 @@ import com.github.aha.poc.junit.springboot.CityResource;
 import com.github.aha.poc.junit.springboot.CityService;
 
 @RestClientTest(CityController.class)
-public class CityControllerBeanTest {
+class CityControllerBeanTest {
 
 	private static final long MADRID_ID = 5L;
 	private static final String MADRID_NAME = "Madrid";
@@ -27,7 +27,7 @@ public class CityControllerBeanTest {
 	private CityService service;
 
 	@Test
-	public void getItem() {
+	void getItem() {
 		// given
 		when(this.service.getItem(MADRID_ID)).thenReturn(new City(MADRID_ID, MADRID_NAME));
 		// when
