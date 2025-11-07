@@ -13,7 +13,6 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 @SpringJUnitConfig(classes=SpringConfig.class)
 @DisplayName("Setting properties for test purposes")
 public class PropertiesTest {
-
 	private static final String ENVIRONMENT_KEY = "ju5.spring.test.environment";
 	private static final String ENVIRONMENT_MEM = "MEM";
 
@@ -26,7 +25,7 @@ public class PropertiesTest {
 	}
 	
 	@Test
-	public void test() {
+	void test() {
 		assertThat(environment.getProperty(ENVIRONMENT_KEY)).isEqualTo(ENVIRONMENT_MEM);
 	}
 

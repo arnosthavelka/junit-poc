@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 import org.junit.jupiter.api.Test;
 
-public class ApplicationTest {
+class ApplicationTest {
 
 	@Test
-	public void checkContext() {
+	void checkContext() {
 		assertDoesNotThrow(() -> Application.main(array()));
 	}
 

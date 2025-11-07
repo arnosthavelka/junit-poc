@@ -9,13 +9,13 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 @SpringJUnitConfig(classes=SpringConfig.class)
 @DisplayName("Simple spring test for JUnit5")
-public class SimpleSpringTest {
+class SimpleSpringTest {
 
 	@Autowired
 	HelloService service;
 	
 	@Test
-	public void getMessage() {
+	void getMessage() {
 		assertThat(service.getMessage()).isEqualTo("Hello world!");
 	}
 

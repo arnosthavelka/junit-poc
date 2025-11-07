@@ -9,7 +9,7 @@ import org.junit.jupiter.api.TestInfo;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class CTest {
+class CTest {
 
 	@Test
 	@DisplayName("Fast A test")
