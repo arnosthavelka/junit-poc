@@ -9,13 +9,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @SpringBootTest(webEnvironment = NONE)
-public class CityJdbcTest {
+class CityJdbcTest {
 
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
 	@Test
-	public void testCount() {
+	void testCount() {
 		Integer count = jdbcTemplate.queryForObject("select count(*) from city", Integer.class);
 		assertThat(count).isEqualTo(4);
 	}

@@ -29,7 +29,7 @@ import org.springframework.test.web.servlet.MockMvc;
 @SpringBootTest(webEnvironment = MOCK)
 @AutoConfigureRestDocs
 @AutoConfigureMockMvc
-public class CityControllerRestDocsTest {
+class CityControllerRestDocsTest {
 
 	private static final String ROOT_PATH = "/cities";
 	private static final long PRAGUE_ID = 1L;

@@ -42,7 +42,7 @@ import io.restassured.module.mockmvc.response.MockMvcResponse;
 import io.restassured.response.ExtractableResponse;
 
 @SpringBootTest(webEnvironment = MOCK, classes = CityController.class)
-public class CityControllerRestAssuredControllerTest {
+class CityControllerRestAssuredControllerTest {
 
 	private static final String ROOT_PATH = "/cities";
 	private static final Long PRAGUE_ID = 1L;

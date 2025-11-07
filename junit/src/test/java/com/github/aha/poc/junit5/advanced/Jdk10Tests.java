@@ -23,7 +23,7 @@ class Jdk10Tests {
 	void simpleVarArray() {
 		var array = of(0, 1, 2);
 
-		assertThat(array.size()).isEqualTo(3);
+		assertThat(array).hasSize(3);
 	}
 
 	@Test

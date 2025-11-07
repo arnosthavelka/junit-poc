@@ -14,7 +14,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("Simple parameterized tests")
-public class SimpleParamTests {
+class SimpleParamTests {
 
 	@ParameterizedTest
 	@ValueSource(strings = { "Hello", "World" })
@@ -26,7 +26,7 @@ public class SimpleParamTests {
 	@ParameterizedTest
 	@ValueSource(ints = { 2, 3, -2, 4, -5 })
 	void numberTest(int argument) {
-		assertThat(argument).isNotEqualTo(0);
+		assertThat(argument).isNotZero();
 	}
 
 	@ParameterizedTest

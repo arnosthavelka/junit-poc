@@ -10,13 +10,13 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = SpringConfig.class)
-public class StandardSpringTest {
+class StandardSpringTest {
 
 	@Autowired
 	HelloService service;
 	
 	@Test
-	public void getMessage() {
+	void getMessage() {
 		assertThat(service.getMessage()).isEqualTo("Hello world!");
 	}
 

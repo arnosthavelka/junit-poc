@@ -16,7 +16,7 @@ import com.github.aha.poc.junit.springboot.CityRepository;
 import com.github.aha.poc.junit.springboot.CityService;
 
 @SpringBootTest(webEnvironment = NONE)
-public class CityServiceTest {
+class CityServiceTest {
 
 	private static final long PRAGUE_ID = 1L;
 	private static final String PRAGUE_NAME = "Prague";
@@ -28,7 +28,7 @@ public class CityServiceTest {
 	CityRepository repo;
 
 	@Test
-	public void testMadridCity() {
+	void testMadridCity() {
 		// given
 		when(this.repo.findById(PRAGUE_ID)).thenReturn(Optional.of(new City(5L, PRAGUE_NAME)));
 		// when
