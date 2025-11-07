@@ -14,7 +14,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(initializers = InitializerTest.Initializer.class)
 @DisplayName("Initialize context manually")
-public class InitializerTest {
+class InitializerTest {
 
 	@Autowired
 	HelloService service;

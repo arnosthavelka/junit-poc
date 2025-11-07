@@ -6,7 +6,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 import java.util.Map;
 
-import org.json.JSONException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -60,7 +59,7 @@ class JSONPathTests {
 
 	@Test
 	@DisplayName("should calculate max function")
-	void maxFunction() throws JSONException {
+	void maxFunction() {
 		Double maxValue = JsonPath.read("{values:[1, 3, 9, 7]}", "$.values.max()");
 
 		assertThat(maxValue).isEqualTo(9);
@@ -68,19 +67,19 @@ class JSONPathTests {
 
 	@Test
 	@DisplayName("should get value with dot notation")
-	void useGetValueWithDotNotation() throws JSONException {
+	void useGetValueWithDotNotation() {
 		assertThat(jsonContext.<String>read("$._embedded.countries[3].cities[0]")).isEqualTo("Paris");
 	}
 
 	@Test
 	@DisplayName("should get value with bracket notation")
-	void useGetValueWithBracketNotation() throws JSONException {
+	void useGetValueWithBracketNotation() {
 		assertThat(jsonContext.<String>read("$['_embedded']['countries'][1]['cities'][0]")).isEqualTo("Berlin");
 	}
 
 	@Test
 	@DisplayName("should read integer value directly")
-	void directRead() throws JSONException {
+	void directRead() {
 		Integer jsonPath = JsonPath.read(jsonContent, "$.page.size");
 
 		assertThat(jsonPath).isEqualTo(4);
@@ -88,27 +87,27 @@ class JSONPathTests {
 
 	@Test
 	@DisplayName("should check length")
-	void checkLength() throws JSONException {
+	void checkLength() {
 		assertThat(jsonContext.<Integer>read("$._embedded.countries.length()")).isEqualTo(4);
 	}
 
 	@Test
 	@DisplayName("should get specific node by country name")
-	void getSpecificValueByName() throws JSONException {
+	void getSpecificValueByName() {
 		JSONArray data = jsonContext.read("$._embedded.countries[?(@.name == \"France\")].cities[0]");
 		assertThat(data.get(0)).isEqualTo("Paris");
 	}
 
 	@Test
 	@DisplayName("should count all cities")
-	void countAllCities() throws JSONException {
+	void countAllCities() {
 		JSONArray data = jsonContext.read("$..cities");
 		assertThat(data.stream().map(JSONArray.class::cast).flatMap(x -> x.stream()).count()).isEqualTo(15);
 	}
 
 	@Test
 	@DisplayName("should filter all countries with EUR currency")
-	void filterCities() throws JSONException {
+	void filterCities() {
 		Filter eurFilter = Filter.filter(Criteria.where("currency").eq("EUR"));
 		List<Map<String, String>> countries = jsonContext.read("$['_embedded']['countries'][?]", eurFilter);
 

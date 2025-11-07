@@ -14,7 +14,7 @@ class StatTests {
 
 	@Test
 	void falseTest() {
-		assertThat(1 == 2).isFalse();
+		assertThat(1).isNotSameAs(2);
 	}
 
 }
