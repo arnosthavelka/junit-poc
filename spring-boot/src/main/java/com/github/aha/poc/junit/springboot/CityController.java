@@ -1,6 +1,5 @@
 package com.github.aha.poc.junit.springboot;
 
-import static java.util.stream.Collectors.toList;
 import static org.springframework.hateoas.CollectionModel.of;
 import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -44,7 +43,7 @@ public class CityController {
 	}
 
 	static List<CityResource> toResources(List<City> result) {
-		return result.stream().map(CityController::mapEntity).collect(toList());
+		return result.stream().map(CityController::mapEntity).toList();
 	}
 
 	static CityResource mapEntity(City city) {

@@ -12,7 +12,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 @SpringJUnitConfig(classes=SpringConfig.class)
 @DisplayName("Setting properties for test purposes")
-public class PropertiesTest {
+class PropertiesTest {
 	private static final String ENVIRONMENT_KEY = "ju5.spring.test.environment";
 	private static final String ENVIRONMENT_MEM = "MEM";
 

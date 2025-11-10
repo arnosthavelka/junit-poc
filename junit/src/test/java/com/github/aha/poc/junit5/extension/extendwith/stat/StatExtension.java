@@ -63,8 +63,7 @@ public class StatExtension implements AfterAllCallback, AfterEachCallback, After
 
 	private StatDTO retrieveDTO(ExtensionContext context) {
 		String name = context.getTestMethod().get().getName();
-		StatDTO dto = loadDTO(context, name, StatDTO.class);
-		return dto;
+		return loadDTO(context, name, StatDTO.class);
 	}
 
 	private void processWaiting(ExtensionContext context, String event) {

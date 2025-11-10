@@ -1,6 +1,6 @@
 package com.github.aha.poc.junit5.dynamic;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.util.Iterator;
 import java.util.Random;
@@ -40,10 +40,10 @@ class RealDynamicTests {
         };
 
         // Generates display names like: input:5, input:37, input:85, etc.
-        Function<Integer, String> displayNameGenerator = (input) -> "input:" + input;
+        Function<Integer, String> displayNameGenerator = input -> "input:" + input;
 
         // Executes tests based on the current input value.
-        ThrowingConsumer<Integer> testExecutor = (input) -> assertTrue(input % 7 != 0);
+        ThrowingConsumer<Integer> testExecutor = input -> assertNotEquals(input % 7, 0);
 
         // Returns a stream of dynamic tests.
         return DynamicTest.stream(inputGenerator, displayNameGenerator, testExecutor);

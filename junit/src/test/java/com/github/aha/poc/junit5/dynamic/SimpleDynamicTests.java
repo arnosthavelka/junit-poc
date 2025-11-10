@@ -38,7 +38,7 @@ class SimpleDynamicTests {
     Stream<DynamicTest> dynamicTestsFromIntStream() {
         // Generates tests for the first 10 even integers.
         return IntStream.iterate(0, n -> n + 2).limit(5).mapToObj(
-            n -> dynamicTest("test" + n, () -> assertTrue(n % 2 == 0)));
+            n -> dynamicTest("test" + n, () -> assertEquals(n % 2, 0)));
     }
 
 }

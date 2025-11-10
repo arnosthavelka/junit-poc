@@ -1,6 +1,5 @@
 package com.github.aha.poc.junit5;
 
-import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.condition.JRE.JAVA_10;
 import static org.junit.jupiter.api.condition.JRE.JAVA_11;
@@ -47,14 +46,12 @@ class ConditionalTests {
 	@EnabledForJreRange(min = JAVA_11)
 	void checkJdk11Feature() {
 		showOsProperties();
-		assertThat("").isBlank();
-		assertThat("x\ny\nz".lines().collect(toList())).hasSize(3);
+		assertThat("x\ny\nz".lines()).hasSize(3);
 	}
 
 	private void showOsProperties() {
 		log.info("OS={}", System.getProperty("os.name"));
 		log.info("Version={}", System.getProperty("os.version"));
-		assertThat(true).isTrue();
 	}
 
 }
