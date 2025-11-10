@@ -43,7 +43,7 @@ class RealDynamicTests {
         Function<Integer, String> displayNameGenerator = input -> "input:" + input;
 
         // Executes tests based on the current input value.
-        ThrowingConsumer<Integer> testExecutor = input -> assertNotEquals(input % 7, 0);
+        ThrowingConsumer<Integer> testExecutor = input -> assertNotEquals(0, input % 7);
 
         // Returns a stream of dynamic tests.
         return DynamicTest.stream(inputGenerator, displayNameGenerator, testExecutor);
