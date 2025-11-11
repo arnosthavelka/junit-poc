@@ -11,12 +11,10 @@ class ExceptionTest {
 	@Test
 	@DisplayName("Check thrown exception for dividing by zero")
 	void exceptionHandlingTest() {
-		Exception exception = assertThrows(RuntimeException.class, () -> {
-			assertThat(0).isEqualTo(5 / 0);
-		});
-		// check exception message
-		assertThat(ArithmeticException.class).isEqualTo(exception.getClass());
-		assertThat("/ by zero").isEqualTo(exception.getMessage());
+		Exception exception = assertThrows(RuntimeException.class, () -> assertThat(5 / 0).isZero());
+		assertThat(exception)
+			.isInstanceOf(ArithmeticException.class)
+			.hasMessage("/ by zero");
 	}
 
 }
