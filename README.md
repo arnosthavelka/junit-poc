@@ -1,13 +1,14 @@
 # junit-poc
 [![Java CI with Maven][github-image]][github-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url] [![MIT licensed][mit-badge]](./LICENSE.txt)
 
+This repository contains examples of my latest testing stack (e.g., JUnit, Mockito, AssertJ) and its integration with the Spring framework.
 
-This repository holds examples for my book [JUnit 5 - Unit testing on Java platform](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - Jednotkové testování na platformě Java).
-The main goal is to demonstrate usage of the framework JUnit 5.
+_Note: the backup for all examples from my book [JUnit 5 - Unit testing on Java platform](http://knihy.pecinovsky.cz/54_junit5) (JUnit 5 - Jednotkové testování na platformě Java) if still available in [2.7-SB35-JDK25-JUNIT5](https://github.com/arnosthavelka/junit-poc/tree/2.7-SB35-JDK25-JUNIT5) branch._
 
 ## Pre-requisities
 * JDK 25
 * Maven 3.9
+* JUnit 6
 * Lombok (installed into the IDE)
 
 ## Decomposition of projects
