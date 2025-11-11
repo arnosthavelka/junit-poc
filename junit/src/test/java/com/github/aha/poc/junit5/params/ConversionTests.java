@@ -23,8 +23,9 @@ class ConversionTests {
 	@ValueSource(strings = { "i", "L", "X" })
 	@DisplayName("check custom converter feature")
 	void customConverterTest(@ConvertWith(CustomConverter.class) ParamTypes value) {
-		assertThat(value).isNotNull();
-		assertThat(value).isInstanceOf(ParamTypes.class);
+		assertThat(value)
+			.isNotNull()
+			.isInstanceOf(ParamTypes.class);
 	}
 
 }
