@@ -9,7 +9,7 @@
 	<version>3.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>JUnit 5 :: ${project.artifactId}</name>
+	<name>JUnit 6 :: ${project.artifactId}</name>
 	<description>Parent maven project with definition of used technologies.</description>
 
 	<properties>
@@ -27,7 +27,7 @@
 		<kotlin.version>2.1.21</kotlin.version>
 
 		<!-- testing properties -->
-		<junit.jupiter.version>5.14.0</junit.jupiter.version>
+		<junit.jupiter.version>6.0.1</junit.jupiter.version>
 		<maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
 		<maven-failsafe-plugin.version>3.5.4</maven-failsafe-plugin.version>
 		<byte-buddy.version>1.17.8</byte-buddy.version>

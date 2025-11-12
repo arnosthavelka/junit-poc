@@ -23,6 +23,7 @@
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-runner</artifactId>
+			<version>1.14.1</version>
 		</dependency>
 		<!-- other test -->
     	<dependency>
