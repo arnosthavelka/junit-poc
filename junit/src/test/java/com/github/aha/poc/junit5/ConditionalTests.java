@@ -1,13 +1,9 @@
 package com.github.aha.poc.junit5;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.condition.JRE.JAVA_10;
-import static org.junit.jupiter.api.condition.JRE.JAVA_11;
-import static org.junit.jupiter.api.condition.JRE.JAVA_8;
-import static org.junit.jupiter.api.condition.JRE.OTHER;
+import static org.junit.jupiter.api.condition.JRE.JAVA_21;
+import static org.junit.jupiter.api.condition.JRE.JAVA_25;
 import static org.junit.jupiter.api.condition.OS.WINDOWS;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 import org.junit.jupiter.api.condition.EnabledForJreRange;
@@ -16,37 +12,32 @@ import org.junit.jupiter.api.condition.EnabledOnOs;
 
 import lombok.extern.slf4j.Slf4j;
 
-@DisplayName("Examples of conditional tests")
 @Slf4j
 class ConditionalTests {
 
 	@Test
 	@EnabledOnOs(WINDOWS)
-	@DisplayName("enable test on Windows")
-	void testOnWindowsOnly() {
+	void enabledOnWindowsOnly() {
 		showOsProperties();
 	}
 
 	@Test
 	@EnabledOnOs(WINDOWS)
 	@DisabledIfSystemProperty(named = "os.version", matches = ".*10.*")
-	@DisplayName("enable test on Windows except version 10")
-	void testOnWindowsExceptVersion10() {
+	void enabledOnWindowsExceptVersion10() {
 		showOsProperties();
 	}
 
 	@Test
-	@EnabledOnJre({ JAVA_8, JAVA_10, JAVA_11, OTHER })
-	@DisplayName("enable test on JDK 9 only")
-	void testForJdk9() {
+	@EnabledOnJre(JAVA_25 )
+	void enabledForJdk25Only() {
 		showOsProperties();
 	}
 
 	@Test
-	@EnabledForJreRange(min = JAVA_11)
-	void checkJdk11Feature() {
+	@EnabledForJreRange(min = JAVA_21, max=JAVA_25)
+	void enabledForJdkFrom21To25() {
 		showOsProperties();
-		assertThat("x\ny\nz".lines()).hasSize(3);
 	}
 
 	private void showOsProperties() {

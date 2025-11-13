@@ -27,11 +27,6 @@
 			<version>${junit-platform-runner.version}</version>
 		</dependency>
 		<!-- other test -->
-    	<dependency>
-    		<groupId>net.bytebuddy</groupId>
-    		<artifactId>byte-buddy</artifactId>
-    		<version>${byte-buddy.version}</version>
-    	</dependency>
 		<dependency>
 		    <groupId>org.assertj</groupId>
 		    <artifactId>assertj-core</artifactId>
