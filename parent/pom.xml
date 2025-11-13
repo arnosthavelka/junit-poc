@@ -31,7 +31,6 @@
 		<junit-platform-runner.version>1.14.1</junit-platform-runner.version>
 		<maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
 		<maven-failsafe-plugin.version>3.5.4</maven-failsafe-plugin.version>
-		<byte-buddy.version>1.17.8</byte-buddy.version>
 		<cucumber.version>7.31.0</cucumber.version>
 		<assertj.version>3.27.6</assertj.version>
 		<mockito.version>5.20.0</mockito.version>
