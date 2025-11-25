@@ -1,15 +1,12 @@
 package com.github.aha.poc.junit.springboot.rest.assured;
 
-import static com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS;
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
 import static java.util.Arrays.asList;
-import static java.util.Collections.emptyMap;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.MOCK;
-import static org.springframework.hateoas.mediatype.MessageResolver.DEFAULTS_ONLY;
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -21,18 +18,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.hateoas.mediatype.hal.DefaultCurieProvider;
-import org.springframework.hateoas.mediatype.hal.Jackson2HalModule;
-import org.springframework.hateoas.server.core.AnnotationLinkRelationProvider;
-import org.springframework.hateoas.server.core.DelegatingLinkRelationProvider;
-import org.springframework.hateoas.server.core.EvoInflectorLinkRelationProvider;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.plugin.core.OrderAwarePluginRegistry;
+import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.StdDateFormat;
 import com.github.aha.poc.junit.springboot.City;
 import com.github.aha.poc.junit.springboot.CityController;
 import com.github.aha.poc.junit.springboot.CityResource;
@@ -129,7 +117,7 @@ class CityControllerRestAssuredControllerTest {
 		List<City> cities = asList(buildCity(111L, "Prague"), buildCity(222L, "Madrid"), buildCity(999L, "Tokyo"));
 		when(service.getAll()).thenReturn(cities);
 		given()
-			.standaloneSetup(standaloneSetup(controller).setMessageConverters(new MappingJackson2HttpMessageConverter(configureObjectMapper())))
+			.standaloneSetup(standaloneSetup(controller).setMessageConverters(new JacksonJsonHttpMessageConverter()))
 		.when()
 			.get(ROOT_PATH)
 		.then()
@@ -147,25 +135,25 @@ class CityControllerRestAssuredControllerTest {
 		return new City(id, name);
 	}
 
-	private static final StdDateFormat DATE_FORMAT = new StdDateFormat().withColonInTimeZone(false);
-
-	private ObjectMapper configureObjectMapper() {
-        return Jackson2ObjectMapperBuilder.json()
-                .modules(new Jackson2HalModule())
-                .handlerInstantiator(
-                        new Jackson2HalModule.HalHandlerInstantiator(
-                                new DelegatingLinkRelationProvider(
-                                        OrderAwarePluginRegistry.of(
-                                                new EvoInflectorLinkRelationProvider(),
-                                                new AnnotationLinkRelationProvider()
-                                        )
-                                ),
-                                new DefaultCurieProvider(emptyMap()),
-                                DEFAULTS_ONLY
-                        )
-                )
-                .featuresToDisable(WRITE_DATES_AS_TIMESTAMPS)
-                .dateFormat(DATE_FORMAT)
-				.build();
-    }
+//	private static final StdDateFormat DATE_FORMAT = new StdDateFormat().withColonInTimeZone(false);
+//
+//	private ObjectMapper configureObjectMapper() {
+//        return Jackson2ObjectMapperBuilder.json()
+//                .modules(new Jackson2HalModule())
+//                .handlerInstantiator(
+//                        new Jackson2HalModule.HalHandlerInstantiator(
+//                                new DelegatingLinkRelationProvider(
+//                                        OrderAwarePluginRegistry.of(
+//                                                new EvoInflectorLinkRelationProvider(),
+//                                                new AnnotationLinkRelationProvider()
+//                                        )
+//                                ),
+//                                new DefaultCurieProvider(emptyMap()),
+//                                DEFAULTS_ONLY
+//                        )
+//                )
+//                .featuresToDisable(WRITE_DATES_AS_TIMESTAMPS)
+//                .dateFormat(DATE_FORMAT)
+//				.build();
+//    }
 }
