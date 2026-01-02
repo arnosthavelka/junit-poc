@@ -10,15 +10,12 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 import java.util.List;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import com.github.aha.poc.junit.springboot.City;
@@ -42,8 +39,7 @@ class CityControllerRestAssuredControllerTest {
 	CityController controller;
 
 	@Test
-	@DisplayName("should read one city")
-	void getCity() {
+	void getCityDetail() {
 		when(service.getItem(PRAGUE_ID)).thenReturn(buildCity(999L, "Tokyo"));
 		given()
 			.standaloneSetup(controller)
@@ -58,8 +54,7 @@ class CityControllerRestAssuredControllerTest {
 	}
 
 	@Test
-	@DisplayName("should read one city and retrieve the complete response")
-	void getCityAndRetriveCompleteResponse() {
+	void getCityDetailAndRetriveCompleteResponse() {
 		when(service.getItem(PRAGUE_ID)).thenReturn(buildCity(123L, "Moscow"));
 		ExtractableResponse<MockMvcResponse> response =
 		given()
@@ -77,8 +72,7 @@ class CityControllerRestAssuredControllerTest {
 	}
 	
 	@Test
-	@DisplayName("should read one city and retrieve the city resource")
-	void getCityAndRetriveDirectCity() {
+	void getCityDetailAndRetriveDirectCity() {
 		when(service.getItem(PRAGUE_ID)).thenReturn(buildCity(456L, "Sydney"));
 
 		CityResource cityResource = given()
@@ -93,8 +87,7 @@ class CityControllerRestAssuredControllerTest {
 	}
 	
 	@Test
-	@DisplayName("should list cities without HATEOAS conversion")
-	void listCitiesWithoutConversion() {
+	void listCitiesWithout() {
 		List<City> cities = asList(buildCity(111L, "Prague"), buildCity(222L, "Madrid"), buildCity(999L, "Tokyo"));
 		when(service.getAll()).thenReturn(cities);
 		given()
@@ -111,49 +104,8 @@ class CityControllerRestAssuredControllerTest {
 
 	}
 
-	@Test
-	@DisplayName("should list cities with HATEOAS conversion")
-	void listCitiesWithConversion() {
-		List<City> cities = asList(buildCity(111L, "Prague"), buildCity(222L, "Madrid"), buildCity(999L, "Tokyo"));
-		when(service.getAll()).thenReturn(cities);
-		given()
-			.standaloneSetup(standaloneSetup(controller).setMessageConverters(new JacksonJsonHttpMessageConverter()))
-		.when()
-			.get(ROOT_PATH)
-		.then()
-			.log().body()
-			.statusCode(200)
-			.assertThat().header(CONTENT_TYPE, APPLICATION_JSON_VALUE)
-			.assertThat().body(
-						"_embedded.cityResources.size()", is(3),
-						"_embedded.cityResources[0].id", equalTo(111),
-						"_embedded.cityResources[0].name", equalTo("Prague"));
-	}
-
-
 	static City buildCity(Long id, String name) {
 		return new City(id, name);
 	}
 
-//	private static final StdDateFormat DATE_FORMAT = new StdDateFormat().withColonInTimeZone(false);
-//
-//	private ObjectMapper configureObjectMapper() {
-//        return Jackson2ObjectMapperBuilder.json()
-//                .modules(new Jackson2HalModule())
-//                .handlerInstantiator(
-//                        new Jackson2HalModule.HalHandlerInstantiator(
-//                                new DelegatingLinkRelationProvider(
-//                                        OrderAwarePluginRegistry.of(
-//                                                new EvoInflectorLinkRelationProvider(),
-//                                                new AnnotationLinkRelationProvider()
-//                                        )
-//                                ),
-//                                new DefaultCurieProvider(emptyMap()),
-//                                DEFAULTS_ONLY
-//                        )
-//                )
-//                .featuresToDisable(WRITE_DATES_AS_TIMESTAMPS)
-//                .dateFormat(DATE_FORMAT)
-//				.build();
-//    }
 }

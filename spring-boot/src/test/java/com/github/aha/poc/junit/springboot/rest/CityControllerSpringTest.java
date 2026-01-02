@@ -8,7 +8,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,15 +19,14 @@ import org.springframework.test.web.servlet.MockMvc;
 class CityControllerSpringTest {
 
 	private static final String ROOT_PATH = "/cities";
-	private static final long PRAGUE_ID = 1L;
+	private static final Long PRAGUE_ID = 1L;
 	private static final String PRAGUE_NAME = "Prague";
 
 	@Autowired
 	private MockMvc mvc;
 
 	@Test
-	@DisplayName("should list all available cities")
-	void listCities() throws Exception {
+	void listAllCities() throws Exception {
 		mvc.perform(get(ROOT_PATH)
 				.contentType(APPLICATION_JSON))
 				.andExpect(status().isOk())
@@ -36,8 +34,7 @@ class CityControllerSpringTest {
 	}
 
 	@Test
-	@DisplayName("should read one city")
-	void getCity() throws Exception {
+	void getSingleCity() throws Exception {
 		mvc.perform(get(ROOT_PATH + "/{id}", PRAGUE_ID)
 				.contentType(APPLICATION_JSON))
 				.andExpect(status().isOk())

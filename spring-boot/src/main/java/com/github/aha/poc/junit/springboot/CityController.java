@@ -36,8 +36,8 @@ public class CityController {
 	}
 
 	@GetMapping("/{id}")
-	public HttpEntity<CityResource> getItem(@PathVariable("id") Long id) {
-		City result = service.getItem(id);
+	public HttpEntity<CityResource> getItem(@PathVariable("id") Long cityId) {
+		City result = service.getItem(cityId);
 		return ok(mapEntity(result));
 	}
 

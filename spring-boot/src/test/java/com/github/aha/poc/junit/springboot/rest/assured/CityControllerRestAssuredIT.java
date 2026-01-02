@@ -21,13 +21,17 @@ class CityControllerRestAssuredIT {
 
 	@Test
 	void listCities() {
-		when().get("http://localhost:" + port + "/cities").then().statusCode(200).assertThat().body(
+		when()
+			.get("http://localhost:" + port + "/cities")
+		.then()
+			.statusCode(200)
+				.assertThat().body(
 				"_embedded.cityResources.size()", is(4), "_embedded.cityResources[2].id", equalTo(3),
 				"_embedded.cityResources[2].name", equalTo("Paris"));
 	}
 
 	@Test
-	void getCity() {
+	void getCityDetail() {
 		long cityId = 2L;
 		CityResource city = get("http://localhost:" + port + "/cities/" + cityId).then().extract()
 				.as(CityResource.class);
