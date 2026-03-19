@@ -22,29 +22,32 @@
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<maven.compiler.proc>full</maven.compiler.proc>
-		<jacoco.version>0.8.14</jacoco.version>
-		<kotlin.version>2.2.21</kotlin.version>
+		<jacoco.version>0.8.15</jacoco.version>
+		<kotlin.version>2.4.0</kotlin.version>
 
 		<!-- plugins -->
-		<maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
-		<maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
-		<maven-failsafe-plugin.version>3.5.4</maven-failsafe-plugin.version>
+		<maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+		<maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>3.5.6</maven-failsafe-plugin.version>
+		<build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
+		<asciidoctor-maven-plugin.verion>3.2.0</asciidoctor-maven-plugin.verion>
 
 		<!-- testing properties -->
-		<junit.jupiter.version>6.0.1</junit.jupiter.version>
-		<junit-platform-runner.version>1.14.1</junit-platform-runner.version>
-		<cucumber.version>7.32.0</cucumber.version>
-		<assertj.version>3.27.6</assertj.version>
-		<mockito.version>5.20.0</mockito.version>
+		<junit.jupiter.version>6.1.0</junit.jupiter.version>
+		<junit-platform-runner.version>1.14.4</junit-platform-runner.version>
+		<cucumber.version>7.34.3</cucumber.version>
+		<assertj.version>3.27.7</assertj.version>
+		<mockito.version>5.23.0</mockito.version>
 		<jsonassert.version>1.5.3</jsonassert.version>
-		<json-path.version>2.10.0</json-path.version>
+		<json-path.version>3.0.0</json-path.version>
 		<!-- specific logging properties -->
 		<slf4j.version>2.0.17</slf4j.version>
-		<logback.version>1.5.21</logback.version>
+		<logback.version>1.5.32</logback.version>
 		<!-- specific dependencies -->
-		<spring-boot.version>3.5.8</spring-boot.version>
-		<spring-cloud-contract.version>4.3.0</spring-cloud-contract.version>
-		<lombok.version>1.18.42</lombok.version>
+		<spring-boot.version>4.1.0</spring-boot.version>
+		<spring-cloud-contract.version>5.0.2</spring-cloud-contract.version>
+		<rest-assured.version>6.0.0</rest-assured.version>
+		<lombok.version>1.18.46</lombok.version>
 	</properties>
 
 	<dependencyManagement>

@@ -5,7 +5,7 @@ import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
+import org.springframework.boot.restclient.test.autoconfigure.RestClientTest;
 import org.springframework.http.HttpEntity;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
@@ -28,11 +28,10 @@ class CityControllerBeanTest {
 
 	@Test
 	void getItem() {
-		// given
 		when(this.service.getItem(MADRID_ID)).thenReturn(new City(MADRID_ID, MADRID_NAME));
-		// when
+
 		HttpEntity<CityResource> resource = this.controller.getItem(MADRID_ID);
-		// then
+
 		CityResource city = resource.getBody();
 		assertThat(city.getId()).isEqualTo(MADRID_ID);
 		assertThat(city.getName()).isEqualTo(MADRID_NAME);

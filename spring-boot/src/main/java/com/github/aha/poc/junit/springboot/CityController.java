@@ -1,14 +1,13 @@
 package com.github.aha.poc.junit.springboot;
 
 import static org.springframework.hateoas.CollectionModel.of;
-import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.http.ResponseEntity.ok;
 
 import java.util.List;
 
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 /**
  * Usage:
  * <ul>
- * <li>search - http://localhost:8080/cities/</li>
+ * <li>search - http://localhost:8080/cities</li>
  * <li>detail - http://localhost:8080/cities/2</li>
  * </ul>
  */
@@ -33,13 +32,13 @@ public class CityController {
 	@GetMapping
 	public HttpEntity<CollectionModel<CityResource>> list() {
 		List<City> result = service.getAll();
-		return new ResponseEntity<>(of(toResources(result)), OK);
+		return ok(of(toResources(result)));
 	}
 
 	@GetMapping("/{id}")
-	public HttpEntity<CityResource> getItem(@PathVariable("id") Long id) {
-		City result = service.getItem(id);
-		return new ResponseEntity<>(mapEntity(result), OK);
+	public HttpEntity<CityResource> getItem(@PathVariable("id") Long cityId) {
+		City result = service.getItem(cityId);
+		return ok(mapEntity(result));
 	}
 
 	static List<CityResource> toResources(List<City> result) {

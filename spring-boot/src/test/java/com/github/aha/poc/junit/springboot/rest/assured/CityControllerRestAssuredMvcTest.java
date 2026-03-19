@@ -9,11 +9,10 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.test.web.servlet.MockMvc;
 
 @SpringBootTest(webEnvironment = MOCK)
@@ -28,8 +27,7 @@ class CityControllerRestAssuredMvcTest {
 	private MockMvc mvc;
 	
 	@Test
-	@DisplayName("should read one city")
-	void getCity() {
+	void getCityDetail() {
 		given()
 			.mockMvc(mvc)
 		.when()
@@ -41,7 +39,6 @@ class CityControllerRestAssuredMvcTest {
 	}
 
 	@Test
-	@DisplayName("should list cities")
 	void listCities() {
 		given()
 			.mockMvc(mvc)
@@ -61,7 +58,6 @@ class CityControllerRestAssuredMvcTest {
 	}
 
 	@Test
-	@DisplayName("should run list cities under 1s")
 	void measurePerformanceOfListCities() {
 		given()
 			.mockMvc(mvc)

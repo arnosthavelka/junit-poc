@@ -18,12 +18,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.restdocs.test.autoconfigure.AutoConfigureRestDocs;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.test.web.servlet.MockMvc;
 
 @SpringBootTest(webEnvironment = MOCK)
@@ -39,7 +38,6 @@ class CityControllerRestDocsTest {
 	private MockMvc mvc;
 
 	@Test
-	@DisplayName("should list all available cities")
 	void listCities() throws Exception {
 		mvc.perform(get(ROOT_PATH).contentType(APPLICATION_JSON))
 				.andExpect(status().isOk())
@@ -52,8 +50,7 @@ class CityControllerRestDocsTest {
 	}
 
 	@Test
-	@DisplayName("should read one city")
-	void getCity() throws Exception {
+	void getCityDetail() throws Exception {
 		mvc.perform(get(ROOT_PATH + "/{id}", PRAGUE_ID).contentType(APPLICATION_JSON)).andExpect(status().isOk())
 				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON)).andExpect(jsonPath("id", is(1)))
 				.andExpect(jsonPath("name", is(PRAGUE_NAME)))
